@@ -1,0 +1,21 @@
+[/]
+default='3e1a1cfb-2f07-4147-a778-dcde1aa1d284'
+list=['3e1a1cfb-2f07-4147-a778-dcde1aa1d284']
+
+[:3e1a1cfb-2f07-4147-a778-dcde1aa1d284]
+audible-bell=false
+background-color='rgb(54,57,62)'
+background-transparency-percent=6
+cursor-background-color='rgb(255,255,255)'
+cursor-colors-set=true
+cursor-foreground-color='rgb(72,185,199)'
+default-size-columns=125
+default-size-rows=45
+font='FiraCode Nerd Font Mono 11'
+foreground-color='rgb(255,255,255)'
+highlight-background-color='rgb(72,185,199)'
+highlight-colors-set=true
+palette=['rgb(54,57,62)', 'rgb(226,44,57)', 'rgb(0,224,108)', 'rgb(246,116,81)', 'rgb(54,123,240)', 'rgb(191,46,93)', 'rgb(73,174,230)', 'rgb(230,230,230)', 'rgb(91,94,99)', 'rgb(229,75,75)', 'rgb(38,166,113)', 'rgb(244,86,42)', 'rgb(39,127,255)', 'rgb(215,22,85)', 'rgb(5,161,247)', 'rgb(255,255,255)']
+use-system-font=true
+use-transparent-background=true
+visible-name='Flat Remix'
