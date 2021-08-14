@@ -45,7 +45,7 @@ echo "> Shorcuts installed\n"
 
 # Gnome terminal profile
 echo "> Installing gnome-terminal profiles"
-dconf_if ./terminal/gnome /org/gnome/terminal/legacy/profiles:/
+dconf_it ./terminal/gnome /org/gnome/terminal/legacy/profiles:/
 echo "> Profiles installed"
 
 echo "\n> Set up completed 🚀"
