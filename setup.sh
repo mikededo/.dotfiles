@@ -41,7 +41,12 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
   dconf_it ./keybindings/media-keys /org/gnome/settings-daemon/plugins/media-keys/
   dconf_it ./keybindings/mutter /org/gnome/mutter/keybindings
 fi
-echo "> Shorcuts installed"
+echo "> Shorcuts installed\n"
+
+# Gnome terminal profile
+echo "> Installing gnome-terminal profiles"
+dconf_if ./terminal/gnome /org/gnome/terminal/legacy/profiles:/
+echo "> Profiles installed"
 
 echo "\n> Set up completed 🚀"
 
