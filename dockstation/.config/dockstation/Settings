@@ -1,0 +1,21 @@
+{
+	"settings": {
+		"shell": "sh",
+		"logsLimit": 500,
+		"termPath": "/usr/bin/gnome-terminal",
+		"termArgs": "-e",
+		"sshTunnel": {
+			"type": "port",
+			"port": 3500,
+			"socketPath": "/tmp/docker.tmp.sock",
+			"dockerPath": "/var/run/docker.sock"
+		},
+		"send_metrics": true,
+		"docker": {
+			"type": "native",
+			"vmName": "default",
+			"driver": "virtualbox"
+		}
+	},
+	"projects": []
+}
