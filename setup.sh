@@ -2,7 +2,6 @@
 
 # Packages to be installed
 packages=(
-  dockstation
   git
   nvim
   oh-my-zsh
@@ -24,6 +23,15 @@ dconf_it() {
 
   cat ${file} | dconf load ${location}
 }
+
+
+# Install zsh and its plugins
+echo "> Installing oh-my-zsh"
+ZSH_PLUGINS=$HOME/.config/zsh/.oh-my-zsh/custom/plugins
+
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_PLUGINS/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting $ZSH_PLUGINS/zsh-autosuggestions
 
 echo "> Stowing all packages\n"
 

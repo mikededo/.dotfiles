@@ -49,7 +49,7 @@ setopt list_ambiguous			# Complete until it gets ambiguous
 # OTHER
 # #
 # In Arch based distros, it is needed to open new tabs in same folder
-source /etc/profile.d/vte.sh
+[ -f "/etc/arch-release" ] && source /etc/profile.d/vte.sh
 
 # Preferred editor for local and remote sessions
 export EDITOR='nvim'
