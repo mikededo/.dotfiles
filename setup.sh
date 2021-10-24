@@ -1,5 +1,16 @@
 #!/usr/bin/env zsh
 
+OHMYZSH_CONFIG=$HOME/.config/zsh/.oh-my-zsh
+OHMYZSH_THEMES=$OHMYZSH_CONFIG/themes
+OHMYZSH_PLUGINS=$OHMYZSH_CONFIG/custom/plugins
+
+# Check mandatory applications
+[ ! -x "$(command -v zsh)" ] && echo "ERROR: zsh is not installed in the system" && exit -1
+[ ! -x "$(command -v git)" ] && echo "ERROR: git is not installed in the system" && exit -1
+[ ! -x "$(command -v nvim)" ] && echo "ERROR: nvim is not installed in the system" && exit -1
+[ ! -x "$(command -v stow)" ] && echo "ERROR: stow is not installed in the system" && exit -1
+[ ! -x "$(command -v curl)" ] && echo "ERROR: curl is not installed in the system" && exit -1
+
 # Packages to be installed
 packages=(
   git
@@ -24,14 +35,23 @@ dconf_it() {
   cat ${file} | dconf load ${location}
 }
 
+# git clone helper
+git_clone() {
+  git clone "https://github.com/$1" $2
+}
+
 
 # Install zsh and its plugins
 echo "> Installing oh-my-zsh"
-ZSH_PLUGINS=$HOME/.config/zsh/.oh-my-zsh/custom/plugins
 
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_PLUGINS/zsh-autosuggestions
-git clone https://github.com/zsh-users/zsh-syntax-highlighting $ZSH_PLUGINS/zsh-autosuggestions
+[ ! -d $HOME/.config/zsh/.oh-my-zsh ] && git_clone ohmyzsh/ohmyzsh $HOME/.config/zsh/.oh-my-zsh
+
+[ ! -d $OHMYZSH_PLUGINS/zsh-autosuggestions ] && git_clone zsh-users/zsh-autosuggestions $OHMYZSH_PLUGINS/zsh-autosuggestions
+[ ! -d $OHMYZSH_PLUGINS/zsh-syntax-highlighting ] && git_clone zsh-users/zsh-syntax-highlighting $OHMYZSH_PLUGINS/zsh-syntax-highlighting
+
+echo "> Installing powerlevel10k"
+
+[ ! -d $OHMYZSH_THEMES/powerlevel10k ] && git_clone romkatv/powerlevel10k $OHMYZSH_THEMES/powerlevel10k
 
 echo "> Stowing all packages\n"
 
@@ -55,6 +75,13 @@ echo "> Shorcuts installed\n"
 echo "> Installing gnome-terminal profiles"
 dconf_it ./terminal/gnome /org/gnome/terminal/legacy/profiles:/
 echo "> Profiles installed"
+
+# Additional dependencies
+echo "> Installing additional dependencies"
+
+echo "Installing nvm"
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
+echo "nvm installed"
 
 echo "\n> Set up completed 🚀"
 
