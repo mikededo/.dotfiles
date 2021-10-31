@@ -3,7 +3,6 @@
 	email = miquelddg@gmail.com
 [core]
 	editor = nvim
-	pager = more
 [github]
 	user = MikeDedo
 [hub]
