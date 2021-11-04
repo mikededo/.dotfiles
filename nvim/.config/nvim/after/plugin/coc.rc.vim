@@ -6,9 +6,15 @@ nmap <silent> gi <Plug>(coc-implmentation)
 nmap <silent> gr <Plug>(coc-references)
 
 " Tab for trigger completion
-inoremap <silent><expr> <TAB>
-  \ pumvisible() ? "\<C-n>" :
-  \ <SID>check_back_space() ? "\<TAB>" :
-  \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <silent><expr> <c-space> coc#refresh()
 
+" [SETUP] Language servers to install
+"   coc-tsserver
+"   coc-eslint
+"   coc-json
+"   coc-html
+"   coc-css
+" [SETUP] Additional installations
+"   coc-snippets

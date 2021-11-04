@@ -1,0 +1,27 @@
+{
+  "codeLens.enable": true,
+  "coc.preferences.extensionUpdateCheck": "daily",
+  "coc.preferences.formatOnType": true,
+  "coc.preferences.willSaveHandlerTimeout": 300,
+  "coc.preferences.formatOnSaveFiletypes": [
+    "javascript",
+    "typescript",
+    "jsonc",
+    "json",
+    "html",
+    "css"
+  ],
+  "diagnostic.refreshOnInsertMode": true,
+  "suggest.timeout": 500,
+  "suggest.triggerCompletionWait": 30,
+  "suggest.defaultSortMethod": "none",
+  "suggest.enablePreselect": true,
+  "snippets.ultisnips.enable": false,
+  "snippets.ultisnips.usePythonx": false,
+  "snippets.extends": {
+    "javascriptreact": ["javascript"]
+  },
+  "prettier.formatterPriority": 1,
+  "typescript.autoClosingTags": true,
+  "typescript.format.semicolons": "insert"
+}
