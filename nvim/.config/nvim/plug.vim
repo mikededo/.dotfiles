@@ -1,13 +1,19 @@
 call plug#begin(stdpath('data') . '/plugged')
-        Plug 'joshdick/onedark.vim' 
-        Plug 'neovim/nvim-lspconfig'
-        Plug 'glepnir/lspsaga.nvim' 
-        Plug 'nvim-lua/completion-nvim'
-        Plug 'nvim-lua/popup.nvim'
-        Plug 'nvim-lua/plenary.nvim'
-        Plug 'nvim-telescope/telescope.nvim'
-        Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
-        Plug 'hoob3rt/lualine.nvim'
+  " Theme
+  Plug 'hoob3rt/lualine.nvim'
+  Plug 'joshdick/onedark.vim' 
+  Plug 'ryanoasis/vim-devicons'
+
+  " Syntax highlighting
+  Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
+
+  " Completion
+  Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+
+  " Utils
+  Plug 'nvim-telescope/telescope.nvim'
+  Plug 'nvim-lua/plenary.nvim'
+  Plug 'preservim/nerdtree'
 call plug#end()
 
 colorscheme onedark
