@@ -1,8 +1,9 @@
 call plug#begin(stdpath('data') . '/plugged')
   " Theme
   Plug 'hoob3rt/lualine.nvim'
-  Plug 'joshdick/onedark.vim' 
+  Plug 'navarasu/onedark.nvim' 
   Plug 'ryanoasis/vim-devicons'
+  Plug 'mhinz/vim-startify'
 
   " Syntax highlighting
   Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
@@ -16,4 +17,9 @@ call plug#begin(stdpath('data') . '/plugged')
   Plug 'preservim/nerdtree'
 call plug#end()
 
+" Custom configurations
+let g:onedark_italic_comment = v:false
+let g:onedark_darker_diagnostics = v:false
+let g:onedark_transparent_background = v:true
+" Enable colorscheme
 colorscheme onedark

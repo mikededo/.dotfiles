@@ -21,6 +21,8 @@ set shiftwidth=2
 set tabstop=2
 set ai
 set ruler
+set splitbelow
+set splitright
 
 au FocusGained,BufEnter * :checktime " Refresh the file on focus
 
