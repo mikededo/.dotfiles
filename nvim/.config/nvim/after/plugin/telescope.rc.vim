@@ -2,8 +2,8 @@ if !exists('g:loaded_telescope') | finish | endif
 
 nnoremap <silent> ff <cmd>Telescope find_files<cr>
 nnoremap <silent> fb <cmd>Telescope buffers<cr>
-nnoremap <silent> fg <cmd>Telescope live_grep<cr>
-nnoremap <silent> ;; <cmd>Telescope help_tags<cr>
+" grep_string requires ripgrep
+nnoremap <leader>ps :lua require('telescope.builtin').grep_string({ search = vim.fn.input("Search: ") })<CR>
 
 lua << EOF
 local actions = require('telescope.actions')
@@ -16,6 +16,17 @@ require('telescope').setup{
         ["q"] = actions.close
       },
     },
+  },
+  pickers = {
+    buffers = {
+      show_all_buffers = true,
+      sort_lastused = true,
+      mappings = {
+        i = {
+          ['<C-d>'] = "delete_buffer"
+        }
+      }
+    }
   }
 }
 

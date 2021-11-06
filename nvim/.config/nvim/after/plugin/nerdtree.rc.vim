@@ -8,6 +8,6 @@ autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTr
 autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
 
 " Mappings
-nnoremap <C-b> :NERDTreeToggle<CR>
-nnoremap <C-e> :NERDTreeFocus<CR>
+nnoremap <leader>b :NERDTreeToggle<CR>
+nnoremap <leader>t :NERDTreeFocus<CR>
 

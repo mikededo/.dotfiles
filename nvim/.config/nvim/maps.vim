@@ -23,3 +23,14 @@ nmap <C-w><down> <C-w>-
 nmap <leader>p gt
 nmap <leader>n gT
 
+fun! TrimWhitespace()
+    let l:save = winsaveview()
+    keeppatterns %s/\s\+$//e
+    call winrestview(l:save)
+endfun
+
+augroup TrimSpace
+    autocmd!
+    autocmd BufWritePre * :call TrimWhitespace()
+augroup END
+

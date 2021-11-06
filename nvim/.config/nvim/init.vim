@@ -1,8 +1,13 @@
+au ColorScheme * hi Normal ctermbg=none guibg=none
+
 " Configurations
 set nocompatible
 set smartindent
 set smarttab
+set shiftwidth=4
+set tabstop=4 softtabstop=4
 set expandtab
+set nohlsearch
 set noshowmode
 set number relativenumber
 set termguicolors
@@ -17,8 +22,6 @@ set ignorecase
 set smartcase
 syntax on
 filetype plugin indent on
-set shiftwidth=2
-set tabstop=2
 set ai
 set ruler
 set splitbelow
@@ -38,6 +41,16 @@ set formatoptions-=a
 set formatoptions+=j
 set formatoptions+=r
 set formatoptions-=o
+
+" Custom file identations
+autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType javascriptreact setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType javascript.tsx setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType typescript setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType typescriptreact setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType typescript.tsx setlocal shiftwitdth=2 tabstop=2 softtabstop=2
+autocmd FileType vim setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType lua setlocal shiftwidth=2 tabstop=2 softtabstop=2
 
 " Imports
 runtime ./plug.vim " Plugins

@@ -1,6 +1,18 @@
-if !exists ('g:loaded_lspsaga') | finish | endif
+if !exists('g:loaded_lspsaga') | finish | endif
 
-nnoremap <silent> <C-j> <Cmd>Lspsaga diagnostic_jump_next<CR>
-nnoremap <silent>K <Cmd>Lspsaga hover_doc<CR>
-inoremap <silent> <C-k> <Cmd>Lspsaga signature_help<CR>
-nnoremap <silent> gh <Cmd>Lspsaga lsp_finder<CR>
+lua << EOF
+local saga = require 'lspsaga'
+
+saga.init_lsp_saga {
+  error_sign = '●',
+  warn_sign = '●',
+  hint_sign = '●',
+  infor_sign = '●',
+  border_style = "round",
+}
+
+EOF
+
+nnoremap <silent> <C-j> :Lspsaga diagnostic_jump_next<CR>
+nnoremap <silent> gh :Lspsaga lsp_finder<CR>
+nnoremap <silent> gp :Lspsaga preview_definition<CR>
