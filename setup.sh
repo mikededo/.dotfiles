@@ -14,6 +14,7 @@ OHMYZSH_PLUGINS=$OHMYZSH_CONFIG/custom/plugins
 # Packages to be installed
 packages=(
   git
+  kitty
   nvim
   oh-my-zsh
   powerlevel10k
@@ -71,11 +72,6 @@ if command -v gnome-shell &> /dev/null; then
       dconf_it ./keybindings/mutter /org/gnome/mutter/keybindings
     fi
     echo "> Shorcuts installed\n"
-
-    # Gnome terminal profile
-    echo "> Installing gnome-terminal profiles"
-    dconf_it ./terminal/gnome /org/gnome/terminal/legacy/profiles:/
-    echo "> Profiles installed"
 fi
 
 # Additional dependencies

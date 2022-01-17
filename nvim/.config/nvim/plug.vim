@@ -31,8 +31,6 @@ call plug#begin(stdpath('data') . '/plugged')
   Plug 'mhartington/formatter.nvim'
 call plug#end()
 
-let g:onedark_italic_comment = v:false
-let g:onedark_darker_diagnostics = v:false
-let g:onedark_transparent_background = v:true
 " Enable colorscheme
 colorscheme onedark
+

@@ -20,6 +20,8 @@ autoload -U colors && colors
 # #
 plugins=(
 	git
+    docker
+    docker-compose
 	zsh-syntax-highlighting
 	zsh-autosuggestions
 )
