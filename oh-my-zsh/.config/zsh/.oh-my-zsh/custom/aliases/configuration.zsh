@@ -5,6 +5,7 @@ alias zshconfig="vim $HOME/.config/zsh/.zshrc"
 alias nvimconfig="vim $HOME/.config/nvim/init.vim"
 alias vimconfig="vim $HOME/.vimrc"
 alias gitconfig="vim $HOME/.gitconfig"
+alias kittyconfig="vim $HOME/.config/kitty/kitty.conf"
 alias dotman="$HOME/.dotfiles"
 alias updzsh="exec zsh"
 
@@ -24,7 +25,7 @@ mkcd() { mkdir $1 && cd $1 }
 alias rmd="rm -rf"                  # Lazy remove files
 lazymv() { mv $1 $(dirname $1)$2 }  # Lazy move files
 
-# Other 
+# Other
 alias sudo="sudo"                   # Make sudo not skip alias
 alias vim="nvim"                    # Open nvim over vim
 alias svim="sudo -E vim"            # Same but sudo
