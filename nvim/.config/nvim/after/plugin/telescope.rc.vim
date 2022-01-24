@@ -1,7 +1,8 @@
 if !exists('g:loaded_telescope') | finish | endif
 
-nnoremap <silent> ff <cmd>Telescope find_files<cr>
-nnoremap <silent> fb <cmd>Telescope buffers<cr>
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
 " grep_string requires ripgrep
 nnoremap <leader>ps :lua require('telescope.builtin').grep_string({ search = vim.fn.input("Search: ") })<CR>
 
@@ -10,7 +11,7 @@ local actions = require('telescope.actions')
 -- Global remapping
 require('telescope').setup{
   defaults = {
-    file_ignore_patterns = { "node_modules", "out", "dist", ".git" },
+      file_ignore_patterns = { "^node_modules/*", "^out/*", "^coverage/*", "^dist/*", ".git/*" },
     mappings = {
       n = {
         ["q"] = actions.close

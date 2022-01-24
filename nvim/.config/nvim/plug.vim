@@ -24,7 +24,6 @@ call plug#begin(stdpath('data') . '/plugged')
   " Utils
   Plug 'nvim-telescope/telescope.nvim'
   Plug 'nvim-lua/plenary.nvim'
-  Plug 'preservim/nerdtree'
   Plug 'tpope/vim-fugitive'
   Plug 'tpope/vim-rhubarb'
   Plug 'windwp/nvim-autopairs'
