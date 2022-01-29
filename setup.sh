@@ -49,6 +49,7 @@ echo "> Installing oh-my-zsh"
 
 [ ! -d $OHMYZSH_PLUGINS/zsh-autosuggestions ] && git_clone zsh-users/zsh-autosuggestions $OHMYZSH_PLUGINS/zsh-autosuggestions
 [ ! -d $OHMYZSH_PLUGINS/zsh-syntax-highlighting ] && git_clone zsh-users/zsh-syntax-highlighting $OHMYZSH_PLUGINS/zsh-syntax-highlighting
+[ ! -d $OHMYZSH_PLUGINS/zsh-better-npm-completion ] && git_clone lukechilds/zsh-better-npm-completion $OHMYZSH_PLUGINS/zsh-better-npm-completion
 
 echo "> Installing powerlevel10k"
 
