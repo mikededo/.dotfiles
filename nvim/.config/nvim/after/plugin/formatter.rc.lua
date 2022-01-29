@@ -1,35 +1,50 @@
 local prettierConfig = function()
   return {
-    exe = "prettier",
-    args = { "--stdin-filepath", vim.api.nvim_buf_get_name(0) },
-    stdin = true
+    exe = 'prettier',
+    args = { '--stdin-filepath', vim.api.nvim_buf_get_name(0) },
+    stdin = true,
   }
 end
 
 local eslintConfig = function()
   return {
-    exe = "eslint_d",
-    args = { "--stdin", "--stdin-filename", vim.api.nvim_buf_get_name(0), "--fix-to-stdout" },
-    stdin = true
+    exe = 'eslint_d',
+    args = { '--stdin', '--stdin-filename', vim.api.nvim_buf_get_name(0), '--fix-to-stdout' },
+    stdin = true,
   }
 end
 
-require("formatter").setup(
-  {
-    filetype = {
-      json = { prettierConfig, eslintConfig },
-      html = { prettierConfig, eslintConfig },
-      javascript = { prettierConfig, eslintConfig },
-      javascriptreact = { prettierConfig, eslintConfig },
-      typescript = { prettierConfig, eslintConfig },
-      typescriptreact = { prettierConfig, eslintConfig }
-    }
+local luaConfig = function()
+  return {
+    exe = 'stylua',
+    args = {
+      '--indent-type Spaces',
+      '--indent-width 2',
+      '--quote-style ForceSingle',
+      vim.api.nvim_buf_get_name(0),
+    },
+    stdin = false,
   }
-)
+end
 
-vim.api.nvim_exec([[
+require('formatter').setup({
+  filetype = {
+    json = { prettierConfig, eslintConfig },
+    html = { prettierConfig, eslintConfig },
+    javascript = { prettierConfig, eslintConfig },
+    javascriptreact = { prettierConfig, eslintConfig },
+    typescript = { prettierConfig, eslintConfig },
+    typescriptreact = { prettierConfig, eslintConfig },
+    lua = { luaConfig },
+  },
+})
+
+vim.api.nvim_exec(
+  [[
   augroup FormatAutogroup
     autocmd!
     autocmd BufWritePost *.js,*.jsx,*.ts,*.tsx,*.lua FormatWrite
   augroup END
-]], true)
+]],
+  true
+)
