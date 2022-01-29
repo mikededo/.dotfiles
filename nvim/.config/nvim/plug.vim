@@ -26,6 +26,7 @@ call plug#begin(stdpath('data') . '/plugged')
   Plug 'nvim-lua/plenary.nvim'
   Plug 'tpope/vim-fugitive'
   Plug 'tpope/vim-rhubarb'
+  Plug 'tpope/vim-surround'
   Plug 'windwp/nvim-autopairs'
   Plug 'mhartington/formatter.nvim'
 call plug#end()

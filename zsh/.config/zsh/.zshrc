@@ -24,6 +24,7 @@ plugins=(
     docker-compose
 	zsh-syntax-highlighting
 	zsh-autosuggestions
+    zsh-better-npm-completion
 )
 
 # #
