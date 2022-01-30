@@ -55,6 +55,10 @@ echo "> Installing powerlevel10k"
 
 [ ! -d $OHMYZSH_THEMES/powerlevel10k ] && git_clone romkatv/powerlevel10k $OHMYZSH_THEMES/powerlevel10k
 
+echo "> Adding NvChad\n"
+
+[ ! -d $HOME/.config/nvim ] && git_clone NvChad/NvChad $HOME/.config/nvim 
+
 echo "> Stowing all packages\n"
 
 # Install everything
