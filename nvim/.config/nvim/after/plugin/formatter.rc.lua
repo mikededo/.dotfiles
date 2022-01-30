@@ -9,7 +9,12 @@ end
 local eslintConfig = function()
   return {
     exe = 'eslint_d',
-    args = { '--stdin', '--stdin-filename', vim.api.nvim_buf_get_name(0), '--fix-to-stdout' },
+    args = {
+      '--stdin',
+      '--stdin-filename',
+      vim.api.nvim_buf_get_name(0),
+      '--fix-to-stdout',
+    },
     stdin = true,
   }
 end
@@ -18,6 +23,7 @@ local luaConfig = function()
   return {
     exe = 'stylua',
     args = {
+      '--column-width 80',
       '--indent-type Spaces',
       '--indent-width 2',
       '--quote-style ForceSingle',
@@ -45,6 +51,6 @@ vim.api.nvim_exec(
     autocmd!
     autocmd BufWritePost *.js,*.jsx,*.ts,*.tsx,*.lua FormatWrite
   augroup END
-]],
+  ]],
   true
 )

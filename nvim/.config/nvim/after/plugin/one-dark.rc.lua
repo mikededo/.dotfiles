@@ -4,7 +4,9 @@ require('onedark').setup({
   code_style = {
     coments = 'none',
   },
-  colors = {},
+  colors = {
+    grey = '#858b9a',
+  },
   highlights = {
     Delimiter = { fg = '#ABB2BF' },
     TSPunctDelimiter = { fg = '#ABB2DF' },

@@ -19,7 +19,7 @@ call plug#begin(stdpath('data') . '/plugged')
   Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
 
   " Git
-  Plug 'airblade/vim-gitgutter'
+  Plug 'lewis6991/gitsigns.nvim'
 
   " Utils
   Plug 'nvim-telescope/telescope.nvim'
@@ -30,7 +30,4 @@ call plug#begin(stdpath('data') . '/plugged')
   Plug 'windwp/nvim-autopairs'
   Plug 'mhartington/formatter.nvim'
 call plug#end()
-
-" Enable colorscheme
-colorscheme onedark
 

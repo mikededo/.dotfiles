@@ -11,7 +11,7 @@ local actions = require('telescope.actions')
 -- Global remapping
 require('telescope').setup{
   defaults = {
-      file_ignore_patterns = { "^node_modules/*", "^out/*", "^coverage/*", "^dist/*", ".git/*" },
+      file_ignore_patterns = { "^node_modules/*", "^out/*", "^coverage/*", "^dist/*", "^.git/*" },
     mappings = {
       n = {
         ["q"] = actions.close
