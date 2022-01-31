@@ -1,13 +1,16 @@
+local ui = require('core.utils').load_config().ui
 local fg = require('core.utils').fg
 
 fg('Normal', '#ABB2BF')
 
-fg('TelescopeBorder', '#ABB2BF')
-fg('TelescopePromptBorder', '#ABB2BF')
-fg('TelescopeBorder', '#ABB2BF')
+if ui.transparency then
+  fg('TelescopeBorder', '#ABB2BF')
+  fg('TelescopePromptBorder', '#ABB2BF')
+  fg('TelescopeBorder', '#ABB2BF')
+end
 
 fg('Delimiter', '#ABB2BF')
-fg('Comments', '#818998')
+fg('Comment', '#818998')
 fg('TSPunctDelimiter', '#ABB2BF')
 fg('TSPunctBracket', '#ABB2BF')
 fg('TSPunctSpecial', '#ABB2BF')
