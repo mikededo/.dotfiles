@@ -33,11 +33,11 @@ M.telescope = {
       '--smart-case',
     },
     file_ignore_patterns = {
-      '^node_modules/*',
-      '^out/*',
-      '^coverage/*',
-      '^dist/*',
-      '^.git/*',
+      '^node_modules*',
+      '^out*',
+      '^coverage*',
+      '^dist*',
+      '^.git/+',
     },
     initial_mode = 'normal',
     mappings = {
