@@ -57,7 +57,7 @@ echo "> Installing powerlevel10k"
 
 echo "> Adding NvChad\n"
 
-[ ! -d $HOME/.config/nvim ] && git_clone NvChad/NvChad $HOME/.config/nvim 
+[ ! -d $HOME/.config/nvim ] && git_clone NvChad/NvChad $HOME/.config/nvim --depth 1
 
 echo "> Stowing all packages\n"
 
