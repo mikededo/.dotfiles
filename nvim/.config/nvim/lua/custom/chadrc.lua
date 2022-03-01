@@ -22,6 +22,7 @@ M.plugins = {
     dashboard = true,
     lspkind = true,
     lspsignature = true,
+    nvim_cmp = true,
   },
   default_plugin_config_replace = {
     nvim_treesitter = configs.treesitter,
