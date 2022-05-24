@@ -68,17 +68,6 @@ for package in ${packages[@]}; do
   echo
 done
 
-if command -v gnome-shell &> /dev/null; then
-    # Gnome keybindings
-    echo "> Installing shortcuts"
-    if [[ $REPLY =~ ^[Yy]$ ]]; then
-      dconf_it ./keybindings/desktop /org/gnome/desktop/wm/keybindings/
-      dconf_it ./keybindings/media-keys /org/gnome/settings-daemon/plugins/media-keys/
-      dconf_it ./keybindings/mutter /org/gnome/mutter/keybindings
-    fi
-    echo "> Shorcuts installed\n"
-fi
-
 # Additional dependencies
 echo "> Installing additional dependencies"
 

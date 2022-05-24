@@ -19,12 +19,11 @@ autoload -U colors && colors
 # PLUGINS
 # #
 plugins=(
-	git
-    docker
-    docker-compose
-	zsh-syntax-highlighting
-	zsh-autosuggestions
-    zsh-better-npm-completion
+  git
+  docker
+  docker-compose
+  zsh-syntax-highlighting
+  zsh-autosuggestions
 )
 
 # #
@@ -43,10 +42,10 @@ source $ZSH/oh-my-zsh.sh
 autoload -U compinit && compinit -u
 # Auto complete with case insenstivity
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
-setopt correct						# Command spelling
-setopt complete_in_word		# Completion from within a word/phrase
-setopt completealiases		# Aliases completion
-setopt list_ambiguous			# Complete until it gets ambiguous
+    setopt correct			# Command spelling
+    setopt complete_in_word		# Completion from within a word/phrase
+    setopt completealiases		# Aliases completion
+    setopt list_ambiguous		# Complete until it gets ambiguous
 
 # #
 # OTHER

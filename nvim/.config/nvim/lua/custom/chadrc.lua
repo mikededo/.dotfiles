@@ -1,37 +1,25 @@
 local M = {}
-local configs = require('custom.plugins.configs')
 
--- Custom configurations
-vim.api.nvim_set_option('guicursor', 'i:block')
-vim.cmd('set incsearch')
-vim.cmd('set noshowmode')
+-- Require configurations
+require('custom.configs')
+require('custom.plugins.lspconfig')
 
+-- Theme and colors
 M.ui = {
   theme = 'onedark',
-  transparency = true,
-  hl_override = 'custom.highlights',
+  hl_override = require('custom.highlights'),
 }
 
--- Install plugins
-local userPlugins = require('custom.plugins') -- path to table
-
+-- Plugins configurations
 M.plugins = {
-  status = {
-    cmp = true,
-    comment = true,
-    dashboard = true,
-    lspkind = true,
-    lspsignature = true,
-    nvim_cmp = true,
+  options = {
+    separator_line = 'round',
   },
-  default_plugin_config_replace = {
-    nvim_treesitter = configs.treesitter,
-    telescope = configs.telescope,
+  override = {
+    ['nvim-treesitter/nvim-treesitter'] = require('custom.plugins.treesitter'),
+    ['nvim-telescope/telescope.nvim'] = require('custom.plugins.telescope'),
   },
-  install = userPlugins,
+  user = require('custom.plugins.configs'),
 }
-
--- Require file so it is loaded
-require('custom.plugins.lspconfig')
 
 return M

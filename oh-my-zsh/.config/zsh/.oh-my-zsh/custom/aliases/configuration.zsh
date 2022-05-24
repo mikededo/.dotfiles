@@ -11,18 +11,11 @@ alias updzsh="exec zsh"
 # Alias files
 alias cfgalias="vim $HOME/.config/zsh/.oh-my-zsh/custom/aliases/configuration.zsh"
 alias npmalias="vim $HOME/.config/zsh/.oh-my-zsh/custom/aliases/npm.zsh"
-
-# snap
-alias ssi="sudo snap install"
-alias ssun="sudo snap remove --purge"
-
-# yay
-alias updsys="yay -Syyu"
+alias workalias="vim $HOME/.config/zsh/.oh-my-zsh/custom/aliases/work.zsh"
 
 # File manipulation
 mkcd() { mkdir $1 && cd $1 }
 alias rmd="rm -rf"                  # Lazy remove files
-lazymv() { mv $1 $(dirname $1)$2 }  # Lazy move files
 
 # Other
 alias sudo="sudo"                   # Make sudo not skip alias
