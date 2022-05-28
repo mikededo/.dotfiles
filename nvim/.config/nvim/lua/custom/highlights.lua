@@ -1,33 +1,23 @@
-local ui = require('core.utils').load_config().ui
-local fg = require('core.utils').fg
-local bg = require('core.utils').bg
-
-fg('Normal', '#ABB2BF')
-fg('StatusLineNC', '#ABB2BF')
-bg('Pmenu', '#343A48')
-
-if ui.transparency then
-  fg('TelescopeBorder', '#ABB2BF')
-  fg('TelescopePromptBorder', '#ABB2BF')
-  fg('TelescopeBorder', '#ABB2BF')
-end
-
-fg('DashboardCenter', '#ABB2BF')
-fg('DashboardFooter', '#ABB2BF')
-fg('DashboardHeader', '#ABB2BF')
-fg('DashboardShortcut', '#ABB2BF')
-
-fg('IndentBlanklineChar', '#3F4854')
-
-fg('Delimiter', '#ABB2BF')
-fg('Comment', '#818998')
-fg('TSPunctDelimiter', '#ABB2BF')
-fg('TSPunctBracket', '#ABB2BF')
-fg('TSPunctSpecial', '#ABB2BF')
-fg('TSAttribute', '#E06C75')
-fg('TSField', '#E06C75')
-fg('TSSymbol', '#E5C07B')
-fg('TSNamespace', '#E5C07B')
-fg('TSProperty', '#E06C75')
-fg('TSConstant', '#D19A66')
-fg('TSTagAttribute', '#E5C07B')
+return {
+  Normal = { fg = '#ABB2BF' },
+  StatusLineNC = { fg = '#ABB2BF' },
+  TelescopeBorder = { fg = '#ABB2BF' },
+  TelescopePromptBorder = { fg = '#ABB2BF' },
+  DashboardCenter = { fg = '#ABB2BF' },
+  DashboardFooter = { fg = '#ABB2BF' },
+  DashboardHeader = { fg = '#ABB2BF' },
+  DashboardShortcut = { fg = '#ABB2BF' },
+  IndentBlanklineChar = { fg = '#3F4854' },
+  Delimiter = { fg = '#ABB2BF' },
+  Comment = { fg = '#ABB2BF' },
+  TSPunctDelimiter = { fg = '#ABB2BF' },
+  TSPunctBracket = { fg = '#ABB2BF' },
+  TSPunctSpecial = { fg = '#ABB2BF' },
+  TSAttribute = { fg = '#E06C75' },
+  TSField = { fg = '#E06C75' },
+  TSSymbol = { fg = '#E5C07B' },
+  TSNamespace = { fg = '#E5C07B' },
+  TSProperty = { fg = '#E06C75' },
+  TSConstant = { fg = '#D19A66' },
+  TSTagAttribute = { fg = '#E5C07B' },
+}

@@ -1,8 +1,0 @@
-[/]
-custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/']
-screensaver=['<Alt>l']
-
-[custom-keybindings/custom0]
-binding='<Super>t'
-command='gnome-terminal'
-name='Launch Terminal'

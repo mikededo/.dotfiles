@@ -1,3 +1,5 @@
+local util = require('formatter.util')
+
 local prettierConfig = function()
   return {
     exe = 'prettier',
@@ -27,7 +29,6 @@ local luaConfig = function()
       '--indent-type Spaces',
       '--indent-width 2',
       '--quote-style ForceSingle',
-      vim.api.nvim_buf_get_name(0),
     },
     stdin = false,
   }

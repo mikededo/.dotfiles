@@ -1,65 +1,13 @@
-local M = {}
-local actions = require('telescope.actions')
-
-M.treesitter = {
-  ensure_installed = {
-    'bash',
-    'css',
-    'javascript',
-    'jsdoc',
-    'json',
-    'jsonc',
-    'lua',
-    'tsx',
-    'typescript',
-    'vim',
-    'yaml',
+-- Plugins configuration
+return {
+  ['mhartington/formatter.nvim'] = {
+    config = function()
+      require('custom.plugins.formatter')
+    end,
   },
-  highlight = { enable = true },
-  incremental_selection = { enabled = true },
-  textobjects = { enabled = true },
+  ['hrsh7th/nvim-cmp'] = { disable = false },
+  ['terrortylor/nvim-comment'] = { disable = false },
+  ['goolord/alpha-nvim'] = { disable = false },
+  ['onsails/lspkind.nvim'] = { disable = false },
+  ['ray-x/lsp_signature.nvim'] = { disable = false },
 }
-
-M.telescope = {
-  defaults = {
-    vimgrep_arguments = {
-      'rg',
-      '--color=never',
-      '--no-heading',
-      '--with-filename',
-      '--line-number',
-      '--column',
-      '--hidden',
-      '--smart-case',
-    },
-    file_ignore_patterns = {
-      '^node_modules*',
-      '^out*',
-      '^coverage*',
-      '^dist*',
-      '^.git/+',
-    },
-    initial_mode = 'normal',
-    mappings = {
-      n = {
-        ['q'] = actions.close,
-      },
-    },
-  },
-  pickers = {
-    find_files = {
-      hidden = true,
-    },
-    buffers = {
-      show_all_buffers = true,
-      sort_lastused = true,
-      mappings = {
-        i = {
-          ['<C-d>'] = 'delete_buffer',
-        },
-      },
-    },
-  },
-}
-
-return M

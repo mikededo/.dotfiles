@@ -28,14 +28,6 @@ stow_it() {
   stow -vR ${package}
 }
 
-# Run dconf
-dconf_it() {
-  file=$1
-  location=$2
-
-  cat ${file} | dconf load ${location}
-}
-
 # git clone helper
 git_clone() {
   git clone "https://github.com/$1" $2
@@ -67,17 +59,6 @@ for package in ${packages[@]}; do
   stow_it $package
   echo
 done
-
-if command -v gnome-shell &> /dev/null; then
-    # Gnome keybindings
-    echo "> Installing shortcuts"
-    if [[ $REPLY =~ ^[Yy]$ ]]; then
-      dconf_it ./keybindings/desktop /org/gnome/desktop/wm/keybindings/
-      dconf_it ./keybindings/media-keys /org/gnome/settings-daemon/plugins/media-keys/
-      dconf_it ./keybindings/mutter /org/gnome/mutter/keybindings
-    fi
-    echo "> Shorcuts installed\n"
-fi
 
 # Additional dependencies
 echo "> Installing additional dependencies"

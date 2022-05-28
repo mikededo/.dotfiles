@@ -188,7 +188,6 @@ nvim_lsp.diagnosticls.setup({
           '%filename',
           '--fix-to-stdout',
         },
-        rootPatterns = { '.git' },
       },
       prettier = {
         command = 'prettier_d_slim',

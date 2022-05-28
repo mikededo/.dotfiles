@@ -4,3 +4,6 @@
 
 # .zshrc file location
 ZDOTDIR=$HOME/.config/zsh
+
+# brew
+eval "$(/opt/homebrew/bin/brew shellenv)"
