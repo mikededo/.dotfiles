@@ -12,7 +12,7 @@ return {
     },
     file_ignore_patterns = {
       '^node_modules*',
-      '^.git*',
+      '^.git/',
       '^coverage*',
     },
     initial_mode = 'normal',

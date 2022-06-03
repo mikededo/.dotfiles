@@ -18,6 +18,9 @@ M.plugins = {
   override = {
     ['nvim-treesitter/nvim-treesitter'] = require('custom.plugins.treesitter'),
     ['nvim-telescope/telescope.nvim'] = require('custom.plugins.telescope'),
+    ['lukas-reineke/indent-blankline.nvim'] = require(
+      'custom.plugins.indent-blankline'
+    ),
   },
   user = require('custom.plugins.configs'),
 }
