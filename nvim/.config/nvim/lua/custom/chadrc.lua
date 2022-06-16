@@ -1,13 +1,15 @@
 local M = {}
+local overrides = require('custom.plugins')
 
 -- Require configurations
 require('custom.configs')
-require('custom.plugins.lspconfig')
+-- require('custom.plugins.lspconfig')
 
 -- Theme and colors
 M.ui = {
   theme = 'onedark',
-  hl_override = require('custom.highlights'),
+  transparency = false,
+  -- hl_override = require('custom.highlights'),
 }
 
 -- Plugins configurations
@@ -16,13 +18,11 @@ M.plugins = {
     separator_line = 'round',
   },
   override = {
-    ['nvim-treesitter/nvim-treesitter'] = require('custom.plugins.treesitter'),
-    ['nvim-telescope/telescope.nvim'] = require('custom.plugins.telescope'),
-    ['lukas-reineke/indent-blankline.nvim'] = require(
-      'custom.plugins.indent-blankline'
-    ),
+    ['nvim-treesitter/nvim-treesitter'] = overrides.treesitter,
+    ['nvim-telescope/telescope.nvim'] = overrides.telescope,
+    ['lukas-reineke/indent-blankline.nvim'] = overrides.indent_blanklinke,
   },
-  user = require('custom.plugins.configs'),
+  user = overrides.user,
 }
 
 return M

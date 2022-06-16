@@ -2,7 +2,7 @@
 return {
   ['mhartington/formatter.nvim'] = {
     config = function()
-      require('custom.plugins.formatter')
+      require('custom.plugins.user.formatter')
     end,
   },
   ['hrsh7th/nvim-cmp'] = { disable = false },

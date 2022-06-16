@@ -22,5 +22,6 @@ alias sudo="sudo"                   # Make sudo not skip alias
 alias vim="nvim"                    # Open nvim over vim
 alias svim="sudo -E vim"            # Same but sudo
 alias falias="alias | grep "        # Search for an alias
+alias t="tree"
 alias imgrn="exiftool -fileOrder DateTimeOriginal -recurse -extension jpg -extension jpeg -extension mp4 -ignoreMinorErrors '-FileName<FileModifyDate' -d '%Y-%m-%d-%%.3nc.%%e'"
 
