@@ -5,6 +5,7 @@ return {
       require('custom.plugins.user.formatter')
     end,
   },
+  ['fatih/vim-go'] = {},
   ['hrsh7th/nvim-cmp'] = { disable = false },
   ['terrortylor/nvim-comment'] = { disable = false },
   ['goolord/alpha-nvim'] = { disable = false },

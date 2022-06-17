@@ -116,6 +116,7 @@ for type, icon in pairs(signs) do
   vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
 end
 
+-- Typescript
 nvim_lsp.tsserver.setup({
   on_attach = on_attach,
   filetypes = {
@@ -195,6 +196,26 @@ nvim_lsp.diagnosticls.setup({
         args = { '--stdin', '--stdin-filepath', '%filename' },
       },
     },
+  },
+})
+
+-- golang
+nvim_lsp.gopls.setup({
+  cmd = { 'gopls' },
+  on_attach = on_attach,
+  capabilities = capabilities,
+  settings = {
+    gopls = {
+      experimentalPostfixCompletions = true,
+      analyses = {
+        unusedparams = true,
+        shadow = true,
+      },
+      staticcheck = true,
+    },
+  },
+  init_options = {
+    usePlaceholders = true,
   },
 })
 
