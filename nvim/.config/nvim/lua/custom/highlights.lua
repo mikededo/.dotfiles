@@ -1,8 +1,6 @@
 return {
-  Normal = { fg = '#ABB2BF' },
+  Normal = { fg = '#ABB2BF', bg = 'black' },
   StatusLineNC = { fg = '#ABB2BF' },
-  TelescopeBorder = { fg = '#ABB2BF' },
-  TelescopePromptBorder = { fg = '#ABB2BF' },
   DashboardCenter = { fg = '#ABB2BF' },
   DashboardFooter = { fg = '#ABB2BF' },
   DashboardHeader = { fg = '#ABB2BF' },

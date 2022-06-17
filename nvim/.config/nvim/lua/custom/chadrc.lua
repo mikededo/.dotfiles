@@ -9,7 +9,7 @@ require('custom.configs')
 M.ui = {
   theme = 'onedark',
   transparency = false,
-  -- hl_override = require('custom.highlights'),
+  hl_override = require('custom.highlights'),
 }
 
 -- Plugins configurations
