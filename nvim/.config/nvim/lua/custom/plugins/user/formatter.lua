@@ -1,5 +1,3 @@
-local util = require('formatter.util')
-
 local prettierConfig = function()
   return {
     exe = 'prettier',
