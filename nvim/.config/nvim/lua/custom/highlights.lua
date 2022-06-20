@@ -7,7 +7,6 @@ return {
   DashboardShortcut = { fg = '#ABB2BF' },
   IndentBlanklineChar = { fg = '#3F4854' },
   Delimiter = { fg = '#ABB2BF' },
-  Comment = { fg = '#ABB2BF' },
   TSPunctDelimiter = { fg = '#ABB2BF' },
   TSPunctBracket = { fg = '#ABB2BF' },
   TSPunctSpecial = { fg = '#ABB2BF' },

@@ -1,9 +1,8 @@
-local nvim_lsp = require('lspconfig')
 local protocol = vim.lsp.protocol
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
-local on_attach = function(client, bufnr)
+local on_attach = function(_, bufnr)
   local function buf_set_keymap(...)
     vim.api.nvim_buf_set_keymap(bufnr, ...)
   end
@@ -73,8 +72,6 @@ local on_attach = function(client, bufnr)
   )
   buf_set_keymap('n', '<space>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
 
-  -- formatting
-
   protocol.CompletionItemKind = {
     '', -- Text
     '', -- Method
@@ -106,110 +103,25 @@ end
 
 -- Set up completion using nvim_cmp with LSP source
 local capabilities = require('cmp_nvim_lsp').update_capabilities(
-  vim.lsp.protocol.make_client_capabilities()
+  protocol.make_client_capabilities()
 )
 
--- Remove gutter icons
-local signs = { Error = '', Warn = '', Hint = '', Info = '' }
-for type, icon in pairs(signs) do
-  local hl = 'DiagnosticSign' .. type
-  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
-end
-
-nvim_lsp.tsserver.setup({
-  on_attach = on_attach,
-  filetypes = {
-    'javascript',
-    'javascriptreact',
-    'javascript.jsx',
-    'typescript',
-    'typescriptreact',
-    'typescript.tsx',
-  },
-  capabilities = capabilities,
-})
-
-nvim_lsp.diagnosticls.setup({
-  on_attach = on_attach,
-  filetypes = {
-    'javascript',
-    'javascriptreact',
-    'json',
-    'typescript',
-    'typescriptreact',
-    'css',
-    'less',
-    'scss',
-    'markdown',
-    'pandoc',
-  },
-  init_options = {
-    linters = {
-      eslint = {
-        command = 'eslint_d',
-        rootPatterns = { '.git' },
-        debounce = 100,
-        args = {
-          '--stdin',
-          '--stdin-filename',
-          '%filepath',
-          '--format',
-          'json',
-        },
-        sourceName = 'eslint_d',
-        parseJson = {
-          errorsRoot = '[0].messages',
-          line = 'line',
-          column = 'column',
-          endLine = 'endLine',
-          endColumn = 'endColumn',
-          message = '[eslint] ${message} [${ruleId}]',
-          security = 'severity',
-        },
-        securities = {
-          [2] = 'error',
-          [1] = 'warning',
-        },
-      },
-    },
-    filetypes = {
-      javascript = 'eslint',
-      javascriptreact = 'eslint',
-      typescript = 'eslint',
-      typescriptreact = 'eslint',
-    },
-    formatters = {
-      eslint_d = {
-        command = 'eslint_d',
-        rootPatterns = { '.git' },
-        args = {
-          '--stdin',
-          '--stdin-filename',
-          '%filename',
-          '--fix-to-stdout',
-        },
-      },
-      prettier = {
-        command = 'prettier_d_slim',
-        rootPatterns = { '.git' },
-        args = { '--stdin', '--stdin-filepath', '%filename' },
-      },
-    },
-  },
-})
-
--- icon
-vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(
-  vim.lsp.diagnostic.on_publish_diagnostics,
-  {
-    underline = true,
-    -- This sets the spacing and the prefix, obviously.
-    virtual_text = {
-      spacing = 2,
-      prefix = '',
-    },
-    update_in_insert = true,
-  }
+-- require configurations
+-- frontend (mainly TS/JS)
+require('custom.plugins.lspconfig.typescript').setup_tsserver(
+  on_attach,
+  capabilities
 )
+require('custom.plugins.lspconfig.typescript').setup_diagnostics(on_attach)
 
-return {}
+-- golang
+require('custom.plugins.lspconfig.go').setup(on_attach, capabilities)
+
+-- diagnostics
+require('custom.plugins.lspconfig.diagnostics')
+
+return {
+  setup_lsp = function()
+    -- add setup_lsp fn so that nvchad does not show an error
+  end,
+}

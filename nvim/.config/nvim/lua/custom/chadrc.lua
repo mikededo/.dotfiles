@@ -1,10 +1,6 @@
 local M = {}
 local overrides = require('custom.plugins')
 
--- Require configurations
-require('custom.configs')
--- require('custom.plugins.lspconfig')
-
 -- Theme and colors
 M.ui = {
   theme = 'onedark',
@@ -16,11 +12,14 @@ M.ui = {
 M.plugins = {
   options = {
     separator_line = 'round',
+    lspconfig = {
+      setup_lspconf = 'custom.plugins.lspconfig',
+    },
   },
   override = {
     ['nvim-treesitter/nvim-treesitter'] = overrides.treesitter,
     ['nvim-telescope/telescope.nvim'] = overrides.telescope,
-    ['lukas-reineke/indent-blankline.nvim'] = overrides.indent_blanklinke,
+    ['lukas-reineke/indent-blankline.nvim'] = overrides.indent_blankline,
   },
   user = overrides.user,
 }

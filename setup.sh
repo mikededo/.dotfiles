@@ -28,14 +28,6 @@ stow_it() {
   stow -vR ${package}
 }
 
-# Run dconf
-dconf_it() {
-  file=$1
-  location=$2
-
-  cat ${file} | dconf load ${location}
-}
-
 # git clone helper
 git_clone() {
   git clone "https://github.com/$1" $2

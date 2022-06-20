@@ -14,3 +14,6 @@ export PATH="/Users/miquel.dedomingo/.gem/ruby/2.6.0/bin:$PATH"
 
 # .zshrc file location
 ZDOTDIR=$HOME/.config/zsh
+
+# brew
+eval "$(/opt/homebrew/bin/brew shellenv)"
