@@ -25,8 +25,8 @@ I currently use `zsh` and I do not intend to change it, as it is fast an very
 customizable. In top of `zsh`, there's `powerlevel10k` for theming, with a
 custom theme; and `oh-my-zsh` for added plugins and configurations.
 
-> You can modify the theme by change `powerlevel10k` [configuration]
-> (./powerlevel10k/.config/zsh/.p10k.zsh)
+> You can modify the theme by change `powerlevel10k`
+> [configuration](./powerlevel10k/.config/zsh/.p10k.zsh)
 
 ## Neovim
 
@@ -34,8 +34,8 @@ The Neovim configuration is built upon
 [`NvChad`](https://github.com/NvChad/NvChad). It adds a couple of plugins to
 deal with formmating and the required configurations for the LSP server.
 
-> You can find and modify LSP configurations in the [NvChad custom config folder]
-> (./nvim/.config/nvim/lua/custom/plugins).
+> You can find and modify LSP configurations in the 
+> [NvChad custom config folder](./nvim/.config/nvim/lua/custom/plugins).
 
 Currently, the LSP is set up for:
 
@@ -51,7 +51,7 @@ display and prettier formatting.
 - Golang development, using the `vim-go` plugin and `gopls` for linting and
 error fixing.
 
-> You can modify the formatting options in the [`formatter.lua`]
-> (./nvim/.config/nvim/lua/custom/plugins/user/formatter.lua).
+> You can modify the formatting options in the 
+> [`formatter.lua`](./nvim/.config/nvim/lua/custom/plugins/user/formatter.lua).
 
 
