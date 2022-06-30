@@ -3,7 +3,7 @@ local overrides = require('custom.plugins')
 
 -- Theme and colors
 M.ui = {
-  theme = 'onedark',
+  theme = 'onedommed',
   transparency = false,
   hl_override = require('custom.highlights'),
 }
