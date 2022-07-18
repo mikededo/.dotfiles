@@ -12,6 +12,8 @@ M.setup_tsserver = function(on_attach, capabilities)
       'typescript',
       'typescriptreact',
       'typescript.tsx',
+      'html',
+      'css',
     },
     capabilities = capabilities,
   })

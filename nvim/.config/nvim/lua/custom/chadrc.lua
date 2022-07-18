@@ -17,6 +17,7 @@ M.plugins = {
     },
   },
   override = {
+    ['kyazdani42/nvim-tree.lua'] = overrides.nvimtree,
     ['nvim-treesitter/nvim-treesitter'] = overrides.treesitter,
     ['nvim-telescope/telescope.nvim'] = overrides.telescope,
     ['lukas-reineke/indent-blankline.nvim'] = overrides.indent_blankline,

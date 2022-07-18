@@ -20,6 +20,7 @@ autoload -U colors && colors
 # #
 plugins=(
   git
+  gh
   docker
   docker-compose
   zsh-syntax-highlighting
