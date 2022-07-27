@@ -102,9 +102,8 @@ local on_attach = function(_, bufnr)
 end
 
 -- Set up completion using nvim_cmp with LSP source
-local capabilities = require('cmp_nvim_lsp').update_capabilities(
-  protocol.make_client_capabilities()
-)
+local capabilities = protocol.make_client_capabilities()
+require('cmp_nvim_lsp').update_capabilities(capabilities)
 
 -- require configurations
 -- frontend (mainly TS/JS)
@@ -113,15 +112,9 @@ require('custom.plugins.lspconfig.typescript').setup_tsserver(
   capabilities
 )
 require('custom.plugins.lspconfig.typescript').setup_diagnostics(on_attach)
-
 -- golang
 require('custom.plugins.lspconfig.go').setup(on_attach, capabilities)
-
 -- diagnostics
 require('custom.plugins.lspconfig.diagnostics')
 
-return {
-  setup_lsp = function()
-    -- add setup_lsp fn so that nvchad does not show an error
-  end,
-}
+return {}

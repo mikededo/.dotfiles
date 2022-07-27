@@ -1,7 +1,8 @@
 return {
-  nvimtree = require('custom.plugins.nvimtree'),
-  treesitter = require('custom.plugins.treesitter'),
-  telescope = require('custom.plugins.telescope'),
   indent_blankline = require('custom.plugins.indent-blankline'),
+  mason = require('custom.plugins.mason'),
+  nvimtree = require('custom.plugins.nvimtree'),
+  telescope = require('custom.plugins.telescope'),
+  treesitter = require('custom.plugins.treesitter'),
   user = require('custom.plugins.user'),
 }

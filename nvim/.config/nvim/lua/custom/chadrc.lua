@@ -1,5 +1,6 @@
 local M = {}
 local overrides = require('custom.plugins')
+print('inside chadrc')
 
 -- Theme and colors
 M.ui = {
@@ -12,15 +13,13 @@ M.ui = {
 M.plugins = {
   options = {
     separator_line = 'round',
-    lspconfig = {
-      setup_lspconf = 'custom.plugins.lspconfig',
-    },
   },
   override = {
     ['kyazdani42/nvim-tree.lua'] = overrides.nvimtree,
-    ['nvim-treesitter/nvim-treesitter'] = overrides.treesitter,
-    ['nvim-telescope/telescope.nvim'] = overrides.telescope,
     ['lukas-reineke/indent-blankline.nvim'] = overrides.indent_blankline,
+    ['nvim-telescope/telescope.nvim'] = overrides.telescope,
+    ['nvim-treesitter/nvim-treesitter'] = overrides.treesitter,
+    ['williamboman/mason.nvim'] = overrides.mason,
   },
   user = overrides.user,
 }
