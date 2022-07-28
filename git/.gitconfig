@@ -1,0 +1,21 @@
+[user]
+	name = Miquel de Domingo
+	email = miquelddg@gmail.com 
+[core]
+	editor = nvim
+[github]
+    user = mikededo
+[hub]
+	protocol = https
+[color]
+	ui = true
+[credential]
+	helper = store
+[init]
+	defaultBranch = main
+[pull]
+	rebase = true
+[alias]
+	hist = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
+[includeIf "gitdir:~/Documents/work/"]
+    path = ~/Documents/work/.gitconfig
