@@ -63,9 +63,9 @@ done
 # Additional dependencies
 echo "> Installing additional dependencies"
 
-echo "Installing nvm"
-[ ! -d $HOME/.nvm ] && curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
-echo "nvm installed"
+echo "Installing volta"
+[ ! -d $HOME/.volta ] && curl https://get.volta.sh | bash
+echo "volta installed"
 
 echo "\n> Set up completed 🚀"
 
