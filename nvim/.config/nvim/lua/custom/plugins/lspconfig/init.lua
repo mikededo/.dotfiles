@@ -55,7 +55,7 @@ local on_attach = function(_, bufnr)
   buf_set_keymap(
     'n',
     '<space>e',
-    '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>',
+    '<cmd>lua vim.diagnostic.open_float(0, { scope = "line" })<CR>',
     opts
   )
   buf_set_keymap(
@@ -107,14 +107,8 @@ require('cmp_nvim_lsp').update_capabilities(capabilities)
 
 -- require configurations
 -- frontend (mainly TS/JS)
-require('custom.plugins.lspconfig.typescript').setup_tsserver(
-  on_attach,
-  capabilities
-)
-require('custom.plugins.lspconfig.typescript').setup_diagnostics(on_attach)
--- golang
-require('custom.plugins.lspconfig.go').setup(on_attach, capabilities)
+require('custom.plugins.lspconfig.servers').attach(on_attach)
 -- diagnostics
-require('custom.plugins.lspconfig.diagnostics')
+require('custom.plugins.lspconfig.diagnostics').setup()
 
 return {}

@@ -1,8 +1,11 @@
 local M = {}
 local nvim_lsp = require('lspconfig')
 
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+require('cmp_nvim_lsp').update_capabilities(capabilities)
+
 -- Typescript
-M.setup_tsserver = function(on_attach, capabilities)
+M.setup_tsserver = function(on_attach)
   nvim_lsp.tsserver.setup({
     on_attach = on_attach,
     filetypes = {
@@ -34,7 +37,7 @@ M.setup_diagnostics = function(on_attach)
     init_options = {
       linters = {
         eslint = {
-          command = 'eslint_d',
+          command = 'eslint',
           rootPatterns = { '.git' },
           debounce = 100,
           args = {
@@ -67,7 +70,7 @@ M.setup_diagnostics = function(on_attach)
         typescriptreact = 'eslint',
       },
       formatters = {
-        eslint_d = {
+        eslint = {
           command = 'eslint_d',
           rootPatterns = { '.git' },
           args = {
@@ -78,7 +81,7 @@ M.setup_diagnostics = function(on_attach)
           },
         },
         prettier = {
-          command = 'prettier_d_slim',
+          command = 'prettierd',
           rootPatterns = { '.git' },
           args = { '--stdin', '--stdin-filepath', '%filename' },
         },

@@ -1,5 +1,5 @@
 return {
   view = {
-    width = 50,
+    width = 40,
   },
 }

@@ -1,7 +1,9 @@
 local nvim_lsp = require('lspconfig')
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+require('cmp_nvim_lsp').update_capabilities(capabilities)
 
 return {
-  setup = function(on_attach, capabilities)
+  setup = function(on_attach)
     nvim_lsp.gopls.setup({
       cmd = { 'gopls' },
       on_attach = on_attach,

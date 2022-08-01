@@ -1,6 +1,5 @@
 local M = {}
 local overrides = require('custom.plugins')
-print('inside chadrc')
 
 -- Theme and colors
 M.ui = {
