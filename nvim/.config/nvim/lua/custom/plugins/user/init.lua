@@ -16,4 +16,5 @@ return {
   ['goolord/alpha-nvim'] = { disable = false },
   ['onsails/lspkind.nvim'] = { disable = false },
   ['ray-x/lsp_signature.nvim'] = { disable = false },
+  ['folke/which-key.nvim'] = { disable = false },
 }
