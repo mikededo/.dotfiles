@@ -33,7 +33,6 @@ git_clone() {
   git clone "https://github.com/$1" $2
 }
 
-
 # Install zsh and its plugins
 echo "> Installing oh-my-zsh"
 

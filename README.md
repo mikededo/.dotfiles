@@ -19,14 +19,33 @@ the dependencies it is not found, the execution will stop.
 It installs `nvm` as a `node` and `npm` version manager, but it can easily be
 removed by removing the `$HOME/.nvm` folder.
 
-## zsh
+> As soon as possible, the script will be migrated to a `lua` script in order to
+provide a more customizable installation.
+
+## zsh && kitty
 
 I currently use `zsh` and I do not intend to change it, as it is fast an very
 customizable. In top of `zsh`, there's `powerlevel10k` for theming, with a
 custom theme; and `oh-my-zsh` for added plugins and configurations.
 
+I have been using kitty, and IMO it works better than iTerm and iTerm2. It also
+allows font ligatures.
+
+The following plugins are used in zsh (see [the config
+file](./zsh/.config/zsh/.zshrc):
+
+- `git` for git autocompletion and other features 
+- `docker` and `docker-compose` for docker utilities
+- `zsh-syntax-highlighting` for highlighting the text written in the terminal
+- `zsh-autosuggestion` for command suggestions
+
+### powerlevel10k
+
+With zsh, I also use [powerlevel10k](https://github.com/romkatv/powerlevel10k)
+which is provides a lot of features, other that theming the terminal.
+
 > You can modify the theme by change `powerlevel10k`
-> [configuration](./powerlevel10k/.config/zsh/.p10k.zsh)
+[configuration](./powerlevel10k/.config/zsh/.p10k.zsh)
 
 ## Neovim
 
@@ -45,8 +64,9 @@ display and prettier formatting.
   install:
     - `typescript-language-server` and `diagnostics-languageserver` as the base
     packages.
-    - `eslint_d` for fast ESLint linting.
-    - `prettier_d` for fast code prettifying.
+    - `eslint_d` for fast ESLint linting (in case `eslint_d` does not work as
+    expected, you can replace it using with the `eslint` original package).
+    - `prettierd` for fast code prettifying.
   - HTML and CSS are also included, but not much has been configurated.
 - Golang development, using the `vim-go` plugin and `gopls` for linting and
 error fixing.
@@ -58,20 +78,6 @@ Currently using a minimally modified [NvChad](https://github.com/NvChad/NvChad)
 set up. The goal is to add the plugins required in order to make it fully
 functional both for front and back end development.
 
-## zsh & kitty
+## Other
 
-`zsh` is the default shell for MacOs (in newer versions). Since a long time ago
-I have been using kitty, and IMO it works better than iTerm and iTerm2. It also
-allows font ligatures.  
-The following plugins are used in zsh (see [the config
-file](./zsh/.config/zsh/.zshrc):
-
-- `git` for git autocompletion and other features 
-- `docker` and `docker-compose` for docker utilities
-- `zsh-syntax-highlighting` for highlighting the text written in the terminal
-- `zsh-autosuggestion` for command suggestions
-
-### powerlevel10k
-
-With zsh, I also use [powerlevel10k](https://github.com/romkatv/powerlevel10k)
-which is provides a lot of features, other that theming the terminal.
+Since this set up is intended to be used
