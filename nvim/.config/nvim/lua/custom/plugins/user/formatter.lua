@@ -35,6 +35,7 @@ end
 require('formatter').setup({
   filetype = {
     json = { prettierConfig, eslintConfig },
+    graphql = { prettierConfig },
     html = { prettierConfig, eslintConfig },
     javascript = { prettierConfig, eslintConfig },
     javascriptreact = { prettierConfig, eslintConfig },
