@@ -26,7 +26,5 @@ alias svim="sudo -E vim"            # Same but sudo
 alias falias="alias | grep "        # Search for an alias
 alias home="$HOME"
 alias t="tree"
-
-EXTENSIONS="-extension jpg -extension jpeg -extension mp4 -extension mov"
-alias imgrn="exiftool -fileOrder DateTimeOriginal -recurse $EXTENSIONS -ignoreMinorErrors '-FileName<FileModifyDate' -d '%Y-%m-%d-%%.3nc.%%e'"
+alias :q="exit"
 
