@@ -15,6 +15,11 @@ return {
   ['terrortylor/nvim-comment'] = { disable = false },
   ['goolord/alpha-nvim'] = { disable = false },
   ['onsails/lspkind.nvim'] = { disable = false },
-  ['ray-x/lsp_signature.nvim'] = { disable = false },
+  ['ray-x/lsp_signature.nvim'] = {
+    disable = false,
+    config = function()
+      require('custom.plugins.user.lsp-signature')
+    end,
+  },
   ['folke/which-key.nvim'] = { disable = false },
 }
