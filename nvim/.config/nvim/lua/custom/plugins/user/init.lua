@@ -22,4 +22,5 @@ return {
     end,
   },
   ['folke/which-key.nvim'] = { disable = false },
+  ['b0o/schemastore.nvim'] = {},
 }

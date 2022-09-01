@@ -20,6 +20,14 @@ local setup = function()
       severity_sort = true,
       virtual_text = { spacing = 2, prefix = '' },
       signs = { active = signs },
+      float = {
+        focusable = true,
+        style = 'minimal',
+        border = 'rounded',
+        header = '',
+        prefix = '',
+        source = 'if_many',
+      },
     })
 
   vim.lsp.handlers['textDocument/hover'] =

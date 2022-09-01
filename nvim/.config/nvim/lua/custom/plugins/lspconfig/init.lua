@@ -56,7 +56,7 @@ local on_attach = function(_, bufnr)
   buf_set_keymap(
     'n',
     '<space>e',
-    '<cmd>lua vim.diagnostic.open_float(0, { scope = "line" })<CR>',
+    '<cmd>lua vim.diagnostic.open_float(0, { scope = "line", border = "rouned" })<CR>',
     opts
   )
   buf_set_keymap(

@@ -4,7 +4,6 @@ if not present then
 end
 
 local config = {
-  floating_window_off_y = 4,
   hint_prefix = ' ',
   hint_scheme = 'Comment',
 }

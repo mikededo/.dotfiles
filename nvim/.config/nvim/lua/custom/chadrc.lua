@@ -14,6 +14,7 @@ M.plugins = {
     separator_line = 'round',
   },
   override = {
+    ['hrsh7th/nvim-cmp'] = overrides.cmp,
     ['kyazdani42/nvim-tree.lua'] = overrides.nvimtree,
     ['lukas-reineke/indent-blankline.nvim'] = overrides.indent_blankline,
     ['nvim-telescope/telescope.nvim'] = overrides.telescope,
