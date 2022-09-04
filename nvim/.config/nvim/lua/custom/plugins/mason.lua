@@ -9,7 +9,8 @@ return {
     'eslint_d',
     'prettierd',
     'json_lsp',
+    'tailwind-language-server',
     -- back end
-    'gopls'
+    'gopls',
   },
 }

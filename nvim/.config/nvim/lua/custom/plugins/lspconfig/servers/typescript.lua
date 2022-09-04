@@ -20,6 +20,14 @@ M.setup_tsserver = function(on_attach)
   })
 end
 
+-- Tailwind
+M.setup_tailwindcss = function(on_attach)
+  nvim_lsp.tailwindcss.setup({
+    on_attach = on_attach,
+    capabilities = capabilities,
+  })
+end
+
 M.setup_diagnostics = function(on_attach)
   nvim_lsp.diagnosticls.setup({
     on_attach = on_attach,
