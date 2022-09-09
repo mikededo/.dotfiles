@@ -45,7 +45,6 @@ autoload -U compinit && compinit -u
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
     setopt correct			# Command spelling
     setopt complete_in_word		# Completion from within a word/phrase
-    setopt completealiases		# Aliases completion
     setopt list_ambiguous		# Complete until it gets ambiguous
 
 # #
