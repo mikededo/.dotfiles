@@ -9,19 +9,18 @@ M.ui = {
 }
 
 -- Plugins configurations
-M.plugins = {
-  options = {
-    separator_line = 'round',
+local plugins = vim.tbl_deep_extend('force', {
+  ['hrsh7th/nvim-cmp'] = { override_options = overrides.cmp },
+  ['kyazdani42/nvim-tree.lua'] = { override_options = overrides.nvimtree },
+  ['lukas-reineke/indent-blankline.nvim'] = {
+    override_options = overrides.indent_blankline,
   },
-  override = {
-    ['hrsh7th/nvim-cmp'] = overrides.cmp,
-    ['kyazdani42/nvim-tree.lua'] = overrides.nvimtree,
-    ['lukas-reineke/indent-blankline.nvim'] = overrides.indent_blankline,
-    ['nvim-telescope/telescope.nvim'] = overrides.telescope,
-    ['nvim-treesitter/nvim-treesitter'] = overrides.treesitter,
-    ['williamboman/mason.nvim'] = overrides.mason,
+  ['nvim-telescope/telescope.nvim'] = { override_options = overrides.telescope },
+  ['nvim-treesitter/nvim-treesitter'] = {
+    override_options = overrides.treesitter,
   },
-  user = overrides.user,
-}
+  ['williamboman/mason.nvim'] = { override_options = overrides.mason },
+}, overrides.user)
+M.plugins = plugins
 
 return M
