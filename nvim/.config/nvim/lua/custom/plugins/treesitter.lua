@@ -2,6 +2,7 @@ return {
   ensure_installed = {
     'bash',
     'css',
+    'graphql',
     'javascript',
     'jsdoc',
     'json',
