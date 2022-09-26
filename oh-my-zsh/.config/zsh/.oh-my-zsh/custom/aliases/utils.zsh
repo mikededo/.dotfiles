@@ -1,3 +1,7 @@
+# git
+alias master='git checkout master && gl'
+alias main='git checkout main && gl'
+
 # yarn
 alias fp="yarn list | grep $1"
 alias fp0="yarn list --depth 0 | grep $1"

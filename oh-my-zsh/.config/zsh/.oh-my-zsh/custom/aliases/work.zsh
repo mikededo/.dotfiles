@@ -1,6 +1,5 @@
 # Fast access to common directories
 alias jf="$HOME/Documents/work/jobs-frontend"
-alias master='git checkout master && gl'
 
 # Yarn related
 yyarn() { yarn && yarn $1 }
