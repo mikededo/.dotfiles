@@ -1,6 +1,7 @@
 # git
 alias master='git checkout master && gl'
 alias main='git checkout main && gl'
+alias H0='HUSKY=0' # disable husky from running prehooks
 
 # yarn
 alias fp="yarn list | grep $1"
