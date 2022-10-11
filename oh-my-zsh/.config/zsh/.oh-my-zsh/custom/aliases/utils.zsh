@@ -1,6 +1,8 @@
 # git
 alias master='git checkout master && gl'
 alias main='git checkout main && gl'
+alias list-branches='git branch | xargs -I {} echo {}'
+alias lb='list-branches'
 alias H0='HUSKY=0' # disable husky from running prehooks
 
 # yarn
