@@ -32,16 +32,24 @@ local luaConfig = function()
   }
 end
 
+local goConfig = function()
+  return {
+    exe = 'gofmt',
+    stdin = true,
+  }
+end
+
 require('formatter').setup({
   filetype = {
-    json = { prettierConfig, eslintConfig },
     graphql = { prettierConfig },
+    go = { goConfig },
     html = { prettierConfig, eslintConfig },
     javascript = { prettierConfig, eslintConfig },
     javascriptreact = { prettierConfig, eslintConfig },
+    json = { prettierConfig, eslintConfig },
+    lua = { luaConfig },
     typescript = { prettierConfig, eslintConfig },
     typescriptreact = { prettierConfig, eslintConfig },
-    lua = { luaConfig },
   },
 })
 
