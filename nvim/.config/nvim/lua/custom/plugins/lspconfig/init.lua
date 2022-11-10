@@ -110,7 +110,6 @@ local capabilities = protocol.make_client_capabilities()
 require('cmp_nvim_lsp').update_capabilities(capabilities)
 
 -- require configurations
--- frontend (mainly TS/JS)
 require('custom.plugins.lspconfig.servers').attach(on_attach)
 -- diagnostics
 require('custom.plugins.lspconfig.diagnostics').setup()

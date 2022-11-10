@@ -12,5 +12,7 @@ return {
     'tailwind-language-server',
     -- back end
     'gopls',
+    -- other
+    'dockerfile-language-server',
   },
 }
