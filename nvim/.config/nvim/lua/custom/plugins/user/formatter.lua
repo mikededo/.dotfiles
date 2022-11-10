@@ -39,10 +39,16 @@ local goConfig = function()
   }
 end
 
+local yamlConfig = function()
+  return {
+    exe = 'yamlfmt',
+  }
+end
+
 require('formatter').setup({
   filetype = {
-    graphql = { prettierConfig },
     go = { goConfig },
+    graphql = { prettierConfig },
     html = { prettierConfig, eslintConfig },
     javascript = { prettierConfig, eslintConfig },
     javascriptreact = { prettierConfig, eslintConfig },
@@ -50,6 +56,8 @@ require('formatter').setup({
     lua = { luaConfig },
     typescript = { prettierConfig, eslintConfig },
     typescriptreact = { prettierConfig, eslintConfig },
+    yaml = { yamlConfig },
+    ['yaml.docker-compose'] = { yamlConfig },
   },
 })
 

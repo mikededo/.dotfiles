@@ -14,5 +14,8 @@ return {
     'gopls',
     -- other
     'dockerfile-language-server',
+    -- yaml
+    'yaml-language-server',
+    'yamlfmt',
   },
 }
