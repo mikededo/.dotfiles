@@ -23,6 +23,7 @@ plugins=(
   gh
   docker
   docker-compose
+  kubectl
   zsh-syntax-highlighting
   zsh-autosuggestions
 )
