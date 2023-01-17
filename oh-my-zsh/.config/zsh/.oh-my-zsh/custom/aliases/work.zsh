@@ -1,7 +1,14 @@
 # Fast access to common directories
 alias jf="$HOME/Documents/work/jobs-frontend"
 
-# Yarn related
+# git
+wclone() {
+  repo="git@source.xing.com:$1.git"
+  shift
+  git clone $repo $@ 
+}
+
+# yarn
 yyarn() { yarn && yarn $1 }
 
 # gh cli commands
