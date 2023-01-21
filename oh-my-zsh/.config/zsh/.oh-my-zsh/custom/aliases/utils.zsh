@@ -20,6 +20,7 @@ alias chore="_semm_commit chore"
 alias feat="_semm_commit feat"
 alias fix="_semm_commit feat"
 alias refactor="_semm_commit refactor"
+alias ctest="_semm_commit test"
 
 # yarn
 alias fp="yarn list | grep $1"
