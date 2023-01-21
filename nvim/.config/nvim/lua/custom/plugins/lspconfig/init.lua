@@ -105,11 +105,8 @@ end
 -- Enable signature
 require('lsp_signature').setup()
 
--- Set up completion using nvim_cmp with LSP source
-local capabilities = protocol.make_client_capabilities()
-require('cmp_nvim_lsp').update_capabilities(capabilities)
-
 -- require configurations
+-- frontend (mainly TS/JS)
 require('custom.plugins.lspconfig.servers').attach(on_attach)
 -- diagnostics
 require('custom.plugins.lspconfig.diagnostics').setup()
