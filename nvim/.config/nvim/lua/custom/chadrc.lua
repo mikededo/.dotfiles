@@ -11,7 +11,6 @@ M.ui = {
 -- Plugins configurations
 local plugins = vim.tbl_deep_extend('force', {
   ['hrsh7th/nvim-cmp'] = { override_options = overrides.cmp },
-  ['kyazdani42/nvim-tree.lua'] = { override_options = overrides.nvimtree },
   ['lukas-reineke/indent-blankline.nvim'] = {
     override_options = overrides.indent_blankline,
   },
