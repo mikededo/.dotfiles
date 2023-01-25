@@ -12,7 +12,7 @@ wclone() {
 yyarn() { yarn && yarn $1 }
 
 # gh cli commands
-alias prcreate='gh pr create --fill --base master --assign @me --draft --label WIP --label JSR'
+alias prcreate='gh pr create --fill --base master --assignee @me --draft --label WIP --label JSR'
 alias prcode_review='gh pr edit --add-label "code review" --remove-label qa --remove-label ready'
 alias prqa='gh pr edit --add-label qa --remove-label "code review"'
 alias prbqa='gh pr edit --add-label qa --remove-label ready'
