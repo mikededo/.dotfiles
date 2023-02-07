@@ -26,5 +26,6 @@ alias svim="sudo -E vim"            # Same but sudo
 alias falias="alias | grep "        # Search for an alias
 alias home="$HOME"
 alias t="tree"
+alias m="make"
 alias :q="exit"
 
