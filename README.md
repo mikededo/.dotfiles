@@ -1,4 +1,8 @@
-# dotfiles
+<p align="center">
+  <img width="200" src="assets/Logo.png" alt="Logo">
+</p>
+
+<h1 align="center">~/.dotfiles</h1>
 
 Personal dotfiles to keep the important configurations whenever I change the
 OS. Currently using macOs devices, therefore the `main` branch contains the
@@ -8,7 +12,6 @@ configurations for such devices. Alternatively, you can find:
 
 > Note that the other branches may not be as maintained nor up to date as the
 > `main` branch.
-
 
 ## Set up
 
@@ -58,18 +61,15 @@ deal with formmating and the required configurations for the LSP server.
 
 Currently, the LSP is set up for:
 
-- JavaScript/TypeScript development, including intellisense, ESLint error
-display and prettier formatting.
-  - In order to have the environment fully functional, make sure to globally
-  install:
-    - `typescript-language-server` and `diagnostics-languageserver` as the base
-    packages.
-    - `eslint_d` for fast ESLint linting (in case `eslint_d` does not work as
-    expected, you can replace it using with the `eslint` original package).
-    - `prettierd` for fast code prettifying.
-  - HTML and CSS are also included, but not much has been configurated.
-- Golang development, using the `vim-go` plugin and `gopls` for linting and
-error fixing.
+- Docker
+- Go
+- Rust
+- Typescript
+- Yaml, JSON
+
+It includes diagnostics as well as formatting for each LSP. All required LSP are
+installed through the Mason plugin, meaning they will all be installed on
+lauching `PackerSync`. Same happens for TreeSitter language highlightings.
 
 > You can modify the formatting options in the 
 > [`formatter.lua`](./nvim/.config/nvim/lua/custom/plugins/user/formatter.lua).
@@ -77,7 +77,3 @@ error fixing.
 Currently using a minimally modified [NvChad](https://github.com/NvChad/NvChad)
 set up. The goal is to add the plugins required in order to make it fully
 functional both for front and back end development.
-
-## Other
-
-Since this set up is intended to be used
