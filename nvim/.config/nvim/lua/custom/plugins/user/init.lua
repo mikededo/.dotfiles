@@ -23,4 +23,8 @@ return {
   },
   ['folke/which-key.nvim'] = { disable = false },
   ['b0o/schemastore.nvim'] = {},
+  ['simrat39/rust-tools.nvim'] = {
+    disable = false,
+    -- Plugin is configured in the lspconfig/servers/rust directory
+  },
 }

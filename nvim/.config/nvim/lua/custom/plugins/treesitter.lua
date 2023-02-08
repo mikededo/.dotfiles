@@ -8,6 +8,7 @@ return {
     'jsdoc',
     'json',
     'jsonc',
+    'rust',
     'lua',
     'tsx',
     'typescript',

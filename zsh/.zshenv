@@ -8,6 +8,9 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
 
+# cargo
+. "$HOME/.cargo/env"
+
 # Oly
 export PATH="/Users/miquel.dedomingo/.oly/bin:$PATH"
 export PATH="/Users/miquel.dedomingo/.gem/ruby/2.6.0/bin:$PATH"

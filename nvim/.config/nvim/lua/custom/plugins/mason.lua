@@ -12,6 +12,9 @@ return {
     'tailwind-language-server',
     -- back end
     'gopls',
+    'golangci-lint',
+    'rustfmt',
+    'rust_analyzer',
     -- other
     'dockerfile-language-server',
     -- yaml

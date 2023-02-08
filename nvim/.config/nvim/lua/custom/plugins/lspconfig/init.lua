@@ -1,5 +1,6 @@
 local protocol = vim.lsp.protocol
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
+
 capabilities.textDocument.completion.completionItem.snippetSupport = false
 
 -- Use an on_attach function to only map the following keys

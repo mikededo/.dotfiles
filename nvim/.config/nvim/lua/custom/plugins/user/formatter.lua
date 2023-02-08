@@ -40,8 +40,14 @@ local goConfig = function()
 end
 
 local yamlConfig = function()
+  return { exe = 'yamlfmt' }
+end
+
+local rustfmtConfig = function()
   return {
-    exe = 'yamlfmt',
+    exe = 'rustfmt',
+    args = { '--edition 2021' },
+    stdin = true,
   }
 end
 
@@ -53,6 +59,7 @@ require('formatter').setup({
     javascript = { prettierConfig, eslintConfig },
     javascriptreact = { prettierConfig, eslintConfig },
     json = { prettierConfig, eslintConfig },
+    rust = { rustfmtConfig },
     lua = { luaConfig },
     typescript = { prettierConfig, eslintConfig },
     typescriptreact = { prettierConfig, eslintConfig },

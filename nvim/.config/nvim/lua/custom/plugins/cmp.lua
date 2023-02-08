@@ -7,10 +7,10 @@ local compare = cmp.config.compare
 
 return {
   sources = {
-    { name = 'nvim_lsp', group_index = 1 },
-    { name = 'luasnip', group_index = 2 },
-    { name = 'buffer', group_index = 2 },
-    { name = 'path', group_index = 2 },
+    { name = 'path' },
+    { name = 'nvim_lsp', keyword_length = 3 },
+    { name = 'buffer', keyword_length = 3 },
+    { name = 'luasnip', keyword_length = 2 },
   },
   sorting = {
     priority_weight = 2,
