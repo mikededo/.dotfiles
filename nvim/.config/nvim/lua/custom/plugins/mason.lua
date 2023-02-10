@@ -17,6 +17,7 @@ return {
     'rust_analyzer',
     -- other
     'dockerfile-language-server',
+    'bash-language-server',
     -- yaml
     'yaml-language-server',
     'yamlfmt',

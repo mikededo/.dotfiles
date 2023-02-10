@@ -3,6 +3,7 @@ local serverPath = function(server)
   return servers .. '.' .. server
 end
 
+local bash = require(serverPath('bash'))
 local docker = require(serverPath('docker'))
 local go = require(serverPath('go'))
 local jsonls = require(serverPath('jsonls'))
@@ -12,6 +13,7 @@ local yaml = require(serverPath('yaml'))
 
 return {
   attach = function(on_attach)
+    bash.setup(on_attach)
     docker.setup(on_attach)
     go.setup_go(on_attach)
     go.setup_golang_lint(on_attach)
