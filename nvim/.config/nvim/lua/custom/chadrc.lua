@@ -9,7 +9,15 @@ M.ui = {
 }
 
 -- Plugins configurations
-local plugins = vim.tbl_deep_extend('force', {
+-- NvChad ui configurations
+local nv_chad_ui = {
+  statusline = overrides.statusline,
+}
+
+M.plugins = vim.tbl_deep_extend('force', {
+  ['NvChad/ui'] = {
+    override_options = nv_chad_ui,
+  },
   ['hrsh7th/nvim-cmp'] = { override_options = overrides.cmp },
   ['lukas-reineke/indent-blankline.nvim'] = {
     override_options = overrides.indent_blankline,
@@ -20,6 +28,5 @@ local plugins = vim.tbl_deep_extend('force', {
   },
   ['williamboman/mason.nvim'] = { override_options = overrides.mason },
 }, overrides.user)
-M.plugins = plugins
 
 return M
