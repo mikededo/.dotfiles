@@ -11,9 +11,10 @@ return {
       '--smart-case',
     },
     file_ignore_patterns = {
-      '^node_modules*',
       '^.git/',
       '^coverage*',
+      '^node_modules*',
+      '^target*',
     },
     initial_mode = 'normal',
   },
