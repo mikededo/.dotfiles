@@ -75,6 +75,8 @@ local on_attach = function(_, bufnr)
     opts
   )
   buf_set_keymap('n', '<space>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
+  -- show hover
+  buf_set_keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
 
   protocol.CompletionItemKind = {
     '', -- Text
