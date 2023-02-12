@@ -21,8 +21,13 @@ alias chore="_semm_commit chore"
 alias feat="_semm_commit feat"
 alias fix="_semm_commit feat"
 alias refactor="_semm_commit refactor"
+alias docs="_semm_commit docs"
 alias ctest="_semm_commit test"
 
 # yarn
 alias fp="yarn list | grep $1"
 alias fp0="yarn list --depth 0 | grep $1"
+
+# other
+## avoids having to keep entering the passphrase to sign the commits
+alias reset_gpg="echo 'pinentry-program /opt/homebrew/bin/pinentry-mac' >> ~/.gnupg/gpg-agent.conf && killall gpg-agent"
