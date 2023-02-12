@@ -6,3 +6,4 @@
 ./oh-my-zsh/.gitkeep
 ./powerlevel10k/.gitkeep
 ./zsh/.gitkeep
+.DS_Store

@@ -25,30 +25,40 @@ removed by removing the `$HOME/.nvm` folder.
 > As soon as possible, the script will be migrated to a `lua` script in order to
 provide a more customizable installation.
 
-## zsh && kitty
+## fish && kitty
 
-I currently use `zsh` and I do not intend to change it, as it is fast an very
-customizable. In top of `zsh`, there's `powerlevel10k` for theming, with a
-custom theme; and `oh-my-zsh` for added plugins and configurations.
+Even though there's the `zsh` configuration available, the main shell that I use
+is [fish](fishshell.com). Since I have switched from `zsh`, I have been ejoying
+it more than any other. In combination with `kitty`, I consider to have a great,
+fast, customizable and performant workflow environment.  
+As well as installing `fish`, the `./setup.sh` script will also install the
+[`fisher`](https://git.io/fisher) plugin manager. With it, I recommend
+installing the following plugins:
 
-I have been using kitty, and IMO it works better than iTerm and iTerm2. It also
-allows font ligatures.
+- `plugin-git`: adds similar aliases as the git plugin for zsh.
+- `plugin-kubectl`: adds simliar aliases as the kubectl plugin for zsh.
 
-The following plugins are used in zsh (see [the config
-file](./zsh/.config/zsh/.zshrc):
+> Completions can be installed from most executables (`gh`, `cargo`, `volta`...)
+> and should be stored in `~/.config/fish/completions/<exec-name>.fish`.  
+> Docker does not provide a `completion(s)` command. Use the following command
+> to run:
 
-- `git` for git autocompletion and other features 
-- `docker` and `docker-compose` for docker utilities
-- `zsh-syntax-highlighting` for highlighting the text written in the terminal
-- `zsh-autosuggestion` for command suggestions
+```sh
+curl -sS https://raw.githubusercontent.com/docker/cli/master/contrib/completion/fish/docker.fish \
+  > .config/fish/completions/docker.fish
+```
 
-### powerlevel10k
+> Probably will delete `zsh` configuration or I will keep in an alternative
+> branch.
 
-With zsh, I also use [powerlevel10k](https://github.com/romkatv/powerlevel10k)
-which is provides a lot of features, other that theming the terminal.
+## Starship
 
-> You can modify the theme by change `powerlevel10k`
-[configuration](./powerlevel10k/.config/zsh/.p10k.zsh)
+I have been using powerlevel10k to customize my `zsh`, it was very complex to
+port to `fish`. Using `starship`, I have a shared prompt configuration. Since it
+is exclusively for the prompt, it does not include any sort of plugin
+configuration.
+
+> Configuration can be found in `./starship/.config/starship.toml`.
 
 ## Neovim
 
@@ -61,10 +71,11 @@ deal with formmating and the required configurations for the LSP server.
 
 Currently, the LSP is set up for:
 
+- Bash (it has a very simple completion).
 - Docker
 - Go
 - Rust
-- Typescript
+- JavaScript and Typescript
 - Yaml, JSON
 
 It includes diagnostics as well as formatting for each LSP. All required LSP are
