@@ -1,0 +1,111 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# Prompt
+format = """
+$directory\
+$git_branch\
+$git_state\
+$git_status\
+$character\
+"""
+
+right_format = """
+$golang\
+$rust\
+$lua\
+$nodejs\
+$cmd_duration\
+$kubernetes\
+$memory_usage\
+$time\
+"""
+
+# Custom prompt
+add_newline = false
+
+[character]
+success_symbol = "[»](white)"
+error_symbol = "[»](red)"
+
+[directory]
+style = "fg:4"
+truncation_length = 2
+truncation_symbol = "…/"
+
+[directory.substitutions]
+"Documents" = " "
+"Downloads" = " "
+"/mnt/media" = " "
+
+[cmd_duration]
+min_time = 0                    # always show
+format = "[$duration]($style) "
+style = "fg:101"
+disabled = false
+
+[memory_usage]
+disabled = false
+format = "[$symbol$ram_pct]($style) "
+style = "fg:208"
+symbol = "⛁ "
+threshold = 75
+
+[time]
+disabled = false
+format = "[$time]($style)"
+style = "white"
+
+
+# Non-languages
+[git_branch]
+format = "[$symbol$branch(:$remote_branch)]($style) "
+style = "fg:35"
+symbol = "\uF126 "
+
+[git_state]
+am = "am"
+am_or_rebase = "am/rebase"
+bisect = "bisect"
+cherry_pick = "cherry-pick"
+merge = "merge"
+rebase = "rebase"
+revert = "revert"
+style = "yellow"
+
+[git_status]
+format = "[$stashed]($style)[$modified$staged](fg:202)[$untracked](fg:4)[$ahead_behind]($style)"
+stashed = "*$count "
+untracked = "?$count "
+modified = "!$count "
+staged = "+$count "
+ahead = "⇡$count "
+behind = "⇣$count "
+style = "fg:35"
+
+# Languages
+[golang]
+disabled = false
+format = "[$symbol($version )]($style)"
+symbol = " "
+style = "cyan"
+
+[nodejs]
+disabled = false
+format = "[$symbol($version )]($style)"
+style = "green"
+not_capable_style = "red"
+
+[rust]
+disabled = false
+format = "[$symbol($version )]($style)"
+style = "fg:208"
+
+[java]
+disabled = false
+format = "[$symbol($version )]($style)"
+style = "red"
+
+[kubernetes]
+disabled = true                                          # show if wanted
+format = "[$symbol$context( \\($namespace\\))]($style) "
+style = "fg:27"

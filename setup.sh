@@ -6,6 +6,7 @@ OHMYZSH_PLUGINS=$OHMYZSH_CONFIG/custom/plugins
 
 # Check mandatory applications
 [ ! -x "$(command -v zsh)" ] && echo "ERROR: zsh is not installed in the system" && exit -1
+[ ! -x "$(command -v fish)" ] && echo "ERROR: fish is not installed in the system" && exit -1
 [ ! -x "$(command -v git)" ] && echo "ERROR: git is not installed in the system" && exit -1
 [ ! -x "$(command -v nvim)" ] && echo "ERROR: nvim is not installed in the system" && exit -1
 [ ! -x "$(command -v stow)" ] && echo "ERROR: stow is not installed in the system" && exit -1
@@ -19,6 +20,8 @@ packages=(
   oh-my-zsh
   powerlevel10k
   zsh
+  fish
+  starship
 )
 
 # Run the stow command
@@ -61,6 +64,10 @@ done
 
 # Additional dependencies
 echo "> Installing additional dependencies"
+
+# Add fisher
+# Figure out why it does not work
+# [ ! -f ~/.config/fish/functions/tide.zsh ] && (curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher)
 
 echo "Installing volta"
 [ ! -d $HOME/.volta ] && curl https://get.volta.sh | bash
