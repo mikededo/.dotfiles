@@ -55,6 +55,9 @@ disabled = false
 format = "[$time]($style)"
 style = "white"
 
+[package]
+format = "[$symbol$version]($style) "
+style = "208"
 
 # Non-languages
 [git_branch]
@@ -74,12 +77,14 @@ style = "yellow"
 
 [git_status]
 format = "[$stashed]($style)[$modified$staged](fg:202)[$untracked](fg:4)[$ahead_behind]($style)"
-stashed = "*$count "
-untracked = "?$count "
-modified = "!$count "
-staged = "+$count "
 ahead = "⇡$count "
 behind = "⇣$count "
+diverged = "⇣$behind_count⇡$ahead_count "
+modified = "!$count "
+renamed = "ɍ$count "
+staged = "+$count "
+stashed = "*$count "
+untracked = "?$count "
 style = "fg:35"
 
 # Languages
