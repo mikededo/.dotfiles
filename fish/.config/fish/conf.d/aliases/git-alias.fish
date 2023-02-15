@@ -14,7 +14,9 @@ alias gaa='git add --all'
 alias gms='git merge --squash'
 # remote
 alias gpf='git push --force-with-lease'
-alias gpsup="git push --set-upstream origin $(_current_branch)"
+function gpsup
+  git push --set-upstream origin $(_current_branch)
+end
 # local
 alias gl='git pull'
 
