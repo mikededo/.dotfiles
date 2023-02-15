@@ -4,7 +4,6 @@ if not present then
 end
 
 local compare = cmp.config.compare
-
 return {
   sources = {
     { name = 'path' },
