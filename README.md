@@ -35,7 +35,6 @@ As well as installing `fish`, the `./setup.sh` script will also install the
 [`fisher`](https://git.io/fisher) plugin manager. With it, I recommend
 installing the following plugins:
 
-- `plugin-git`: adds similar aliases as the git plugin for zsh.
 - `plugin-kubectl`: adds simliar aliases as the kubectl plugin for zsh.
 
 > Completions can be installed from most executables (`gh`, `cargo`, `volta`...)
@@ -71,6 +70,7 @@ deal with formmating and the required configurations for the LSP server.
 
 Currently, the LSP is set up for:
 
+alias gaa='git add --all'
 - Bash (it has a very simple completion).
 - Docker
 - Go
