@@ -76,7 +76,7 @@ revert = "revert"
 style = "yellow"
 
 [git_status]
-format = "[$stashed]($style)[$modified$staged](fg:202)[$untracked](fg:4)[$ahead_behind]($style)"
+format = "[$stashed]($style)[$modified$staged](fg:202)[$untracked](fg:4)[$deleted](fg:13)[$ahead_behind]($style)"
 ahead = "⇡$count "
 behind = "⇣$count "
 diverged = "⇣$behind_count⇡$ahead_count "
@@ -85,6 +85,7 @@ renamed = "ɍ$count "
 staged = "+$count "
 stashed = "*$count "
 untracked = "?$count "
+deleted = "✘$count "
 style = "fg:35"
 
 # Languages
