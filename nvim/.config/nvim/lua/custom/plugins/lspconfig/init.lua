@@ -1,6 +1,30 @@
+local wk = require('which-key')
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
+local lsp_mappings = require('custom.plugins.lspconfig.mappings')
 
 capabilities.textDocument.completion.completionItem.snippetSupport = false
+
+local len = function(t)
+  local c = 0
+  for _, _ in ipairs(t) do
+    c = c + 1
+  end
+  return c
+end
+
+local build_which_key = function(map, cmd, desc)
+  local map_len = len(map)
+  local res
+  for i, _ in ipairs(map) do
+    local pos = map_len - i + 1
+    if i == 1 then
+      res = { [map[pos]] = { cmd, desc } }
+    else
+      res = { [map[pos]] = res }
+    end
+  end
+  return res
+end
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
@@ -18,20 +42,10 @@ local on_attach = function(_, bufnr)
   -- Mappings.
   local opts = { noremap = true, silent = true }
 
-  buf_set_keymap(
-    'n',
-    '<space>e',
-    '<cmd>lua vim.diagnostic.open_float(0, { scope = "line", border = "rounded" })<CR>',
-    opts
-  )
-  buf_set_keymap(
-    'n',
-    '<space>dn',
-    '<cmd>lua vim.diagnostic.goto_next()<CR>',
-    opts
-  )
-  buf_set_keymap('n', '<space>dt', '<cmd>Telescope diagnostics<CR>', opts)
-  buf_set_keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
+  for _, m in ipairs(lsp_mappings) do
+    buf_set_keymap(m.mode, table.concat(m.map), m.cmd, opts)
+    wk.register(build_which_key(m.map, m.cmd, m.desc), { mode = m.mode })
+  end
 end
 
 -- Enable signature
