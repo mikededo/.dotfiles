@@ -1,5 +1,6 @@
 # Fast access to common directories
 alias jf="cd $HOME/Documents/work/jobs-frontend"
+alias crate="cd $HOME/Documents/work/crate"
 
 # git
 function wclone
