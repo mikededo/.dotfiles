@@ -13,10 +13,11 @@ alias updzsh="exec zsh"
 alias updfish="exec fish"
 
 # Alias files
-set ALIAS_DIR "$HOME/.config/zsh/.oh-my-zsh/custom/aliases"
-alias cfgalias="vim $ALIAS_DIR/configuration.zsh"
-alias utilalias="vim $ALIAS_DIR/utils.zsh"
-alias workalias="vim $ALIAS_DIR/work.zsh"
+set ALIAS_DIR "$HOME/.config/fish/conf.d/aliases"
+alias cfgalias="vim $ALIAS_DIR/configuration.fish"
+alias gitalias="vim $ALIAS_DIR/git-alias.fish"
+alias utilalias="vim $ALIAS_DIR/utils.fish"
+alias workalias="vim $ALIAS_DIR/work.fish"
 
 # File manipulation
 alias rmd="rm -rf"                  # Lazy remove files
