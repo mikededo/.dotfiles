@@ -36,7 +36,7 @@ function _semm_commit
 end
 alias chore="_semm_commit chore"
 alias feat="_semm_commit feat"
-alias fix="_semm_commit feat"
+alias fix="_semm_commit fix"
 alias refactor="_semm_commit refactor"
 alias docs="_semm_commit docs"
 alias ctest="_semm_commit test"
