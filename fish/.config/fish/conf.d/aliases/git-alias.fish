@@ -15,6 +15,7 @@ alias gms='git merge --squash'
 # remote
 alias gp='git push'
 alias gpf='git push --force-with-lease'
+alias gf='git fetch'
 function gpsup
   git push --set-upstream origin $(_current_branch)
 end
