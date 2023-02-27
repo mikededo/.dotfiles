@@ -76,7 +76,7 @@ revert = "revert"
 style = "yellow"
 
 [git_status]
-format = "[$stashed]($style)[$modified$staged](fg:202)[$untracked](fg:4)[$deleted](fg:13)[$ahead_behind]($style)"
+format = "[$modified$staged](fg:202)[$untracked](fg:4)[$deleted](fg:13)[$ahead_behind$stashed]($style)"
 ahead = "⇡$count "
 behind = "⇣$count "
 diverged = "⇣$behind_count⇡$ahead_count "
