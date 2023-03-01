@@ -73,12 +73,14 @@ cherry_pick = "cherry-pick"
 merge = "merge"
 rebase = "rebase"
 revert = "revert"
+format = '[\[$state( $progress_current/$progress_total)\]]($style) '
 style = "yellow"
 
 [git_status]
-format = "[$modified$staged](fg:202)[$untracked](fg:4)[$deleted](fg:13)[$ahead_behind$stashed]($style)"
+format = "[$modified$staged](fg:202)[$conflicted](fg:11)[$untracked](fg:4)[$deleted](fg:13)[$ahead_behind$stashed]($style)"
 ahead = "⇡$count "
 behind = "⇣$count "
+conflicted = "~$count "
 diverged = "⇣$behind_count⇡$ahead_count "
 modified = "!$count "
 renamed = "ɍ$count "
