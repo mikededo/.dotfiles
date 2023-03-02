@@ -64,6 +64,7 @@ style = "208"
 format = "[$symbol$branch(:$remote_branch)]($style) "
 style = "fg:35"
 symbol = "\uF126 "
+truncation_length = 24
 
 [git_state]
 am = "am"
