@@ -1,9 +1,0 @@
-# Files to be ignored by stow
-
-./git/.gitkeep
-./kitty/.gitkeep
-./nvim/.gitkeep
-./oh-my-zsh/.gitkeep
-./powerlevel10k/.gitkeep
-./zsh/.gitkeep
-.DS_Store

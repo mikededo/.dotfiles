@@ -28,7 +28,7 @@ packages=(
 stow_it() {
   package=$1
 
-  stow -vR ${package}
+  stow -vR ${package} --ignore='(^|\W)\.gitkeep($|\W)' --ignore='(^|\W).DS_Store($|\W)'
 }
 
 # git clone helper
