@@ -8,6 +8,8 @@ alias list-branches='git branch | xargs -I {} echo {}'
 alias lb='list-branches'
 alias H0='HUSKY=0' # disable husky from running prehooks
 
+# commit
+alias gcan="git commit --amend --no-edit"
 # staging
 alias gaa='git add --all'
 # merging
@@ -21,6 +23,11 @@ function gpsup
 end
 # local
 alias gl='git pull'
+# cherry-pick
+alias gcp="git cherry-pick"
+alias gcpc="git cherry-pick --continue"
+alias gcpa="git cherry-pick --abort"
+alias gcps="git cherry-pick --skip"
 
 # Commit messages
 function _semm_commit
@@ -41,3 +48,4 @@ alias fix="_semm_commit fix"
 alias refactor="_semm_commit refactor"
 alias docs="_semm_commit docs"
 alias ctest="_semm_commit test"
+alias ci="_semm_commit ci"
