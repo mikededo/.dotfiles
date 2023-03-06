@@ -24,6 +24,15 @@ M.setup_tailwindcss = function(on_attach)
   nvim_lsp.tailwindcss.setup({
     on_attach = on_attach,
     capabilities = capabilities,
+    filetypes = {
+      'html',
+      'javascript',
+      'javascriptreact',
+      'javascript.jsx',
+      'typescript',
+      'typescriptreact',
+      'typescript.tsx',
+    },
   })
 end
 
