@@ -18,17 +18,5 @@ alias cfgalias="vim $ALIAS_DIR/configuration.fish"
 alias gitalias="vim $ALIAS_DIR/git-alias.fish"
 alias utilalias="vim $ALIAS_DIR/utils.fish"
 alias workalias="vim $ALIAS_DIR/work.fish"
-
-# File manipulation
-alias rmd="rm -rf"                  # Lazy remove files
-
-# Other
-alias sudo="sudo"                   # Make sudo not skip alias
-alias vim="nvim"                    # Open nvim over vim
-alias svim="sudo -E vim"            # Same but sudo
 alias falias="alias | grep "        # Search for an alias
-alias home="cd $HOME"
-alias t="tree"
-alias m="make"
-alias :q="exit"
 

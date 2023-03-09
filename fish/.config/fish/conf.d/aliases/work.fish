@@ -28,7 +28,7 @@ function qaimage
   gh pr comment $argv[1] --body '[build-qa-docker-image]'
 end
 function imgaccept
-  echo -n "" > prmsg
+  printf "[run-acceptance-tests]\n[build-qa-docker-image]" > prmsg
   set prmsg (cat prmsg)
   gh pr comment $argv[1] --body "$prmsg"
   rm prmsg
