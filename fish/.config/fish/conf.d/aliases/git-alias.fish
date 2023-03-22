@@ -8,6 +8,10 @@ alias list-branches='git branch | xargs -I {} echo {}'
 alias lb='list-branches'
 alias H0='HUSKY=0' # disable husky from running prehooks
 
+# status
+alias gst="git status"
+alias gstu="git status -u"
+alias gsts="git status -s"
 # commit
 alias gcan="git commit --amend --no-edit"
 # staging
