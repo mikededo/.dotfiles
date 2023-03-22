@@ -20,7 +20,7 @@ return {
   {
     mode = 'n',
     map = { '<leader>', 'r', 'n' },
-    cmd = '<Cmd>lua vim.lsp.buf.rename()<CR>',
+    cmd = '<Cmd>lua require(\'nvchad_ui.renamer\').open()<CR>',
     desc = 'Rename',
   },
   {
