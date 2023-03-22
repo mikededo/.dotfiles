@@ -9,7 +9,7 @@ M.ui = {
     load_on_startup = true,
   },
   cmp = {
-    style = 'flat',
+    style = 'flat_dark',
     selected_item_bg = 'colored',
   },
   statusline = {
