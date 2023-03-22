@@ -8,13 +8,13 @@ return {
     'diagnostic-languageserver',
     'eslint_d',
     'prettierd',
-    'json_lsp',
-    'tailwind-language-server',
+    'json-lsp',
+    'tailwindcss-language-server',
     -- back end
     'gopls',
     'golangci-lint',
     'rustfmt',
-    'rust_analyzer',
+    'rust-analyzer',
     -- other
     'dockerfile-language-server',
     'bash-language-server',

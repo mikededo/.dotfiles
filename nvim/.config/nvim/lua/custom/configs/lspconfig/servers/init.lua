@@ -1,4 +1,4 @@
-local servers = 'custom.plugins.lspconfig.servers'
+local servers = 'custom.configs.lspconfig.servers'
 local serverPath = function(server)
   return servers .. '.' .. server
 end

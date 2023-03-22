@@ -52,6 +52,8 @@ M.base_16 = {
   base0F = '#c8ccd4',
 }
 
+M.type = 'dark'
+
 vim.opt.bg = 'dark'
 
 return M

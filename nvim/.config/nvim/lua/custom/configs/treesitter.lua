@@ -16,7 +16,8 @@ return {
     'vim',
     'yaml',
   },
-  highlight = { enabled = true },
-  incremental_selection = { enabled = true },
-  textobjects = { enabled = true },
+  highlight = { enable = true, use_languagetree = true },
+  incremental_selection = { enable = true },
+  textobjects = { enable = true },
+  indent = { enable = true },
 }

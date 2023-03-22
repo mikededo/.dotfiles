@@ -1,5 +1,10 @@
+local present, _ = pcall(require, 'lsp_signature')
+if not present then
+  return
+end
+
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
-local lsp_mappings = require('custom.plugins.lspconfig.mappings')
+local lsp_mappings = require('custom.configs.lspconfig.mappings')
 local register_wk = require('custom.utils.register-wk')
 
 capabilities.textDocument.completion.completionItem.snippetSupport = false
@@ -30,8 +35,8 @@ end
 require('lsp_signature').setup()
 
 -- require configurations
-require('custom.plugins.lspconfig.servers').attach(on_attach)
+require('custom.configs.lspconfig.servers').attach(on_attach)
 -- diagnostics
-require('custom.plugins.lspconfig.diagnostics').setup()
+require('custom.configs.lspconfig.diagnostics').setup()
 
 return {}
