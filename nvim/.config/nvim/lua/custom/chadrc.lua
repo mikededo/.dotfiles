@@ -1,5 +1,7 @@
 local M = {}
 
+-- local ui = require('NvChad/ui.nvim')
+
 -- Theme and colors
 M.ui = {
   theme = 'onedommed',
@@ -12,10 +14,7 @@ M.ui = {
     style = 'flat_dark',
     selected_item_bg = 'colored',
   },
-  statusline = {
-    theme = 'minimal',
-    separator_style = 'round',
-  },
+  statusline = require('custom.configs.statusline'),
 }
 
 M.plugins = 'custom.plugins'

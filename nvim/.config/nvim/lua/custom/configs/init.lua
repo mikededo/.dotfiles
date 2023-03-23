@@ -4,6 +4,7 @@ local opts = {
   cmp = require('custom.configs.cmp'),
   indent_blankline = require('custom.configs.indent-blankline'),
   mason = require('custom.configs.mason'),
+  nvimtree = require('custom.configs.nvimtree'),
   telescope = require('custom.configs.telescope'),
   treesitter = require('custom.configs.treesitter'),
   user = require('custom.configs.user'),
@@ -12,6 +13,7 @@ local opts = {
 local default_plugins = {
   { 'hrsh7th/nvim-cmp', opts = opts.cmp },
   { 'lukas-reineke/indent-blankline.nvim', opts = opts.indent_blankline },
+  { 'nvim-tree/nvim-tree.lua', opts = opts.nvimtree },
   { 'nvim-telescope/telescope.nvim', opts = opts.telescope },
   { 'nvim-treesitter/nvim-treesitter', opts = opts.treesitter },
   {
