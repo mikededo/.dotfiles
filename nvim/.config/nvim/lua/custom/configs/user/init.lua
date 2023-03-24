@@ -3,9 +3,6 @@ return {
   {
     'ray-x/lsp_signature.nvim',
     lazy = false,
-    config = function()
-      require('custom.configs.user.lsp-signature')
-    end,
   },
   {
     'neovim/nvim-lspconfig',

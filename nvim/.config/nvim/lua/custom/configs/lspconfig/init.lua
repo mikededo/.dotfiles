@@ -32,7 +32,12 @@ local on_attach = function(_, bufnr)
 end
 
 -- Enable signature
-require('lsp_signature').setup()
+require('lsp_signature').setup({
+  bind = true,
+  handler_opts = { border = 'single' },
+  hint_prefix = ' ',
+  hint_scheme = 'Comment',
+})
 
 -- require configurations
 require('custom.configs.lspconfig.servers').attach(on_attach)

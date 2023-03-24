@@ -3,8 +3,10 @@ if not present then
   return {}
 end
 
+local nvchad_cmp = require('plugins.configs.cmp')
+
 local compare = cmp.config.compare
-return {
+local options = {
   sources = {
     { name = 'path' },
     { name = 'nvim_lsp', keyword_length = 3 },
@@ -25,3 +27,5 @@ return {
     },
   },
 }
+
+return vim.tbl_deep_extend('force', nvchad_cmp, options)

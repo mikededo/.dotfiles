@@ -1,4 +1,3 @@
--- local nvchad_modules = require('nvchad_ui').statusline
 local limit_str = require('custom.utils.limit_str')
 
 local git_module = function()
@@ -22,29 +21,46 @@ local git_module = function()
   return '%#St_gitIcons#' .. branch_name .. added .. changed .. removed
 end
 
+local lsp_progress_module = function()
+  if not rawget(vim, 'lsp') then
+    return ''
+  end
+
+  local config = require('core.utils').load_config().ui.statusline
+  local Lsp = vim.lsp.util.get_progress_messages()[1]
+
+  if vim.o.columns < 120 or not Lsp then
+    return ''
+  end
+
+  local msg = Lsp.message or ''
+  local percentage = Lsp.percentage or 0
+  local title = Lsp.title or ''
+  local spinners = { '⣾', '⣽', '⣻', '⢿', '⡿', '⣟', '⣯', '⣷' }
+  local ms = vim.loop.hrtime() / 1000000
+  local frame = math.floor(ms / 120) % #spinners
+  local content = string.format(
+    ' %%<%s %s %s (%s%%%%) ',
+    spinners[frame + 1],
+    title,
+    msg,
+    percentage
+  )
+
+  if config.lsprogress_len then
+    content = string.sub(content, 1, config.lsprogress_len)
+  end
+
+  return ('%#St_LspProgress#' .. content) or ''
+end
+
 return {
   theme = 'minimal',
   separator_style = 'round',
   overriden_modules = function()
     return {
       git = git_module,
-      -- TODO: Check if NvChad/ui can be used as a plugin
-      -- run = function()
-      --   local def_modules = nvchad_modules.default
-      --   return table.concat({
-      --     def_modules.mode(),
-      --     def_modules.fileInfo(),
-      --     git_module(),
-      --     '%=',
-      --     def_modules.LSP_progress(),
-      --     '%=',
-      --
-      --     def_modules.LSP_Diagnostics(),
-      --     def_modules.LSP_status() or '',
-      --     def_modules.cwd(),
-      --     def_modules.cursor_position(),
-      --   })
-      -- end,
+      LSP_progress = lsp_progress_module,
     }
   end,
 }
