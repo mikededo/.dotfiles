@@ -78,7 +78,7 @@ format = '[\[$state( $progress_current/$progress_total)\]]($style) '
 style = "yellow"
 
 [git_status]
-format = "[$modified$staged](fg:202)[$conflicted](fg:11)[$untracked](fg:4)[$deleted](fg:13)[$ahead_behind$stashed]($style)"
+format = "[$staged$modified](fg:202)[$conflicted](fg:11)[$untracked](fg:4)[$deleted](fg:13)[$ahead_behind$stashed]($style)"
 ahead = "⇡$count "
 behind = "⇣$count "
 conflicted = "~$count "
