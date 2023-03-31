@@ -18,6 +18,10 @@ alias gcan="git commit --amend --no-edit"
 alias gaa='git add --all'
 # merging
 alias gms='git merge --squash'
+# checkout
+alias gco="git checkout"
+alias gcb="git checkout -b"
+alias gc-="git checkout -"
 # remote
 alias gp='git push'
 alias gpf='git push --force-with-lease'
