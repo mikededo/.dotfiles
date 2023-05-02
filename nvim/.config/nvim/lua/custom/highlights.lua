@@ -1,4 +1,4 @@
-return {
+local highlights = {
   Normal = { fg = '#ABB2BF', bg = 'black' },
   StatusLineNC = { fg = '#ABB2BF' },
   DashboardCenter = { fg = '#ABB2BF' },
@@ -18,3 +18,9 @@ return {
   ['@constant'] = { fg = '#D19A66' },
   ['@tag.attribute'] = { fg = '#E5C07B' },
 }
+
+for _, highlight in pairs(highlights) do
+  highlight.link = ''
+end
+
+return highlights
