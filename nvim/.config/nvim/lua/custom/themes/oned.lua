@@ -53,7 +53,6 @@ M.base_16 = {
 }
 
 M.type = 'dark'
-
 vim.opt.bg = 'dark'
 
 return M

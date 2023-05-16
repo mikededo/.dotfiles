@@ -4,7 +4,7 @@ local M = {}
 
 -- Theme and colors
 M.ui = {
-  theme = 'onedommed',
+  theme = 'oned',
   transparency = false,
   hl_override = require('custom.highlights'),
   nvdash = {
