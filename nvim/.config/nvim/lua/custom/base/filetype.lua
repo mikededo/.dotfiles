@@ -29,4 +29,10 @@ vim.api.nvim_create_autocmd('FileType', {
   command = 'setlocal tabstop=4 shiftwidth=4 softtabstop=4',
 })
 
+-- Latex
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = { 'tex' },
+  command = 'setlocal textwidth=80',
+})
+
 return {}

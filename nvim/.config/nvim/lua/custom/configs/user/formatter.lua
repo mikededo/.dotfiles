@@ -51,6 +51,13 @@ local rustfmtConfig = function()
   }
 end
 
+local latexConfig = function()
+  return {
+    exe = 'latexindent',
+    args = { '-w', '-s' },
+  }
+end
+
 require('formatter').setup({
   filetype = {
     go = { goConfig },
@@ -61,6 +68,7 @@ require('formatter').setup({
     json = { prettierConfig, eslintConfig },
     rust = { rustfmtConfig },
     lua = { luaConfig },
+    tex = { latexConfig },
     typescript = { prettierConfig, eslintConfig },
     typescriptreact = { prettierConfig, eslintConfig },
     yaml = { yamlConfig },
