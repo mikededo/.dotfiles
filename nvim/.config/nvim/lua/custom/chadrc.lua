@@ -28,10 +28,11 @@ M.ui = {
     },
   },
   cmp = {
-    style = 'flat_dark',
+    style = 'atom_colored',
     selected_item_bg = 'colored',
   },
   statusline = require('custom.configs.statusline'),
+  tabufline = require('custom.configs.tabufline'),
 }
 
 M.plugins = 'custom.plugins'
