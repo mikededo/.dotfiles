@@ -21,41 +21,16 @@ local function new_hl(opts)
 end
 
 local hl = {
-  on = new_hl({ name = 'HlCurrentBufferOn', bg = '#252931', fg = '#98c379' }),
+  on = new_hl({ name = 'HlCurrentBufferOn', fg = '#98c379', bg = '#252931' }),
   off = new_hl({ name = 'HlCurrentBufferOff', fg = '#676b73', bg = '#252931' }),
-  icon = new_hl({
-    name = 'HlCurrentBufferIcon',
-    fg = '#1E222A',
-    bg = '#98c379',
-  }),
+  icon = new_hl({ name = 'HlCurrentBufferIcon', fg = '#1E222A', bg = '#98c379' }),
   icon_off = function(icon_hl)
     return new_hl({ group1 = icon_hl, group2 = 'TbLineBufOff' })
   end,
-  l_limit = new_hl({
-    name = 'TbBufLineLimitLeftHl',
-    fg = '#98c379',
-    bg = '#252931',
-  }),
-  r_limit = new_hl({
-    name = 'TbBufLineLimitRightHl',
-    fg = '#1E222A',
-    bg = '#252931',
-  }),
-  content = new_hl({
-    name = 'TbBufLineContentHl',
-    fg = '#98c379',
-    bg = '#1E222A',
-  }),
-  modified = new_hl({
-    name = 'TbBufLineBufModified',
-    bg = '#1E222A',
-    fg = '#e06c75',
-  }),
-  modified_off = new_hl({
-    name = 'TbBufLineBufOffModified',
-    bg = '#252931',
-    fg = '#e06c75',
-  }),
+  l_limit = new_hl({ name = 'TbBufLineLimitLeftHl', fg = '#98c379', bg = '#252931' }),
+  r_limit = new_hl({ name = 'TbBufLineLimitRightHl', fg = '#1E222A', bg = '#252931' }),
+  content = new_hl({ name = 'TbBufLineContentHl', fg = '#98c379', bg = '#1E222A' }),
+  modified = new_hl({ name = 'TbBufLineBufModified', fg = '#e06c75', bg = '#1E222A' }),
 }
 
 local is_buf_valid = function(bufnr)
@@ -84,40 +59,25 @@ local function add_file_info(file_name, bufnr)
   local present, devicons = pcall(require, 'nvim-web-devicons')
 
   if present then
-    local icon, icon_hl =
-      devicons.get_icon(file_name, string.match(file_name, '%a+$'))
+    local icon, icon_hl = devicons.get_icon(file_name, string.match(file_name, '%a+$'))
 
     if not icon then
       icon = '󰈚'
       icon_hl = 'DevIconDefault'
     end
 
-    icon = (
-      api.nvim_get_current_buf() == bufnr and hl.icon .. icon
-      or hl.icon_off(icon_hl) .. icon
-    )
+    icon = (api.nvim_get_current_buf() == bufnr and hl.icon .. icon or hl.icon_off(icon_hl) .. icon)
 
     for _, value in ipairs(vim.t.bufs) do
       if is_buf_valid(value) then
-        if
-          file_name == fn.fnamemodify(api.nvim_buf_get_name(value), ':t')
-          and value ~= bufnr
-        then
+        if file_name == fn.fnamemodify(api.nvim_buf_get_name(value), ':t') and value ~= bufnr then
           local other = {}
-          for match in
-            (vim.fs.normalize(api.nvim_buf_get_name(value)) .. '/'):gmatch(
-              '(.-)' .. '/'
-            )
-          do
+          for match in (vim.fs.normalize(api.nvim_buf_get_name(value)) .. '/'):gmatch('(.-)' .. '/') do
             table.insert(other, match)
           end
 
           local current = {}
-          for match in
-            (vim.fs.normalize(api.nvim_buf_get_name(bufnr)) .. '/'):gmatch(
-              '(.-)' .. '/'
-            )
-          do
+          for match in (vim.fs.normalize(api.nvim_buf_get_name(bufnr)) .. '/'):gmatch('(.-)' .. '/') do
             table.insert(current, match)
           end
 
@@ -143,13 +103,10 @@ local function add_file_info(file_name, bufnr)
 
     local maxname_len = 18
 
-    file_name = (
-      #file_name > maxname_len
-      and string.sub(file_name, 1, maxname_len) .. '...'
-    ) or file_name
-    file_name = (
-      api.nvim_get_current_buf() == bufnr and hl.content .. ' ' .. file_name
-    ) or (hl.off .. file_name)
+    file_name = (#file_name > maxname_len and string.sub(file_name, 1, maxname_len) .. '...')
+      or file_name
+    file_name = (api.nvim_get_current_buf() == bufnr and hl.content .. ' ' .. file_name)
+      or (hl.off .. file_name)
 
     return icon .. ' ' .. file_name
   end
@@ -157,17 +114,14 @@ end
 
 local function style_buff_tab(nr)
   local close_btn = '%' .. nr .. '@TbKillBuf@ 󰅙'
-  local name = (#api.nvim_buf_get_name(nr) ~= 0)
-      and fn.fnamemodify(api.nvim_buf_get_name(nr), ':t')
+  local name = (#api.nvim_buf_get_name(nr) ~= 0) and fn.fnamemodify(api.nvim_buf_get_name(nr), ':t')
     or ' No Name '
   name = '%' .. nr .. '@TbGoToBuf@' .. add_file_info(name, nr) .. '%X'
 
   -- color close btn for focused / hidden  buffers
   if nr == api.nvim_get_current_buf() then
-    close_btn = (
-      vim.bo[0].modified
-      and '%' .. nr .. '@TbKillBuf@' .. hl.modified .. ' '
-    ) or (hl.modified .. close_btn)
+    close_btn = (vim.bo[0].modified and '%' .. nr .. '@TbKillBuf@' .. hl.modified .. ' ')
+      or (hl.modified .. close_btn)
     name = hl.off
       .. ' '
       .. hl.l_limit
@@ -178,26 +132,20 @@ local function style_buff_tab(nr)
       .. hl.r_limit
       .. limit.right
   else
-    close_btn = (
-      vim.bo[nr].modified
-      and '%' .. nr .. '@TbKillBuf@' .. hl.modified_off .. ' '
-    ) or (hl.modified_off .. close_btn)
-    name = hl.off .. name .. close_btn
+    close_btn = (vim.bo[nr].modified and '%' .. nr .. '@TbKillBuf@' .. hl.off .. ' ')
+      or close_btn
+    name = hl.off .. ' ' .. name .. close_btn
   end
 
   return name .. ' '
 end
 
 return {
-  theme = 'minimal',
-  separator_style = 'round',
   overriden_modules = function()
     return {
       bufferlist = function()
         local buffers = {} -- buffersults
-        local available_space = vim.o.columns
-          - get_nvimtree_width()
-          - get_buttons_width()
+        local available_space = vim.o.columns - get_nvimtree_width() - get_buttons_width()
         local current_buf = api.nvim_get_current_buf()
         local has_current = false -- have we seen current buffer yet?
 

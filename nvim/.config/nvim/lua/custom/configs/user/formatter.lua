@@ -23,7 +23,7 @@ local luaConfig = function()
   return {
     exe = 'stylua',
     args = {
-      '--column-width 80',
+      '--column-width 100',
       '--indent-type Spaces',
       '--indent-width 2',
       '--quote-style ForceSingle',
