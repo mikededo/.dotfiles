@@ -14,6 +14,7 @@ alias gstu="git status -u"
 alias gsts="git status -s"
 # commit
 alias gcan="git commit --amend --no-edit"
+alias gca="git commit --amend"
 # staging
 alias gaa='git add --all'
 # merging
