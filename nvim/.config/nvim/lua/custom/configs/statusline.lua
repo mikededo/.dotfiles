@@ -7,9 +7,7 @@ local git_module = function()
 
   local git_status = vim.b.gitsigns_status_dict
 
-  local added = (git_status.added and git_status.added ~= 0)
-      and ('  ' .. git_status.added)
-    or ''
+  local added = (git_status.added and git_status.added ~= 0) and ('  ' .. git_status.added) or ''
   local changed = (git_status.changed and git_status.changed ~= 0)
       and ('  ' .. git_status.changed)
     or ''
@@ -39,13 +37,8 @@ local lsp_progress_module = function()
   local spinners = { '⣾', '⣽', '⣻', '⢿', '⡿', '⣟', '⣯', '⣷' }
   local ms = vim.loop.hrtime() / 1000000
   local frame = math.floor(ms / 120) % #spinners
-  local content = string.format(
-    ' %%<%s %s %s (%s%%%%) ',
-    spinners[frame + 1],
-    title,
-    msg,
-    percentage
-  )
+  local content =
+    string.format(' %%<%s %s %s (%s%%%%) ', spinners[frame + 1], title, msg, percentage)
 
   if config.lsprogress_len then
     content = string.sub(content, 1, config.lsprogress_len)

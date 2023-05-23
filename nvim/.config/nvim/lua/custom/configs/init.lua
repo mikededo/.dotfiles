@@ -23,9 +23,7 @@ local default_plugins = {
       require('mason').setup(plugin_opts)
 
       vim.api.nvim_create_user_command('MasonInstallAll', function()
-        vim.cmd(
-          'MasonInstall ' .. table.concat(opts.mason.ensure_installed, ' ')
-        )
+        vim.cmd('MasonInstall ' .. table.concat(opts.mason.ensure_installed, ' '))
       end, {})
     end,
   },

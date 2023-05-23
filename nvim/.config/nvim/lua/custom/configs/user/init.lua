@@ -35,6 +35,7 @@ return {
     end,
   },
   { 'folke/which-key.nvim', lazy = false },
+  { 'folke/noice.nvim', lazy = false },
   { 'b0o/schemastore.nvim' },
   {
     'simrat39/rust-tools.nvim',

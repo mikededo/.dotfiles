@@ -7,10 +7,7 @@ local signs = {
 
 local setup = function()
   for _, sign in ipairs(signs) do
-    vim.fn.sign_define(
-      sign.name,
-      { texthl = sign.name, text = sign.text, numhl = '' }
-    )
+    vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = '' })
   end
 
   vim.lsp.handlers['textDocument/publishDiagnostics'] =
@@ -30,17 +27,15 @@ local setup = function()
       },
     })
 
-  vim.lsp.handlers['textDocument/hover'] =
-    vim.lsp.with(vim.lsp.handlers.hover, {
-      border = 'single',
-      width = 120,
-    })
+  vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, {
+    border = 'single',
+    width = 120,
+  })
 
-  vim.lsp.handlers['textDocument/signatureHelp'] =
-    vim.lsp.with(vim.lsp.handlers.signature_help, {
-      border = 'rounded',
-      width = 100,
-    })
+  vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help, {
+    border = 'rounded',
+    width = 100,
+  })
 end
 
 return { setup = setup }
