@@ -47,9 +47,6 @@ curl -sS https://raw.githubusercontent.com/docker/cli/master/contrib/completion/
   > .config/fish/completions/docker.fish
 ```
 
-> Probably will delete `zsh` configuration or I will keep in an alternative
-> branch.
-
 ## Starship
 
 I have been using powerlevel10k to customize my `zsh`, it was very complex to
