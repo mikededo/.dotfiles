@@ -6,9 +6,7 @@
 
 Personal dotfiles to keep the important configurations whenever I change the
 OS. Currently using macOs devices, therefore the `main` branch contains the
-configurations for such devices. Alternatively, you can find:
-
-- `linux` configuration in the `linux` branch (should work for all distros).
+configurations for such devices.
 
 > Note that the other branches may not be as maintained nor up to date as the
 > `main` branch.
@@ -67,17 +65,17 @@ deal with formmating and the required configurations for the LSP server.
 
 Currently, the LSP is set up for:
 
-alias gaa='git add --all'
 - Bash (it has a very simple completion).
 - Docker
 - Go
 - Rust
-- JavaScript and Typescript
-- Yaml, JSON
+- JavaScript, Typescript and TailwindCSS
+- Yaml (including k8s), JSON
 
 It includes diagnostics as well as formatting for each LSP. All required LSP are
 installed through the Mason plugin, meaning they will all be installed on
-lauching `PackerSync`. Same happens for TreeSitter language highlightings.
+lauching `MasonInstallAll`. Same for TreeSitter language highlightings, which
+has defined the required languages.
 
 > You can modify the formatting options in the 
 > [`formatter.lua`](./nvim/.config/nvim/lua/custom/plugins/user/formatter.lua).
