@@ -11,6 +11,8 @@ local rust = require(serverPath('rust'))
 local ts = require(serverPath('typescript'))
 local yaml = require(serverPath('yaml'))
 
+local latex = require(serverPath('latex')) -- TODO: remove after master
+
 return {
   attach = function(on_attach)
     bash.setup(on_attach)
@@ -23,5 +25,6 @@ return {
     ts.setup_tailwindcss(on_attach)
     ts.setup_tsserver(on_attach)
     yaml.setup(on_attach)
+    latex.setup(on_attach)
   end,
 }
