@@ -1,4 +1,5 @@
 # Fast access to common directories
+alias work="cd $HOME/Documents/work"
 alias jf="cd $HOME/Documents/work/jobs-frontend"
 alias crate="cd $HOME/Documents/work/crate"
 
