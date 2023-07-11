@@ -3,6 +3,9 @@ alias work="cd $HOME/Documents/work"
 alias jf="cd $HOME/Documents/work/jobs-frontend"
 alias crate="cd $HOME/Documents/work/crate"
 
+# crate
+alias sync-references="yarn monorepo sync-project-references && gaa && fix jobs 'run `yarn sync-project-references`' && gp"
+
 # git
 function wclone
   set repo "git@source.xing.com:$argv[1].git"
