@@ -1,5 +1,4 @@
 # Configurations
-alias zshconfig="vim $HOME/.config/zsh/.zshrc"
 alias fishconfig="vim $HOME/.config/fish/config.fish"
 alias starshipconfig="vim $HOME/.config/starship.toml"
 alias chadrc="vim $HOME/.config/nvim/lua/custom/chadrc.lua"
@@ -7,7 +6,6 @@ alias gitconfig="vim $HOME/.gitconfig"
 alias kittyconfig="vim $HOME/.config/kitty/kitty.conf"
 alias dotman="cd $HOME/.dotfiles"
 alias nvimdir="cd $HOME/.dotfiles/nvim/.config/nvim/lua/custom"
-alias updzsh="exec zsh"
 alias updfish="exec fish"
 
 # Alias files

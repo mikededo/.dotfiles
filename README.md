@@ -5,7 +5,7 @@
 <h1 align="center">~/.dotfiles</h1>
 
 Personal dotfiles to keep the important configurations whenever I change the
-OS. Currently using macOs devices, therefore the `main` branch contains the
+OS. Currently, using MacOs devices, therefore the `main` branch contains the
 configurations for such devices.
 
 > Note that the other branches may not be as maintained nor up to date as the
@@ -14,8 +14,8 @@ configurations for such devices.
 ## Set up
 
 You can run the `./setup.sh` script which will initialise the OS by adding the
-moving the pacakges. It uses `stow`, therefore make sure it is installed. It
-requires other packages, such as `zsh`, `git`, `nvim` and `curl`. In case one of
+moving the packages. It uses `stow`, therefore make sure it is installed. It
+requires other packages, such as `git`, `nvim` and `curl`. In case one of
 the dependencies it is not found, the execution will stop.  
 It installs `nvm` as a `node` and `npm` version manager, but it can easily be
 removed by removing the `$HOME/.nvm` folder.
@@ -25,10 +25,6 @@ provide a more customizable installation.
 
 ## fish && kitty
 
-Even though there's the `zsh` configuration available, the main shell that I use
-is [fish](fishshell.com). Since I have switched from `zsh`, I have been ejoying
-it more than any other. In combination with `kitty`, I consider to have a great,
-fast, customizable and performant workflow environment.  
 As well as installing `fish`, the `./setup.sh` script will also install the
 [`fisher`](https://git.io/fisher) plugin manager. With it, I recommend
 installing the following plugins:
@@ -47,10 +43,8 @@ curl -sS https://raw.githubusercontent.com/docker/cli/master/contrib/completion/
 
 ## Starship
 
-I have been using powerlevel10k to customize my `zsh`, it was very complex to
-port to `fish`. Using `starship`, I have a shared prompt configuration. Since it
-is exclusively for the prompt, it does not include any sort of plugin
-configuration.
+Using `starship`, I have a shared prompt configuration. Since it is exclusively
+for the prompt, it does not include any sort of plugin configuration.
 
 > Configuration can be found in `./starship/.config/starship.toml`.
 
@@ -58,7 +52,7 @@ configuration.
 
 The Neovim configuration is built upon
 [`NvChad`](https://github.com/NvChad/NvChad). It adds a couple of plugins to
-deal with formmating and the required configurations for the LSP server.
+deal with formating and the required configurations for the LSP server.
 
 > You can find and modify LSP configurations in the 
 > [NvChad custom config folder](./nvim/.config/nvim/lua/custom/plugins).
@@ -74,7 +68,7 @@ Currently, the LSP is set up for:
 
 It includes diagnostics as well as formatting for each LSP. All required LSP are
 installed through the Mason plugin, meaning they will all be installed on
-lauching `MasonInstallAll`. Same for TreeSitter language highlightings, which
+launching `MasonInstallAll`. Same for TreeSitter language highlights, which
 has defined the required languages.
 
 > You can modify the formatting options in the 

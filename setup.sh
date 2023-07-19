@@ -1,7 +1,6 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env bash
 
 # Check mandatory applications
-[ ! -x "$(command -v zsh)" ] && echo "ERROR: zsh is not installed in the system" && exit -1
 [ ! -x "$(command -v fish)" ] && echo "ERROR: fish is not installed in the system" && exit -1
 [ ! -x "$(command -v git)" ] && echo "ERROR: git is not installed in the system" && exit -1
 [ ! -x "$(command -v nvim)" ] && echo "ERROR: nvim is not installed in the system" && exit -1
@@ -13,7 +12,6 @@ packages=(
   git
   kitty
   nvim
-  zsh
   fish
   starship
 )
@@ -45,10 +43,6 @@ done
 
 # Additional dependencies
 echo "> Installing additional dependencies"
-
-# Add fisher
-# Figure out why it does not work
-# [ ! -f ~/.config/fish/functions/tide.zsh ] && (curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher)
 
 echo "Installing volta"
 [ ! -d $HOME/.volta ] && curl https://get.volta.sh | bash
