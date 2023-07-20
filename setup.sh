@@ -28,10 +28,6 @@ git_clone() {
 	git clone "https://github.com/$1" $2
 }
 
-# echo "> Adding LazyVim\n"
-#
-# [ ! -d $HOME/.config/nvim ] && (git_clone LazyVim/LazyVim $HOME/.config/nvim --depth 1)
-
 echo "> Stowing all packages\n"
 
 # Install everything
