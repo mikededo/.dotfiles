@@ -30,6 +30,14 @@ return {
         bind_to_cwd = false,
         follow_current_file = { enabled = true },
         use_libuv_file_watcher = true,
+        filtered_items = {
+          visible = true,
+          hide_dotfiles = false,
+          hide_gitignore = false,
+          never_show = {
+            ".DS_Store",
+          },
+        },
       },
       window = {
         mappings = {
@@ -38,7 +46,7 @@ return {
       },
       default_component_configs = {
         indent = {
-          with_expanders = true, -- if nil and file nesting is enabled, will enable expanders
+          with_expanders = true,
           expander_collapsed = "",
           expander_expanded = "",
           expander_highlight = "NeoTreeExpander",
@@ -55,14 +63,6 @@ return {
             unstaged = "●",
             staged = "✓",
             conflict = "◎",
-          },
-        },
-        filesystem = {
-          filtered_items = true,
-          hide_dotfiles = false,
-          hide_gitignore = false,
-          never_show = {
-            ".DS_Store",
           },
         },
       },

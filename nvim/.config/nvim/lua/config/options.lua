@@ -3,6 +3,7 @@ vim.cmd("set relativenumber")
 vim.cmd("set incsearch")
 vim.cmd("set noshowmode")
 vim.cmd("set tabstop=4")
+vim.cmd("set wrap")
 vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
 vim.o.foldcolumn = "1"
 
