@@ -6,9 +6,9 @@ alias home="cd $HOME"
 alias :q="exit"
 
 # folders
-alias docs="~/Documents/"
-alias dwn="~/Downloads/"
-alias projects="~/Documents/personal/projects/"
+alias docs="cd ~/Documents/"
+alias dwn="cd ~/Downloads/"
+alias projects="cd ~/Documents/personal/projects/"
 
 # file manipulation
 alias rmd="rm -rf" # Lazy remove files
