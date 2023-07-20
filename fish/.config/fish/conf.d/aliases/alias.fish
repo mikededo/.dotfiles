@@ -1,17 +1,17 @@
 # general
-alias sudo="sudo"                   # Make sudo not skip alias
-alias vim="nvim"                    # Open nvim over vim
-alias n="nvim"                    # Open nvim over vim
+alias sudo="sudo" # Make sudo not skip alias
+alias vim="nvim" # Open nvim over vim
+alias n="nvim" # Open nvim over vim
 alias home="cd $HOME"
 alias :q="exit"
 
 # folders
-alias docs="~/Documents"
-alias dwn="~/Downloads"
-alias projects="~/Documents/personal/projects"
+alias docs="~/Documents/"
+alias dwn="~/Downloads/"
+alias projects="~/Documents/personal/projects/"
 
 # file manipulation
-alias rmd="rm -rf"                  # Lazy remove files
+alias rmd="rm -rf" # Lazy remove files
 alias rmds="find . -name .DS_Store | xargs rm"
 
 # avoids having to keep entering the passphrase to sign the commits
