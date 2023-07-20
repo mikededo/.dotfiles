@@ -9,36 +9,36 @@
 
 # Packages to be installed
 packages=(
-  git
-  kitty
-  nvim
-  fish
-  starship
+	git
+	kitty
+	nvim
+	fish
+	starship
 )
 
 # Run the stow command
 stow_it() {
-  package=$1
+	package=$1
 
-  stow -vR ${package} --ignore='(^|\W)\.gitkeep($|\W)' --ignore='(^|\W).DS_Store($|\W)'
+	stow -vR ${package} --ignore='(^|\W)\.gitkeep($|\W)' --ignore='(^|\W).DS_Store($|\W)'
 }
 
 # git clone helper
 git_clone() {
-  git clone "https://github.com/$1" $2
+	git clone "https://github.com/$1" $2
 }
 
-echo "> Adding NvChad\n"
-
-[ ! -d $HOME/.config/nvim ] && git_clone NvChad/NvChad $HOME/.config/nvim --depth 1
+# echo "> Adding LazyVim\n"
+#
+# [ ! -d $HOME/.config/nvim ] && (git_clone LazyVim/LazyVim $HOME/.config/nvim --depth 1)
 
 echo "> Stowing all packages\n"
 
 # Install everything
 for package in ${packages[@]}; do
-  echo "- Stowing ""$package""..."
-  stow_it $package
-  echo
+	echo "- Stowing ""$package""..."
+	stow_it $package
+	echo
 done
 
 # Additional dependencies
@@ -49,4 +49,3 @@ echo "Installing volta"
 echo "volta installed"
 
 echo "\n> Set up completed 🚀"
-
