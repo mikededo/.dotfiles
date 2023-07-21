@@ -1,38 +1,36 @@
 return {
-  "nvim-lualine/lualine.nvim",
+  'nvim-lualine/lualine.nvim',
   dependencies = {
-    "nvim-tree/nvim-web-devicons",
-    "linrongbin16/lsp-progress.nvim",
+    'nvim-tree/nvim-web-devicons',
+    'linrongbin16/lsp-progress.nvim',
   },
   opts = function()
-    local icons = require("lazyvim.config").icons
+    local icons = require('lazyvim.config').icons
 
     local function fg(name)
       return function()
         ---@type {foreground?:number}?
         local hl = vim.api.nvim_get_hl_by_name(name, true)
-        return hl
-          and hl.foreground
-          and { fg = string.format("#%06x", hl.foreground) }
+        return hl and hl.foreground and { fg = string.format('#%06x', hl.foreground) }
       end
     end
 
     return {
       options = {
         icons_enabled = true,
-        theme = "onedark",
-        component_separators = { left = "", right = "" },
-        section_separators = { left = "", right = "" },
-        disabled_filetypes = { "alpha", "dashboard", "lazy " },
+        theme = 'onedark',
+        component_separators = { left = '', right = '' },
+        section_separators = { left = '', right = '' },
+        disabled_filetypes = { 'alpha', 'dashboard', 'lazy ' },
         always_divide_middle = true,
         globalstatus = true,
       },
       sections = {
-        lualine_a = { "mode" },
-        lualine_b = { "branch" },
+        lualine_a = { 'mode' },
+        lualine_b = { 'branch' },
         lualine_c = {
           {
-            "diagnostics",
+            'diagnostics',
             symbols = {
               error = icons.diagnostics.Error,
               warn = icons.diagnostics.Warn,
@@ -41,15 +39,15 @@ return {
             },
           },
           {
-            "filetype",
+            'filetype',
             icon_only = true,
-            separator = "",
+            separator = '',
             padding = { left = 1, right = 0 },
           },
           {
-            "filename",
+            'filename',
             path = 1,
-            symbols = { modified = "  ", readonly = "", unnamed = "" },
+            symbols = { modified = '  ', readonly = '', unnamed = '' },
           },
         -- stylua: ignore
         {
@@ -58,34 +56,32 @@ return {
         },
         },
         lualine_x = {
-          { require("lsp-progress").progress },
+          { require('lsp-progress').progress },
           {
             function()
-              return require("noice").api.status.command.get()
+              return require('noice').api.status.command.get()
             end,
             cond = function()
-              return package.loaded["noice"]
-                and require("noice").api.status.command.has()
+              return package.loaded['noice'] and require('noice').api.status.command.has()
             end,
-            color = fg("Statement"),
+            color = fg('Statement'),
           },
           {
             function()
-              return require("noice").api.status.mode.get()
+              return require('noice').api.status.mode.get()
             end,
             cond = function()
-              return package.loaded["noice"]
-                and require("noice").api.status.mode.has()
+              return package.loaded['noice'] and require('noice').api.status.mode.has()
             end,
-            color = fg("Constant"),
+            color = fg('Constant'),
           },
           {
-            require("lazy.status").updates,
-            cond = require("lazy.status").has_updates,
-            color = fg("Special"),
+            require('lazy.status').updates,
+            cond = require('lazy.status').has_updates,
+            color = fg('Special'),
           },
           {
-            "diff",
+            'diff',
             symbols = {
               added = icons.git.added,
               modified = icons.git.modified,
@@ -94,25 +90,25 @@ return {
           },
         },
         lualine_y = {
-          { "progress", separator = "", padding = { left = 1, right = 0 } },
-          { "location", padding = { left = 0, right = 1 } },
+          { 'progress', separator = '', padding = { left = 1, right = 0 } },
+          { 'location', padding = { left = 0, right = 1 } },
         },
         lualine_z = {
           function()
-            return " " .. os.date("%R")
+            return ' ' .. os.date('%R')
           end,
         },
       },
       inactive_sections = {
         lualine_a = {},
         lualine_b = {},
-        lualine_c = { "filename" },
-        lualine_x = { "location" },
+        lualine_c = { 'filename' },
+        lualine_x = { 'location' },
         lualine_y = {},
         lualine_z = {},
       },
       tabline = {},
-      extensions = { "neo-tree" },
+      extensions = { 'neo-tree' },
     }
   end,
 }

@@ -1,31 +1,28 @@
 return {
   {
-    "akinsho/bufferline.nvim",
+    'akinsho/bufferline.nvim',
     opts = {
       options = {
-        separator_style = "thick",
+        separator_style = 'thick',
       },
     },
     keys = {
       {
-        "<Tab>",
-        ":BufferLineCycleNext<CR>",
-        { desc = "Next buffer" },
+        '<Tab>',
+        ':BufferLineCycleNext<CR>',
+        { desc = 'Next buffer' },
       },
       {
-        "<S-Tab>",
-        ":BufferLineCyclePrev<CR>",
-        { desc = "Prev buffer" },
+        '<S-Tab>',
+        ':BufferLineCyclePrev<CR>',
+        { desc = 'Prev buffer' },
       },
       {
-        "<leader>x",
+        '<leader>x',
         function()
-          require("mini.bufremove").delete(
-            vim.api.nvim_get_current_buf(),
-            false
-          )
+          require('mini.bufremove').delete(vim.api.nvim_get_current_buf(), false)
         end,
-        { desc = "Delete current buffer" },
+        { desc = 'Delete current buffer' },
       },
     },
   },

@@ -1,7 +1,7 @@
 -- Tailwind CSS
 return {
   {
-    "neovim/nvim-lspconfig",
+    'neovim/nvim-lspconfig',
     opts = {
       servers = {
         tailwindcss = {},
@@ -9,7 +9,7 @@ return {
     },
   },
   {
-    "NvChad/nvim-colorizer.lua",
+    'NvChad/nvim-colorizer.lua',
     cond = vim.g.vscode == nil,
     opts = {
       user_default_options = {
@@ -17,9 +17,9 @@ return {
       },
     },
     {
-      "hrsh7th/nvim-cmp",
+      'hrsh7th/nvim-cmp',
       dependencies = {
-        { "roobert/tailwindcss-colorizer-cmp.nvim", config = true },
+        { 'roobert/tailwindcss-colorizer-cmp.nvim', config = true },
       },
       cond = vim.g.vscode == nil,
       opts = function(_, opts)
@@ -27,19 +27,19 @@ return {
         local format_kinds = opts.formatting.format
         opts.formatting.format = function(entry, item)
           format_kinds(entry, item) -- add icons
-          return require("tailwindcss-colorizer-cmp").formatter(entry, item)
+          return require('tailwindcss-colorizer-cmp').formatter(entry, item)
         end
       end,
     },
-    "laytan/tailwind-sorter.nvim",
+    'laytan/tailwind-sorter.nvim',
     dependencies = {
-      "nvim-treesitter/nvim-treesitter",
-      "nvim-lua/plenary.nvim",
+      'nvim-treesitter/nvim-treesitter',
+      'nvim-lua/plenary.nvim',
     },
-    build = "cd formatter && npm i && npm run build",
+    build = 'cd formatter && npm i && npm run build',
     config = {
       on_save_enabled = true,
-      on_save_pattern = { "*.html", "*.jsx", "*.tsx", "*.astro", "*.svelte" },
+      on_save_pattern = { '*.html', '*.jsx', '*.tsx', '*.astro', '*.svelte' },
     },
   },
 }

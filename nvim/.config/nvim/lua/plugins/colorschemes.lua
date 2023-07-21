@@ -1,7 +1,7 @@
 return {
-  { "mikededo/onenord.nvim" },
+  { 'mikededo/onenord.nvim' },
   {
-    "LazyVim/LazyVim",
-    opts = { colorscheme = "onenord" },
+    'LazyVim/LazyVim',
+    opts = { colorscheme = 'onenord' },
   },
 }
