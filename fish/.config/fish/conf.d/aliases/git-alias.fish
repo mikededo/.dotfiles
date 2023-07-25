@@ -23,10 +23,16 @@ alias gms='git merge --squash'
 alias gco="git checkout"
 alias gcb="git checkout -b"
 alias gc-="git checkout -"
+# rebase
+alias grem="git rebase main"
+alias gremm="git rebase master"
+alias grea="git rebase --abort"
+alias grec="git rebase --continue"
 # remote
 alias gp='git push'
 alias gpf='git push --force-with-lease'
 alias gf='git fetch'
+alias grpo='git remote prune origin'
 function gpsup
   git push --set-upstream origin $(_current_branch)
 end

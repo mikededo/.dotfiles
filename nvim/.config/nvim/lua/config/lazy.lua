@@ -28,6 +28,7 @@ require('lazy').setup({
   },
   install = { colorscheme = { 'tokyonight', 'habamax' } },
   checker = { enabled = true }, -- automatically check for plugin updates
+  keys = { { '<S-h>', false }, { '<S-l>', false } },
   performance = {
     rtp = {
       -- disable some rtp plugins

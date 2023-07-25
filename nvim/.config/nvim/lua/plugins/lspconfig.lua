@@ -33,7 +33,6 @@ return {
         cssls = {},
         cssmodules_ls = {},
         diagnosticls = {},
-        emmet_ls = {},
         graphql = {},
         html = {},
         jsonls = {},

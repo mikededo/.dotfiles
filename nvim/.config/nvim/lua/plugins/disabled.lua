@@ -4,10 +4,11 @@ local function disable(name)
 end
 
 return {
-  -- disable tokyonight
-  disable('folke/tokyonight.nvim'),
   disable('catppuccin/nvim'),
-  disable('folke/flash.nvim'),
   disable('echasnovski/mini.indentscope'),
+  disable('folke/flash.nvim'),
+  disable('folke/tokyonight.nvim'),
+  -- disable('L3MON4D3/LuaSnip'),
+  -- disable('rafamadriz/friendly-snippets'),
   disable('rcarriga/nvim-notify'),
 }

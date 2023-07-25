@@ -15,8 +15,21 @@ return {
       { '<leader>ss', false, desc = 'Goto Symbol' },
       { '<leader>sS', false },
       { '<leader>uC', false, desc = 'Colorscheme with preview' },
+      { '<leader>x', false, desc = 'Document Diagnostics (Trouble)' },
+      { '<leader>xX', false, desc = 'Workspace Diagnostics (Trouble)' },
       -- added/updated mappings
-      { '<leader>fw', Util.telescope('live_grep'), desc = 'Find word' },
+      { '<leader>ff', '<cmd>Telescope find_files<CR>', desc = 'Find files' },
+      { '<leader>fw', '<cmd>Telescope live_grep<CR>', desc = 'Find word' },
+      {
+        '<leader>tx',
+        '<cmd>TroubleToggle document_diagnostics<cr>',
+        desc = 'Document Diagnostics (Trouble)',
+      },
+      {
+        '<leader>tX',
+        '<cmd>TroubleToggle workspace_diagnostics<cr>',
+        desc = 'Workspace Diagnostics (Trouble)',
+      },
       {
         '<leader>dt',
         '<cmd>Telescope diagnostics bufnr=0<cr>',

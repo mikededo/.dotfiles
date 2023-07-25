@@ -19,6 +19,7 @@ return {
       }
     end,
     opts = {
+      popup_border_style = 'NC',
       sources = { 'filesystem', 'buffers', 'git_status', 'document_symbols' },
       hide_root_node = true,
       open_files_do_not_replace_types = {
@@ -43,6 +44,24 @@ return {
       window = {
         mappings = {
           ['<space>'] = 'none',
+          ['s'] = 'none', -- disable open split
+          ['S'] = 'none', -- disable open vsplit
+          ['w'] = 'none', -- disable open with window picker
+          ['y'] = function(state)
+            local node = state.tree:get_node()
+            vim.fn.setreg('"', node.name)
+            vim.fn.setreg('1', node.name)
+            vim.fn.setreg('+', node.name)
+          end,
+          ['Y'] = function(state)
+            -- Copy path
+            local node = state.tree:get_node()
+            vim.fn.setreg('"', node.path)
+            vim.fn.setreg('1', node.path)
+            vim.fn.setreg('+', node.path)
+          end,
+          ['<C-x>'] = 'split_with_window_picker',
+          ['<C-v>'] = 'vsplit_with_window_picker',
         },
       },
       default_component_configs = {
