@@ -3,7 +3,8 @@ function sort_file()
   vim.api.nvim_command('sort')
 end
 
--- Set mappings below
+vim.api.nvim_set_keymap('n', '<S-h>', '', {})
+vim.api.nvim_set_keymap('n', '<S-l>', '', {})
 vim.keymap.set( -- up on wrapped line
   'n',
   'k',

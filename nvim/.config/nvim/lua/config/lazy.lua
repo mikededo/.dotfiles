@@ -11,9 +11,10 @@ require('lazy').setup({
     -- add LazyVim and import its plugins
     { 'LazyVim/LazyVim', import = 'lazyvim.plugins' },
     -- import any extras modules here
-    -- { import = "lazyvim.plugins.extras.lang.typescript" },
-    -- { import = "lazyvim.plugins.extras.lang.json" },
-    -- { import = "lazyvim.plugins.extras.ui.mini-animate" },
+    { import = 'lazyvim.plugins.extras.lang.typescript' },
+    { import = 'lazyvim.plugins.extras.lang.json' },
+    { import = 'lazyvim.plugins.extras.lang.tailwind' },
+    { import = 'lazyvim.plugins.extras.linting.eslint' },
     -- import/override with your plugins
     { import = 'plugins' },
   },
@@ -28,7 +29,6 @@ require('lazy').setup({
   },
   install = { colorscheme = { 'tokyonight', 'habamax' } },
   checker = { enabled = true }, -- automatically check for plugin updates
-  keys = { { '<S-h>', false }, { '<S-l>', false } },
   performance = {
     rtp = {
       -- disable some rtp plugins
