@@ -4,7 +4,19 @@ alias jf="cd $HOME/Documents/work/jobs-frontend"
 alias crate="cd $HOME/Documents/work/crate"
 
 # crate
-alias sync-references="yarn monorepo sync-project-references && gaa && fix jobs 'run `yarn sync-project-references`' && gp"
+alias sync-references="yarn monorepo sync-project-references"
+alias sync-ref-push="sync-references && gaa && fix jobs 'run `yarn sync-project-references`' && gp"
+alias gen-graphql="yarn monorepo graphql-types-generator packages/jobs/graphql"
+function translations
+  yarn monorepo fetch-translations $argv[1]
+end
+function test-components
+  yarn monorepo test "xinglets/jobs/components/$argv[1]"
+end
+alias test-hooks="yarn monorepo test xinglets/jobs/hooks"
+function test-domain
+  yarn monorepo test "xinglets/jobs/domain/$argv[1]"
+end
 
 # git
 function wclone
