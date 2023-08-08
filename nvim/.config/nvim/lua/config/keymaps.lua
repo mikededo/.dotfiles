@@ -1,6 +1,8 @@
-function sort_file()
+---@param all_file boolean
+function sort_selection()
   vim.api.nvim_command('normal! ggVG')
   vim.api.nvim_command('sort')
+  vim.api.nvim_command('w')
 end
 
 vim.api.nvim_set_keymap('n', '<S-h>', '', {})
@@ -20,7 +22,7 @@ vim.keymap.set( -- down on wrapped line
 vim.api.nvim_set_keymap( -- sort file
   'n',
   '<leader>s',
-  ':lua sort_file()<CR>',
+  ':lua sort_selection(true)<CR>',
   { noremap = true, silent = true }
 )
 

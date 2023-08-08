@@ -49,6 +49,7 @@ return {
           ['w'] = 'none', -- disable open with window picker
           ['y'] = function(state)
             local node = state.tree:get_node()
+            print('Yanked: ' .. node.name)
             vim.fn.setreg('"', node.name)
             vim.fn.setreg('1', node.name)
             vim.fn.setreg('+', node.name)
@@ -56,6 +57,7 @@ return {
           ['Y'] = function(state)
             -- Copy path
             local node = state.tree:get_node()
+            print('Yanked: ' .. node.path)
             vim.fn.setreg('"', node.path)
             vim.fn.setreg('1', node.path)
             vim.fn.setreg('+', node.path)
