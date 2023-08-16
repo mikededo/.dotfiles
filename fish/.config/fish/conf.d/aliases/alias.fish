@@ -10,6 +10,7 @@ alias docs="cd ~/Documents"
 alias dwn="cd ~/Downloads"
 alias projects="cd ~/Documents/personal/projects"
 alias os="cd ~/Documents/personal/open-source"
+alias sqci="cd ~/Documents/personal/projects/squared-ci"
 
 # file manipulation
 alias rmd="rm -rf" # Lazy remove files

@@ -2,6 +2,7 @@
 alias work="cd $HOME/Documents/work"
 alias jf="cd $HOME/Documents/work/jobs-frontend"
 alias crate="cd $HOME/Documents/work/crate"
+alias brewery="cd $HOME/Documents/work/brewery"
 
 # crate
 alias sync-references="yarn monorepo sync-project-references"
