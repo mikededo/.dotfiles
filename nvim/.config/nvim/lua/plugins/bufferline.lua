@@ -18,7 +18,7 @@ return {
         { desc = 'Prev buffer' },
       },
       {
-        '<leader>x',
+        '<leader>xx',
         function()
           require('mini.bufremove').delete(vim.api.nvim_get_current_buf(), false)
         end,

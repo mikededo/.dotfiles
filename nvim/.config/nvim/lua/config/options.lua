@@ -27,6 +27,11 @@ vim.api.nvim_create_autocmd('FileType', {
   },
   command = 'setlocal tabstop=2 shiftwidth=2 softtabstop=2',
 })
+-- for .releaserc file name, set filetype to json
+vim.api.nvim_create_autocmd('BufNewFile,BufRead,FileType', {
+  pattern = { '.releaserc' },
+  command = 'set filetype=json',
+})
 
 -- Markdown
 vim.api.nvim_create_autocmd('FileType', {
