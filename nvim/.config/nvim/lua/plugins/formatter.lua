@@ -32,6 +32,10 @@ local luaConfig = function()
   }
 end
 
+local rustConfig = function()
+  return { exe = 'rustfmt', args = { '--edition 2021' }, stdin = true }
+end
+
 local yamlConfig = function()
   return { exe = 'yamlfmt' }
 end
@@ -52,6 +56,7 @@ return {
     event = 'VeryLazy',
     opts = {
       filetype = {
+        css = { prettierConfig, eslintConfig },
         graphql = { prettierConfig },
         html = { prettierConfig, eslintConfig },
         javascript = { prettierConfig, eslintConfig },
@@ -61,6 +66,7 @@ return {
         typescript = { prettierConfig, eslintConfig },
         typescriptreact = { prettierConfig, eslintConfig },
         yaml = { yamlConfig },
+        rust = { rustConfig },
         ['yaml.docker-compose'] = { yamlConfig },
       },
     },

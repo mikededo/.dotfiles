@@ -18,8 +18,7 @@ return {
       local luasnip = require('luasnip')
       local cmp = require('cmp')
       opts.sources = cmp.config.sources(vim.list_extend(opts.sources, {
-        { name = 'copilot' },
-        { name = 'npm', keyword_length = 4 },
+        -- Add additional sources such as copilot
       }))
 
       opts.mapping = vim.tbl_extend('force', opts.mapping, {
