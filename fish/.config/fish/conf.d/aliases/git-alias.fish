@@ -7,6 +7,7 @@ alias master='git checkout master && gl'
 alias list-branches='git branch | xargs -I {} echo {}'
 alias lb='list-branches'
 alias H0='HUSKY=0' # disable husky from running prehooks
+alias clear-merged="git branch --merged master | grep -v master | xargs -I {} git branch -D {}"
 
 # status
 alias gst="git status"
@@ -36,6 +37,7 @@ alias grpo='git remote prune origin'
 function gpsup
   git push --set-upstream origin $(_current_branch)
 end
+alias updrem='git fetch && git rebase origin/main'
 # local
 alias gl='git pull'
 # cherry-pick
