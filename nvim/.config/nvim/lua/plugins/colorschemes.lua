@@ -2,6 +2,6 @@ return {
   { 'mikededo/onenord.nvim' },
   {
     'LazyVim/LazyVim',
-    opts = { colorscheme = 'onenord' },
+    opts = { colorscheme = 'catppuccin-macchiato' },
   },
 }

@@ -7,19 +7,17 @@ return {
     },
     ---@param opts cmp.ConfigSchema
     opts = function(_, opts)
+      local lspkind = require('lspkind')
       local has_words_before = function()
         unpack = unpack or table.unpack
         local line, col = unpack(vim.api.nvim_win_get_cursor(0))
         return col ~= 0
-          and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match('%s')
+            and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match('%s')
             == nil
       end
 
       local luasnip = require('luasnip')
       local cmp = require('cmp')
-      opts.sources = cmp.config.sources(vim.list_extend(opts.sources, {
-        -- Add additional sources such as copilot
-      }))
 
       opts.mapping = vim.tbl_extend('force', opts.mapping, {
         ['<Tab>'] = cmp.mapping(function(fallback)
@@ -43,6 +41,23 @@ return {
           end
         end, { 'i', 's' }),
       })
+
+      ---@diagnostic disable-next-line: missing-fields
+      opts.formatting = {
+        fields = { 'kind', 'abbr', 'menu' },
+        format = function(entry, vim_item)
+          local kind = lspkind.cmp_format({
+            mode = 'symbol_text',
+            maxwidth = 50,
+          })(entry, vim_item)
+
+          local strings = vim.split(kind.kind, '%s', { trimempty = true })
+          kind.kind = ' ' .. strings[1] .. ' '
+          kind.menu = '    (' .. strings[2] .. ')'
+
+          return kind
+        end,
+      }
     end,
   },
 }

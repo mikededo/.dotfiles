@@ -4,13 +4,12 @@ local function disable(name)
 end
 
 return {
-  disable('catppuccin/nvim'),
+  -- disable('catppuccin/nvim'),
   disable('echasnovski/mini.indentscope'),
   disable('folke/flash.nvim'),
-  -- disable('folke/tokyonight.nvim'),
+  disable('folke/persistence.nvim'),
   disable('zbirenbaum/copilot-cmp'),
   disable('zbirenbaum/copilot.lua'),
-  -- disable('L3MON4D3/LuaSnip'),
-  -- disable('rafamadriz/friendly-snippets'),
   disable('rcarriga/nvim-notify'),
+  disable('SmiteshP/nvim-navic'),
 }

@@ -1,19 +1,19 @@
 return {
-  'jose-elias-alvarez/null-ls.nvim',
+  'nvimtools/none-ls.nvim',
   config = function()
-    local null_ls = require('null-ls')
-    null_ls.setup({
+    local nls = require('null-ls')
+    nls.setup({
       debug = false,
       debounce = 50,
       save_after_format = false,
       sources = {
-        null_ls.builtins.code_actions.eslint_d,
-        null_ls.builtins.diagnostics.eslint_d,
-        null_ls.builtins.diagnostics.fish,
-        null_ls.builtins.diagnostics.stylelint,
-        null_ls.builtins.diagnostics.tsc,
-        null_ls.builtins.formatting.fish_indent,
-        null_ls.builtins.formatting.prettierd.with({
+        nls.builtins.code_actions.eslint_d,
+        nls.builtins.diagnostics.eslint_d,
+        nls.builtins.diagnostics.fish,
+        nls.builtins.diagnostics.stylelint,
+        nls.builtins.diagnostics.tsc,
+        nls.builtins.formatting.fish_indent,
+        nls.builtins.formatting.prettierd.with({
           filetypes = {
             'astro',
             'css',
@@ -31,11 +31,11 @@ return {
             'yaml',
           },
         }),
-        null_ls.builtins.formatting.shfmt,
-        null_ls.builtins.formatting.stylelint,
-        null_ls.builtins.formatting.stylua,
-        null_ls.builtins.formatting.trim_newlines,
-        null_ls.builtins.formatting.trim_whitespace,
+        nls.builtins.formatting.shfmt,
+        nls.builtins.formatting.stylelint,
+        nls.builtins.formatting.stylua,
+        nls.builtins.formatting.trim_newlines,
+        nls.builtins.formatting.trim_whitespace,
       },
       root_dir = require('null-ls.utils').root_pattern(
         'package.json',

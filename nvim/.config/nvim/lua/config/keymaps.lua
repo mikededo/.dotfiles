@@ -1,4 +1,3 @@
----@param all_file boolean
 function sort_selection()
   vim.api.nvim_command('normal! ggVG')
   vim.api.nvim_command('sort')

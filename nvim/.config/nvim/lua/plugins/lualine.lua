@@ -2,7 +2,6 @@ return {
   'nvim-lualine/lualine.nvim',
   dependencies = {
     'nvim-tree/nvim-web-devicons',
-    'linrongbin16/lsp-progress.nvim',
   },
   opts = function()
     local icons = require('lazyvim.config').icons
@@ -49,14 +48,13 @@ return {
             path = 1,
             symbols = { modified = '  ', readonly = '', unnamed = '' },
           },
-        -- stylua: ignore
-        {
-          function() return require("nvim-navic").get_location() end,
-          cond = function() return package.loaded["nvim-navic"] and require("nvim-navic").is_available() end,
-        },
+          -- stylua: ignore
+          {
+            function() return require("nvim-navic").get_location() end,
+            cond = function() return package.loaded["nvim-navic"] and require("nvim-navic").is_available() end,
+          },
         },
         lualine_x = {
-          { require('lsp-progress').progress },
           {
             function()
               return require('noice').api.status.command.get()
@@ -90,7 +88,6 @@ return {
           },
         },
         lualine_y = {
-          { 'progress', separator = '', padding = { left = 1, right = 0 } },
           { 'location', padding = { left = 0, right = 1 } },
         },
         lualine_z = {
