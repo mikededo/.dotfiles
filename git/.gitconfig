@@ -27,3 +27,5 @@
 [rerere]
 	autoUpdate = true
 	enabled = true
+[advice]
+	addIgnoredFile = false
