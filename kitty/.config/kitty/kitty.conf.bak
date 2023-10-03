@@ -1,0 +1,58 @@
+# fonts
+font_size 14
+font_family JetBrainsMono Nerd Font Mono Regular
+bold_font JetBrainsMono Nerd Font Mono Medium 
+italic_font JetBrainsMono Nerd Font Mono Medium 
+bold_italic_font JetBrainsMono Nerd Font Mono Medium 
+
+disable_ligatures cursor
+
+# Theme
+foreground              #e6e6e6
+background              #1e222a
+cursor                  #ffffff
+color0                  #36393e
+color1                  #e22c39
+color2                  #00e06c
+color3                  #f67451
+color4                  #367bf0
+color5                  #bf2e5d
+color6                  #49aee6
+color7                  #e6e6e6
+color8                  #585e63
+color9                  #e54b4b
+color10                 #26a671
+color11                 #f4562a
+color12                 #277fff
+color13                 #d71655
+color14                 #05a1f7
+color15                 #ffffff
+selection_foreground    #282c34
+selection_background    #979eab
+
+# UI
+cursor_shape block
+shell_integration no-cursor
+
+enabled_layouts splits:split_axis=horizontal
+remember_window_size no
+initial_window_width 125c
+initial_window_height 45c
+macos_titlebar_color dark
+
+## Tab bar
+tab_bar_edge top
+tab_bar_style powerline
+tab_powerline_style round
+tab_title_template "{activity_symbol}{index}"
+active_tab_background #f67451
+active_tab_foreground #ffffff
+inactive_tab_background #373b43
+inactive_tab_foreground #bbc2cf
+
+# Maps
+map ctrl+alt+j next_window
+map ctrl+alt+k previous_window
+map ctrl+alt+s launch --location=hsplit
+map ctrl+alt+v launch --location=vsplit
+map ctrl+alt+r layout_action rotate
