@@ -49,18 +49,22 @@ return {
           ['w'] = 'none', -- disable open with window picker
           ['y'] = function(state)
             local node = state.tree:get_node()
+
             print('Yanked: ' .. node.name)
             vim.fn.setreg('"', node.name)
             vim.fn.setreg('1', node.name)
             vim.fn.setreg('+', node.name)
           end,
           ['Y'] = function(state)
-            -- Copy path
+            -- Copy pathlocal filepath = node:get_id()
             local node = state.tree:get_node()
-            print('Yanked: ' .. node.path)
-            vim.fn.setreg('"', node.path)
-            vim.fn.setreg('1', node.path)
-            vim.fn.setreg('+', node.path)
+            local filepath = node:get_id()
+            local value = vim.fn.fnamemodify(filepath, ':.')
+
+            print('Yanked: ' .. value)
+            vim.fn.setreg('"', value)
+            vim.fn.setreg('1', value)
+            vim.fn.setreg('+', value)
           end,
           ['<C-x>'] = 'split_with_window_picker',
           ['<C-v>'] = 'vsplit_with_window_picker',
