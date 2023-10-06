@@ -1,7 +1,8 @@
 return {
-  { 'mikededo/onenord.nvim' },
-  {
-    'LazyVim/LazyVim',
-    opts = { colorscheme = 'catppuccin-macchiato' },
-  },
+  'catppuccin/nvim',
+  lazy = false,
+  priority = 1000,
+  config = function()
+    require('config.colors').setup()
+  end,
 }
