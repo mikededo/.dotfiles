@@ -1,3 +1,5 @@
+---@diagnostic disable: missing-fields
+
 local signs = {
   { name = 'DiagnosticSignError', text = '' },
   { name = 'DiagnosticSignWarn', text = '' },
@@ -13,12 +15,14 @@ vim.api.nvim_create_autocmd('LspAttach', {
   end,
 })
 
+-- Disable autoformat
+vim.g.autoformat = false
+
 return {
   {
     'neovim/nvim-lspconfig',
     ---@class PluginLspOpts
     opts = {
-      autoformat = false,
       -- options for vim.diagnostic.config()
       diagnostics = {
         underline = true,
