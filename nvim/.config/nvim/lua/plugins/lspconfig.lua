@@ -18,6 +18,12 @@ vim.api.nvim_create_autocmd('LspAttach', {
 -- Disable autoformat
 vim.g.autoformat = false
 
+local get_root_dir = function(fname)
+  local util = require('lspconfig.util')
+  return util.root_pattern('.git')(fname)
+    or util.root_pattern('package.json', 'tsconfig.json')(fname)
+end
+
 return {
   {
     'neovim/nvim-lspconfig',
@@ -44,12 +50,12 @@ return {
       servers = {
         cssls = {},
         cssmodules_ls = {},
-        diagnosticls = {},
+        eslint = { root_dir = get_root_dir },
         graphql = {},
         html = {},
         jsonls = {},
         lua_ls = {},
-        tsserver = {},
+        tsserver = { root_dir = get_root_dir },
         yamlls = {},
       },
     },

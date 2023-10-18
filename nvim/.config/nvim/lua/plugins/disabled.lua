@@ -6,7 +6,6 @@ end
 return {
   disable('SmiteshP/nvim-navic'),
   disable('echasnovski/mini.indentscope'),
-  disable('echasnovski/mini.pairs'),
   disable('folke/flash.nvim'),
   disable('folke/persistence.nvim'),
   disable('rcarriga/nvim-notify'),
