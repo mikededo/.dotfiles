@@ -2,7 +2,7 @@
 
 # Prompt
 format = """
-$directory\
+$directory${custom.jira} \
 $git_branch\
 $git_state\
 $git_status\
@@ -33,8 +33,8 @@ truncation_length = 2
 truncation_symbol = "…/"
 
 [directory.substitutions]
-"Documents" = " "
-"Downloads" = " "
+"Documents" = ""
+"Downloads" = ""
 "/mnt/media" = " "
 
 [cmd_duration]
@@ -118,3 +118,10 @@ style = "red"
 disabled = true                                          # show if wanted
 format = "[$symbol$context( \\($namespace\\))]($style) "
 style = "fg:27"
+
+[custom.jira]
+command = 'echo $WORK_JIRA_ISSUE'
+when = 'set current_dir (pwd); set hardcoded_dir "$HOME/Documents/work"; echo "$current_dir" | grep -q "$hardcoded_dir"'
+symbol = "󰌃 "
+style = "fg:39 bold"
+format = '[\[$symbol($output)\]]($style)'
