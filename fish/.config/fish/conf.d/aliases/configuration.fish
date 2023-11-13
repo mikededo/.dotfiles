@@ -1,7 +1,6 @@
 # Configurations
 alias fishconfig="vim $HOME/.config/fish/config.fish"
 alias starshipconfig="vim $HOME/.config/starship.toml"
-alias chadrc="vim $HOME/.config/nvim/lua/custom/chadrc.lua"
 alias gitconfig="vim $HOME/.gitconfig"
 alias kittyconfig="vim $HOME/.config/kitty/kitty.conf"
 alias dotman="cd $HOME/.dotfiles"
