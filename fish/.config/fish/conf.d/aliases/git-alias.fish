@@ -35,7 +35,7 @@ alias gpf='git push --force-with-lease'
 alias gf='git fetch'
 alias grpo='git remote prune origin'
 function gpsup
-  git push --set-upstream origin $(_current_branch)
+    git push --set-upstream origin $(_current_branch)
 end
 alias updrem='git fetch && git rebase origin/main'
 # local
@@ -48,16 +48,16 @@ alias gcps="git cherry-pick --skip"
 
 # Commit messages
 function _semm_commit
-  set prefix $argv[1]
-  set -e argv[1]
+    set prefix $argv[1]
+    set -e argv[1]
 
-  if test (count $argv) -eq 1
-    git commit -m "$prefix: $argv[1]"
-  else if test (count $argv) -eq 2
-    git commit -m "$prefix($argv[1]): $argv[2]"
-  else
-    echo "Invalid number of arguments"
-  end
+    if test (count $argv) -eq 1
+        git commit -m "$prefix: $argv[1]"
+    else if test (count $argv) -eq 2
+        git commit -m "$prefix($argv[1]): $argv[2]"
+    else
+        echo "Invalid number of arguments"
+    end
 end
 alias chore="_semm_commit chore"
 alias feat="_semm_commit feat"
@@ -66,3 +66,12 @@ alias refactor="_semm_commit refactor"
 alias docs="_semm_commit docs"
 alias ctest="_semm_commit test"
 alias ci="_semm_commit ci"
+
+# With jira issue
+alias wchore="_semm_commit chore $WORK_JIRA_ISSUE"
+alias wfeat="_semm_commit feat $WORK_JIRA_ISSUE"
+alias wfix="_semm_commit fix $WORK_JIRA_ISSUE"
+alias wrefactor="_semm_commit refactor $WORK_JIRA_ISSUE"
+alias wdocs="_semm_commit docs $WORK_JIRA_ISSUE"
+alias wtest="_semm_commit test $WORK_JIRA_ISSUE"
+alias wci="_semm_commit ci $WORK_JIRA_ISSUE"
