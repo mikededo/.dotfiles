@@ -15,6 +15,12 @@ vim.api.nvim_create_autocmd('FileType', {
   command = 'call setpos(\'.\', [0, 1, 1, 0])',
 })
 
+-- Rust
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = { 'rust' },
+  command = 'lua vim.b.autoformat=1',
+})
+
 -- JavaScript, TypeScript
 vim.api.nvim_create_autocmd('FileType', {
   pattern = {
@@ -28,7 +34,7 @@ vim.api.nvim_create_autocmd('FileType', {
   command = 'setlocal tabstop=2 shiftwidth=2 softtabstop=2',
 })
 -- for .releaserc file name, set filetype to json
-vim.api.nvim_create_autocmd('BufNewFile,BufRead,FileType', {
+vim.api.nvim_create_autocmd({ 'BufNewFile', 'BufRead', 'FileType' }, {
   pattern = { '.releaserc' },
   command = 'set filetype=json',
 })

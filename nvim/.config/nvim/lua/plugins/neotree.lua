@@ -16,6 +16,16 @@ return {
           end,
           desc = 'Explorer NeoTree (root dir)',
         },
+        {
+          '<C-m>',
+          function()
+            require('neo-tree.command').execute({
+              toggle = false,
+              dir = require('lazyvim.util').root.get(),
+            })
+          end,
+          desc = 'Focus NeoTree',
+        },
       }
     end,
     opts = {
