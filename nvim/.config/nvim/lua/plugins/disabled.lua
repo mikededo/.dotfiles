@@ -1,4 +1,3 @@
---- @param name string
 local function disable(name)
   return { name, enabled = false }
 end
@@ -9,6 +8,4 @@ return {
   disable('folke/flash.nvim'),
   disable('folke/persistence.nvim'),
   disable('rcarriga/nvim-notify'),
-  disable('zbirenbaum/copilot-cmp'),
-  disable('zbirenbaum/copilot.lua'),
 }
