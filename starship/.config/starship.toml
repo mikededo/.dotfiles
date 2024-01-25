@@ -2,7 +2,7 @@
 
 # Prompt
 format = """
-$directory${custom.jira} \
+$directory\
 $git_branch\
 $git_state\
 $git_status\
@@ -118,10 +118,3 @@ style = "red"
 disabled = true                                          # show if wanted
 format = "[$symbol$context( \\($namespace\\))]($style) "
 style = "fg:27"
-
-[custom.jira]
-command = 'echo $WORK_JIRA_ISSUE'
-when = 'set current_dir (pwd); set hardcoded_dir "$HOME/Documents/work"; echo "$current_dir" | grep -q "$hardcoded_dir"'
-symbol = "󰌃 "
-style = "fg:39 bold"
-format = '[\[$symbol($output)\]]($style)'
