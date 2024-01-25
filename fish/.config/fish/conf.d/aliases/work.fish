@@ -3,10 +3,6 @@ alias work="cd $HOME/Documents/work"
 alias jf="cd $HOME/Documents/work/jobs-frontend"
 alias crate="cd $HOME/Documents/work/crate"
 alias brewery="cd $HOME/Documents/work/brewery"
-# Update WORK_JIRA_ISSUE variable easily
-function set-jira-issue
-    set WORK_JIRA_ISSUE $argv[1]
-end
 
 # crate
 alias sync-references="yarn monorepo sync-project-references"

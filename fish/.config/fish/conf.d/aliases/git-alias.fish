@@ -66,12 +66,3 @@ alias refactor="_semm_commit refactor"
 alias docs="_semm_commit docs"
 alias ctest="_semm_commit test"
 alias ci="_semm_commit ci"
-
-# With jira issue
-alias wchore="_semm_commit chore $WORK_JIRA_ISSUE"
-alias wfeat="_semm_commit feat $WORK_JIRA_ISSUE"
-alias wfix="_semm_commit fix $WORK_JIRA_ISSUE"
-alias wrefactor="_semm_commit refactor $WORK_JIRA_ISSUE"
-alias wdocs="_semm_commit docs $WORK_JIRA_ISSUE"
-alias wtest="_semm_commit test $WORK_JIRA_ISSUE"
-alias wci="_semm_commit ci $WORK_JIRA_ISSUE"
