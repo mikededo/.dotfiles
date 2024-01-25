@@ -20,9 +20,13 @@ return {
 
       local luasnip = require('luasnip')
       local cmp = require('cmp')
-      opts.sources = cmp.config.sources(vim.list_extend(opts.sources, {
-        { name = 'copilot' },
-      }))
+      -- opts.sources = cmp.config.sources(vim.list_extend(opts.sources, {
+      --   { name = 'copilot' },
+      --   { name = 'npm', keyword_length = 4 },
+      -- }))
+      -- opts.sources = cmp.config.sources(vim.list_extend(opts.sources, {
+      --   { name = 'copilot' },
+      -- }))
 
       opts.mapping = vim.tbl_extend('force', opts.mapping, {
         ['<Tab>'] = cmp.mapping(function(fallback)
@@ -48,6 +52,13 @@ return {
       })
       opts.formatting = {
         fields = { 'kind', 'abbr', 'menu' },
+        formatting = {
+          format = lspkind.cmp_format({
+            mode = 'symbol',
+            max_width = 50,
+            symbol_map = { Copilot = '' },
+          }),
+        },
         format = function(entry, vim_item)
           local kind = lspkind.cmp_format({
             mode = 'symbol_text',
