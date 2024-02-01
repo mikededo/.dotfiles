@@ -14,6 +14,7 @@ packages=(
 	nvim
 	fish
 	starship
+	wezterm
 )
 
 # Run the stow command
