@@ -8,4 +8,5 @@ return {
   disable('folke/flash.nvim'),
   disable('folke/persistence.nvim'),
   disable('rcarriga/nvim-notify'),
+  disable('folke/tokyonight'),
 }

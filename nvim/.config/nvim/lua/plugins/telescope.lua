@@ -18,7 +18,11 @@ return {
       { '<leader>x', false, desc = 'Document Diagnostics (Trouble)' },
       { '<leader>xX', false, desc = 'Workspace Diagnostics (Trouble)' },
       -- added/updated mappings
-      { '<leader>ff', '<cmd>Telescope find_files<CR>', desc = 'Find files' },
+      {
+        '<leader>ff',
+        '<cmd>Telescope find_files hidden=true<CR>',
+        desc = 'Find files',
+      },
       { '<leader>fw', '<cmd>Telescope live_grep<CR>', desc = 'Find word' },
       {
         '<leader>tx',
@@ -106,6 +110,9 @@ return {
           '^coverage*',
           '^node_modules*',
           '^target*',
+          '^package-lock.json*',
+          '^yarn.lock*',
+          '^bun.lockb*',
         },
         initial_mode = 'normal',
         prompt_prefix = '   ',

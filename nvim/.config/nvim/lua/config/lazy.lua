@@ -21,7 +21,6 @@ require('lazy').setup({
     -- have outdated releases, which may break your Neovim install.
     version = false, -- always use the latest git commit
   },
-  install = { colorscheme = { 'tokyonight' } },
   checker = { enabled = true }, -- automatically check for plugin updates
   performance = {
     rtp = {
