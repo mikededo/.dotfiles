@@ -32,8 +32,11 @@ c.window_frame = { font = wezterm.font("JetBrainsMono Nerd Font Mono"), inactive
 
 -- keys
 c.keys = {
-	{ key = "v", mods = "ALT|SHIFT", action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
-	{ key = "x", mods = "ALT|SHIFT", action = wezterm.action.SplitVertical({ domain = "CurrentPaneDomain" }) },
+	{ key = "v", mods = "ALT|CTRL", action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
+	{ key = "x", mods = "ALT|CTRL", action = wezterm.action.SplitVertical({ domain = "CurrentPaneDomain" }) },
+	{ key = "b", mods = "CTRL", action = wezterm.action.RotatePanes("Clockwise") },
+	{ key = "j", mods = "ALT|CTRL", action = wezterm.action.ActivatePaneDirection("Next") },
+	{ key = "k", mods = "ALT|CTRL", action = wezterm.action.ActivatePaneDirection("Prev") },
 }
 
 wezterm.on("format-tab-title", function(tab, _, _, config, _, max_width)
