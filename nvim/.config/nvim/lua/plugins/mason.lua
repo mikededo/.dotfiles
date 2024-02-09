@@ -8,6 +8,7 @@ return {
       -- web dev
       'typescript-language-server',
       'diagnostic-languageserver',
+      'svelte-language-server',
       'eslint_d',
       'prettierd',
       'json-lsp',

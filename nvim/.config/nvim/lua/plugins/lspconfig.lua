@@ -55,6 +55,7 @@ return {
         html = {},
         jsonls = {},
         lua_ls = {},
+        svelte = {},
         tsserver = { root_dir = get_root_dir },
         yamlls = {},
       },
