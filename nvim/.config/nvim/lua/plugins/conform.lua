@@ -15,6 +15,7 @@ return {
       ['javascriptreact'] = { 'eslint_d', 'prettier' },
       ['typescript'] = { 'eslint_d', 'prettier' },
       ['typescriptreact'] = { 'eslint_d', 'prettier' },
+      ['svelte'] = { 'eslint_d', 'prettier' },
       ['vue'] = { 'eslint_d', 'prettier' },
       ['css'] = { 'prettier' },
       ['scss'] = { 'prettier' },
