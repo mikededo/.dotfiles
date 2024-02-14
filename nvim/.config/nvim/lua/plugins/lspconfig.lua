@@ -15,6 +15,34 @@ vim.api.nvim_create_autocmd('LspAttach', {
   end,
 })
 
+local update_svelte_on_ts_js_save = function(client)
+  vim.api.nvim_create_autocmd(
+    { 'TextChanged', 'TextChangedI', 'TextChangedP' },
+    {
+      pattern = { '*.js', '*.ts' },
+      callback = function(ctx)
+        if client.name == 'svelte' then
+          client.notify('$/onDidChangeTsOrJsFile', {
+            uri = ctx.match,
+            changes = {
+              {
+                text = table.concat(
+                  vim.api.nvim_buf_get_lines(ctx.buf, 0, -1, false),
+                  '\n'
+                ),
+              },
+            },
+          })
+        end
+      end,
+      group = vim.api.nvim_create_augroup(
+        'svelte_ondidchangetsorjsfile',
+        { clear = true }
+      ),
+    }
+  )
+end
+
 -- Disable autoformat
 vim.g.autoformat = false
 
@@ -60,6 +88,11 @@ return {
         yamlls = {},
       },
     },
+    init = function()
+      require('lazyvim.util').lsp.on_attach(function(client)
+        update_svelte_on_ts_js_save(client)
+      end)
+    end,
     keys = function()
       local keys = require('lazyvim.plugins.lsp.keymaps').get()
 
