@@ -29,3 +29,5 @@
 	enabled = true
 [advice]
 	addIgnoredFile = false
+[maintenance]
+	repo = /Users/miquel.dedomingo/.dotfiles
