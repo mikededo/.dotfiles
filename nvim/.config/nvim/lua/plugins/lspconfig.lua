@@ -16,31 +16,28 @@ vim.api.nvim_create_autocmd('LspAttach', {
 })
 
 local update_svelte_on_ts_js_save = function(client)
-  vim.api.nvim_create_autocmd(
-    { 'TextChanged', 'TextChangedI', 'TextChangedP' },
-    {
-      pattern = { '*.js', '*.ts' },
-      callback = function(ctx)
-        if client.name == 'svelte' then
-          client.notify('$/onDidChangeTsOrJsFile', {
-            uri = ctx.match,
-            changes = {
-              {
-                text = table.concat(
-                  vim.api.nvim_buf_get_lines(ctx.buf, 0, -1, false),
-                  '\n'
-                ),
-              },
+  vim.api.nvim_create_autocmd('BufWritePost', {
+    pattern = { '*.js', '*.ts' },
+    group = vim.api.nvim_create_augroup(
+      'svelte_ondidchangetsorjsfile',
+      { clear = true }
+    ),
+    callback = function(ctx)
+      if client.name == 'svelte' then
+        client.notify('$/onDidChangeTsOrJsFile', {
+          uri = ctx.match,
+          changes = {
+            {
+              text = table.concat(
+                vim.api.nvim_buf_get_lines(ctx.buf, 0, -1, false),
+                '\n'
+              ),
             },
-          })
-        end
-      end,
-      group = vim.api.nvim_create_augroup(
-        'svelte_ondidchangetsorjsfile',
-        { clear = true }
-      ),
-    }
-  )
+          },
+        })
+      end
+    end,
+  })
 end
 
 -- Disable autoformat
