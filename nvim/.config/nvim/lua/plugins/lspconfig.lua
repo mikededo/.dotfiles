@@ -15,31 +15,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
   end,
 })
 
-local update_svelte_on_ts_js_save = function(client)
-  vim.api.nvim_create_autocmd('BufWritePost', {
-    pattern = { '*.js', '*.ts' },
-    group = vim.api.nvim_create_augroup(
-      'svelte_ondidchangetsorjsfile',
-      { clear = true }
-    ),
-    callback = function(ctx)
-      if client.name == 'svelte' then
-        client.notify('$/onDidChangeTsOrJsFile', {
-          uri = ctx.match,
-          changes = {
-            {
-              text = table.concat(
-                vim.api.nvim_buf_get_lines(ctx.buf, 0, -1, false),
-                '\n'
-              ),
-            },
-          },
-        })
-      end
-    end,
-  })
-end
-
 -- Disable autoformat
 vim.g.autoformat = false
 
@@ -80,16 +55,25 @@ return {
         html = {},
         jsonls = {},
         lua_ls = {},
-        svelte = {},
+        svelte = {
+          on_attach = function(client)
+            -- Update svelte client on ts/js save
+            vim.api.nvim_create_autocmd('BufWritePost', {
+              pattern = { '*.js', '*.ts' },
+              group = vim.api.nvim_create_augroup(
+                'svelte_ondidchangetsorjsfile',
+                { clear = true }
+              ),
+              callback = function(ctx)
+                client.notify('$/onDidChangeTsOrJsFile', { uri = ctx.match })
+              end,
+            })
+          end,
+        },
         tsserver = { root_dir = get_root_dir },
         yamlls = {},
       },
     },
-    init = function()
-      require('lazyvim.util').lsp.on_attach(function(client)
-        update_svelte_on_ts_js_save(client)
-      end)
-    end,
     keys = function()
       local keys = require('lazyvim.plugins.lsp.keymaps').get()
 
