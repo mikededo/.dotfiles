@@ -20,7 +20,7 @@ return {
       {
         '<leader><leader>',
         function()
-          require('mini.bufremove').delete(vim.api.nvim_get_current_buf(), false)
+          require('lazyvim.util.ui').bufremove(vim.api.nvim_get_current_buf())
         end,
         { desc = 'Delete current buffer' },
       },

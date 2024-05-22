@@ -40,17 +40,11 @@ return {
       })
       opts.formatting = {
         fields = { 'kind', 'abbr', 'menu' },
-        formatting = {
-          format = lspkind.cmp_format({
-            mode = 'symbol',
-            max_width = 50,
-            symbol_map = { Copilot = '' },
-          }),
-        },
         format = function(entry, vim_item)
           local kind = lspkind.cmp_format({
             mode = 'symbol_text',
             maxwidth = 50,
+            symbol_map = { Copilot = '' },
           })(entry, vim_item)
 
           local strings = vim.split(kind.kind, '%s', { trimempty = true })

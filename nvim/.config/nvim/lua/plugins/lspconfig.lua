@@ -30,6 +30,7 @@ return {
     ---@class PluginLspOpts
     opts = {
       -- options for vim.diagnostic.config()
+      inlay_hints = { enabled = false },
       diagnostics = {
         underline = true,
         update_in_insert = true,
@@ -55,6 +56,7 @@ return {
         html = {},
         jsonls = {},
         lua_ls = {},
+        tailwindcss = {},
         svelte = {
           on_attach = function(client)
             -- Update svelte client on ts/js save
