@@ -4,6 +4,7 @@
 alias _current_branch='git branch --show-current'
 alias main='git checkout main && gl'
 alias master='git checkout master && gl'
+alias develop='git checkout develop && gl'
 alias list-branches='git branch | xargs -I {} echo {}'
 alias lb='list-branches'
 alias H0='HUSKY=0' # disable husky from running prehooks
