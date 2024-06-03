@@ -52,6 +52,7 @@ return {
         },
       },
       window = {
+        position = 'right',
         mappings = {
           ['<space>'] = 'none',
           ['s'] = 'none', -- disable open split
