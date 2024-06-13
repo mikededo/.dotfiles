@@ -44,7 +44,7 @@ return {
         '<cmd>Telescope diagnostics<cr>',
         desc = 'Workspace diagnostics',
       },
-      { '<leader>sg', Util.telescope('live_grep'), desc = 'Grep (root dir)' },
+      { '<leader>sg', Util.pick('live_grep'), desc = 'Grep (root dir)' },
       { '<leader>sh', '<cmd>Telescope help_tags<cr>', desc = 'Help Pages' },
       {
         '<leader>sH',
@@ -53,12 +53,12 @@ return {
       },
       {
         '<leader>th',
-        Util.telescope('colorscheme', { enable_preview = true }),
+        Util.pick('colorscheme', { enable_preview = true }),
         desc = 'Colorscheme with preview',
       },
       {
         '<leader>ds',
-        Util.telescope('lsp_document_symbols', {
+        Util.pick('lsp_document_symbols', {
           symbols = {
             'Class',
             'Function',
@@ -76,7 +76,7 @@ return {
       },
       {
         '<leader>dS',
-        Util.telescope('lsp_dynamic_workspace_symbols', {
+        Util.pick('lsp_dynamic_workspace_symbols', {
           symbols = {
             'Class',
             'Function',
