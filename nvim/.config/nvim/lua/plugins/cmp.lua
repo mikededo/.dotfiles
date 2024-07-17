@@ -44,7 +44,7 @@ return {
           local kind = lspkind.cmp_format({
             mode = 'symbol_text',
             maxwidth = 50,
-            symbol_map = { Copilot = '' },
+            symbol_map = { Copilot = '', Supermaven = '' },
           })(entry, vim_item)
 
           local strings = vim.split(kind.kind, '%s', { trimempty = true })

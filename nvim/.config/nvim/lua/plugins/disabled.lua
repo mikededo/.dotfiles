@@ -9,4 +9,5 @@ return {
   disable('folke/persistence.nvim'),
   disable('rcarriga/nvim-notify'),
   disable('folke/tokyonight'),
+  disable('zbirenbaum/copilot-cmp'),
 }
