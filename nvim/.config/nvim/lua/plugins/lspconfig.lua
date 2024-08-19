@@ -27,6 +27,17 @@ end
 return {
   {
     'neovim/nvim-lspconfig',
+    setup = {
+      eslint = function()
+        require('lazyvim.util').lsp.on_attach(function(client)
+          if client.name == 'eslint' then
+            client.server_capabilities.documentFormattingProvider = true
+          elseif client.name == 'tsserver' then
+            client.server_capabilities.documentFormattingProvider = false
+          end
+        end)
+      end,
+    },
     ---@class PluginLspOpts
     opts = {
       -- options for vim.diagnostic.config()
@@ -47,11 +58,22 @@ return {
         },
       },
       -- LSP Server Settings
-      ---@type lspconfig.options
+      ---@type lsp.
       servers = {
         cssls = {},
         cssmodules_ls = {},
-        eslint = { root_dir = get_root_dir },
+        eslint = {
+          root_dir = get_root_dir,
+          filetypes = {
+            'javascript',
+            'javascriptreact',
+            'javascript.jsx',
+            'typescript',
+            'typescriptreact',
+            'typescript.tsx',
+            'svelte',
+          },
+        },
         graphql = {},
         html = {},
         jsonls = {},
@@ -59,17 +81,24 @@ return {
         tailwindcss = {},
         svelte = {
           on_attach = function(client)
-            -- Update svelte client on ts/js save
-            vim.api.nvim_create_autocmd('BufWritePost', {
-              pattern = { '*.js', '*.ts' },
-              group = vim.api.nvim_create_augroup(
-                'svelte_ondidchangetsorjsfile',
-                { clear = true }
-              ),
-              callback = function(ctx)
-                client.notify('$/onDidChangeTsOrJsFile', { uri = ctx.match })
+            vim.api.nvim_create_autocmd('BufWritePre', {
+              callback = function()
+                LazyVim.format({ force = true })
               end,
             })
+
+            --  TODO: Check if still required
+            -- -- Update svelte client on ts/js save
+            -- vim.api.nvim_create_autocmd('BufWritePost', {
+            --   pattern = { '*.js', '*.ts' },
+            --   group = vim.api.nvim_create_augroup(
+            --     'svelte_ondidchangetsorjsfile',
+            --     { clear = true }
+            --   ),
+            --   callback = function(ctx)
+            --     client.notify('$/onDidChangeTsOrJsFile', { uri = ctx.match })
+            --   end,
+            -- })
           end,
         },
         tsserver = { root_dir = get_root_dir },

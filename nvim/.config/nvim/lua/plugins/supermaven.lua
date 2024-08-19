@@ -5,7 +5,6 @@ return {
     build = ':SupermavenUseFree', -- remove this line if you are using pro
     opts = {},
   },
-  commit = 'df3ecf7',
   ---@param opts cmp.ConfigSchema
   opts = function(_, opts)
     table.insert(opts.sources, 1, {

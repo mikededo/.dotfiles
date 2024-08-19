@@ -22,7 +22,7 @@ return {
       ['markdown'] = { 'prettierd' },
       ['markdown.mdx'] = { 'prettierd' },
       ['scss'] = { 'prettierd' },
-      ['svelte'] = { 'eslint_d', 'prettierd' },
+      ['svelte'] = { 'prettierd' },
       ['typescript'] = { 'eslint_d', 'prettierd' },
       ['typescriptreact'] = { 'eslint_d', 'prettierd' },
       ['vue'] = { 'eslint_d', 'prettierd' },
