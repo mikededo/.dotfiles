@@ -6,8 +6,9 @@ return {
   disable('SmiteshP/nvim-navic'),
   disable('echasnovski/mini.indentscope'),
   disable('folke/flash.nvim'),
+  disable('folke/noice.nvim'),
   disable('folke/persistence.nvim'),
-  disable('rcarriga/nvim-notify'),
   disable('folke/tokyonight'),
+  disable('rcarriga/nvim-notify'),
   disable('zbirenbaum/copilot-cmp'),
 }
