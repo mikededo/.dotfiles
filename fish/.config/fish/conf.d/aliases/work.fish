@@ -1,8 +1,9 @@
 # Fast access to common directories
 alias work="cd $HOME/Documents/work"
-alias jf="cd $HOME/Documents/work/jobs-frontend"
-alias crate="cd $HOME/Documents/work/crate"
-alias brewery="cd $HOME/Documents/work/brewery"
+alias ghwork="cd $HOME/Documents/work/github.com"
+alias swork="cd $HOME/Documents/work/source.xing.com/"
+alias jf="cd $HOME/Documents/work/source.xing.com/jobs-frontend"
+alias crate="cd $HOME/Documents/work/github.com/crate"
 
 # crate
 alias sync-references="yarn monorepo sync-project-references"
