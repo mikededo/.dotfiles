@@ -58,7 +58,7 @@ return {
         },
       },
       -- LSP Server Settings
-      ---@type lsp.
+      ---@type lsp
       servers = {
         cssls = {},
         cssmodules_ls = {},
@@ -66,11 +66,12 @@ return {
           root_dir = get_root_dir,
           filetypes = {
             'javascript',
-            'javascriptreact',
             'javascript.jsx',
+            'javascriptreact',
+            'tsx',
             'typescript',
-            'typescriptreact',
             'typescript.tsx',
+            'typescriptreact',
             'svelte',
           },
         },
@@ -80,7 +81,7 @@ return {
         lua_ls = {},
         tailwindcss = {},
         svelte = {
-          on_attach = function(client)
+          on_attach = function()
             vim.api.nvim_create_autocmd('BufWritePre', {
               callback = function()
                 LazyVim.format({ force = true })
@@ -101,7 +102,6 @@ return {
             -- })
           end,
         },
-        tsserver = { root_dir = get_root_dir },
         yamlls = {},
       },
     },
@@ -122,12 +122,12 @@ return {
       }
       keys[#keys + 1] = {
         '<leader>dn',
-        vim.diagnostic.goto_next,
+        function() vim.diagnostic.jump({ count = 1 }) end,
         desc = 'Go to next diagnostic',
       }
       keys[#keys + 1] = {
         '<leader>dN',
-        vim.diagnostic.goto_prev,
+        function() vim.diagnostic.jump({ count = -1 }) end,
         desc = 'Go to prev diagnostic',
       }
     end,
