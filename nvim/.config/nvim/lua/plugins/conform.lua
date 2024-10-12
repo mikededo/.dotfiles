@@ -1,18 +1,9 @@
 vim.api.nvim_create_autocmd('BufWritePre', {
+  pattern = '*',
+  callback = function(args)
+    require('conform').format({ bufnr = args.buf })
+  end,
   group = vim.api.nvim_create_augroup('EslintFixAll', { clear = true }),
-  pattern = {
-    '*.tsx',
-    '*.ts',
-    '*.jsx',
-    '*.js',
-    '*.svelte',
-    '*.css',
-    '*.scss',
-    '*.less',
-    '*.json',
-    '*.jsonc',
-  },
-  command = 'silent! EslintFixAll',
 })
 
 local DEFAULT_FORMATTERS = {
@@ -23,11 +14,12 @@ local DEFAULT_FORMATTERS = {
   ['javascriptreact'] = { 'eslint_d', 'prettierd' },
   ['json'] = { 'prettierd' },
   ['jsonc'] = { 'prettierd' },
+  ['lua'] = { 'stylua' },
   ['less'] = { 'prettierd' },
   ['markdown'] = { 'prettierd' },
   ['markdown.mdx'] = { 'prettierd' },
   ['scss'] = { 'prettierd' },
-  ['svelte'] = { 'eslint_d' },
+  ['svelte'] = { 'prettierd', 'eslint_d' },
   ['typescript'] = { 'eslint_d' },
   ['typescriptreact'] = { 'eslint_d', 'prettierd' },
   ['vue'] = { 'eslint_d', 'prettierd' },
@@ -45,11 +37,7 @@ local get_formatters_by_ft = function()
   local current_path = vim.fn.getcwd()
   -- Check if current path is in NO_PRETTIER_PATHS
   for _, path in ipairs(NO_PRETTIER_PATHS) do
-    -- print(current_path)
-    -- print(path)
     if current_path:find(path) then
-      -- Remove prettier from svelte, ts and js
-      -- Clone default formatters
       local formatters = vim.deepcopy(DEFAULT_FORMATTERS)
       -- Remove prettier from svelte, ts and js
       formatters['css'] = {}
@@ -57,7 +45,7 @@ local get_formatters_by_ft = function()
       formatters['less'] = {}
       formatters['javascript'] = {}
       formatters['javascriptreact'] = {}
-      formatters['svelte'] = {}
+      formatters['svelte'] = { 'eslint_d' }
       formatters['typescript'] = {}
       formatters['typescriptreact'] = {}
       return formatters
@@ -76,5 +64,5 @@ return {
     notify_no_formatters = true,
     notify_on_error = true,
     formatters_by_ft = get_formatters_by_ft(),
-  }
+  },
 }
