@@ -9,6 +9,7 @@ alias list-branches='git branch | xargs -I {} echo {}'
 alias lb='list-branches'
 alias H0='HUSKY=0' # disable husky from running prehooks
 alias clear-merged="git branch --merged master | grep -v master | xargs -I {} git branch -D {}"
+alias check-log="git diff --staged -G console"
 
 # status
 alias gst="git status"
