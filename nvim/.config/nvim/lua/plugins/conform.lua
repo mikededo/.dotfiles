@@ -28,6 +28,7 @@ local DEFAULT_FORMATTERS = {
 local NO_PRETTIER_PATHS = {
   '/personal/projects/stack',
   '/personal/open%-source/eslint%-plugin%-svelte%-tailwindcss',
+  '/personal/open%-source/dartBarrelFileGenerator',
 }
 
 -- In personal projects I don't like using prettier,
