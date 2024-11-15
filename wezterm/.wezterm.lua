@@ -35,8 +35,10 @@ c.keys = {
 	{ key = "v", mods = "ALT|CTRL", action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
 	{ key = "x", mods = "ALT|CTRL", action = wezterm.action.SplitVertical({ domain = "CurrentPaneDomain" }) },
 	{ key = "b", mods = "CTRL", action = wezterm.action.RotatePanes("Clockwise") },
-	{ key = "j", mods = "ALT|CTRL", action = wezterm.action.ActivatePaneDirection("Next") },
-	{ key = "k", mods = "ALT|CTRL", action = wezterm.action.ActivatePaneDirection("Prev") },
+	{ key = "h", mods = "ALT", action = wezterm.action.ActivatePaneDirection("Left") },
+	{ key = "j", mods = "ALT", action = wezterm.action.ActivatePaneDirection("Up") },
+	{ key = "k", mods = "ALT", action = wezterm.action.ActivatePaneDirection("Down") },
+	{ key = "l", mods = "ALT", action = wezterm.action.ActivatePaneDirection("Right") },
 }
 
 wezterm.on("format-tab-title", function(tab, _, _, config, _, max_width)
