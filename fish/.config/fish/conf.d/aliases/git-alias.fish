@@ -8,11 +8,10 @@ alias develop='git checkout develop && gl'
 alias list-branches='git branch | xargs -I {} echo {}'
 alias lb='list-branches'
 alias H0='HUSKY=0' # disable husky from running prehooks
-alias clear-merged="git branch --merged master | grep -v master | xargs -I {} git branch -D {}"
 alias check-log="git diff --staged -G console"
 
 # status
-alias gst="git status"
+alias gs="git status"
 alias gstu="git status -u"
 alias gsts="git status -s"
 # commit
@@ -40,8 +39,10 @@ function gpsup
     git push --set-upstream origin $(_current_branch)
 end
 alias updrem='git fetch && git rebase origin/main'
+alias updremm='git fetch && git rebase origin/master'
 # local
 alias gl='git pull'
+alias clear-branches="git branch --merged $git_default_branch | grep -v \"$git_default_branch\" | xargs -I {} git branch -D {}"
 # cherry-pick
 alias gcp="git cherry-pick"
 alias gcpc="git cherry-pick --continue"
@@ -68,3 +69,8 @@ alias refactor="_semm_commit refactor"
 alias docs="_semm_commit docs"
 alias ctest="_semm_commit test"
 alias ci="_semm_commit ci"
+
+# other
+function git_default_branch
+    git symbolic-ref --short HEAD
+end

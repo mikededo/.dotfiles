@@ -31,7 +31,6 @@ function wclone
     set -e argv[1]
     git clone $repo $argv
 end
-alias clear-branches="git branch --merged master | grep -v master | xargs -I {} git branch -D {}"
 
 # yarn
 function yyarn
