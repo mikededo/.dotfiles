@@ -10,7 +10,9 @@ return {
       return function()
         ---@type {foreground?:number}?
         local hl = vim.api.nvim_get_hl_by_name(name, true)
-        return hl and hl.foreground and { fg = string.format('#%06x', hl.foreground) }
+        return hl
+          and hl.foreground
+          and { fg = string.format('#%06x', hl.foreground) }
       end
     end
 
@@ -48,11 +50,6 @@ return {
             path = 1,
             symbols = { modified = '  ', readonly = '', unnamed = '' },
           },
-          -- stylua: ignore
-          {
-            function() return require("nvim-navic").get_location() end,
-            cond = function() return package.loaded["nvim-navic"] and require("nvim-navic").is_available() end,
-          },
         },
         lualine_x = {
           {
@@ -60,7 +57,8 @@ return {
               return require('noice').api.status.command.get()
             end,
             cond = function()
-              return package.loaded['noice'] and require('noice').api.status.command.has()
+              return package.loaded['noice']
+                and require('noice').api.status.command.has()
             end,
             color = fg('Statement'),
           },
@@ -69,7 +67,8 @@ return {
               return require('noice').api.status.mode.get()
             end,
             cond = function()
-              return package.loaded['noice'] and require('noice').api.status.mode.has()
+              return package.loaded['noice']
+                and require('noice').api.status.mode.has()
             end,
             color = fg('Constant'),
           },
@@ -88,7 +87,11 @@ return {
           },
         },
         lualine_y = {
-          { 'location', padding = { left = 0, right = 1 } },
+          function()
+            local line = vim.fn.line('.')
+            local col = vim.fn.charcol('.')
+            return line .. '·' .. col
+          end,
         },
         lualine_z = {
           function()
