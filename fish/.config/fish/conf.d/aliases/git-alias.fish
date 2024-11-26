@@ -2,6 +2,7 @@
 
 # util
 alias _current_branch='git branch --show-current'
+alias def_branch="git symbolic-ref --short HEAD"
 alias main='git checkout main && gl'
 alias master='git checkout master && gl'
 alias develop='git checkout develop && gl'
@@ -42,7 +43,7 @@ alias updrem='git fetch && git rebase origin/main'
 alias updremm='git fetch && git rebase origin/master'
 # local
 alias gl='git pull'
-alias clear-branches="git branch --merged $git_default_branch | grep -v \"$git_default_branch\" | xargs -I {} git branch -D {}"
+alias clear-branches='git branch --merged (def_branch) | grep -v (def_branch) | xargs -I {} git branch -D {}'
 # cherry-pick
 alias gcp="git cherry-pick"
 alias gcpc="git cherry-pick --continue"
@@ -71,6 +72,3 @@ alias ctest="_semm_commit test"
 alias ci="_semm_commit ci"
 
 # other
-function git_default_branch
-    git symbolic-ref --short HEAD
-end
