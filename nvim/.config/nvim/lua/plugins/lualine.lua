@@ -6,20 +6,10 @@ return {
   opts = function()
     local icons = require('lazyvim.config').icons
 
-    local function fg(name)
-      return function()
-        ---@type {foreground?:number}?
-        local hl = vim.api.nvim_get_hl_by_name(name, true)
-        return hl
-          and hl.foreground
-          and { fg = string.format('#%06x', hl.foreground) }
-      end
-    end
-
     return {
       options = {
         icons_enabled = true,
-        theme = 'onedark',
+        theme = 'auto',
         component_separators = { left = '', right = '' },
         section_separators = { left = '', right = '' },
         disabled_filetypes = { 'alpha', 'dashboard', 'lazy ' },
@@ -28,7 +18,7 @@ return {
       },
       sections = {
         lualine_a = { 'mode' },
-        lualine_b = { 'branch' },
+        lualine_b = { { 'branch', color = 'Normal' } },
         lualine_c = {
           {
             'diagnostics',
@@ -60,7 +50,7 @@ return {
               return package.loaded['noice']
                 and require('noice').api.status.command.has()
             end,
-            color = fg('Statement'),
+            color = 'Statement',
           },
           {
             function()
@@ -70,12 +60,12 @@ return {
               return package.loaded['noice']
                 and require('noice').api.status.mode.has()
             end,
-            color = fg('Constant'),
+            color = 'Constant',
           },
           {
             require('lazy.status').updates,
             cond = require('lazy.status').has_updates,
-            color = fg('Special'),
+            color = 'Special',
           },
           {
             'diff',
@@ -87,11 +77,14 @@ return {
           },
         },
         lualine_y = {
-          function()
-            local line = vim.fn.line('.')
-            local col = vim.fn.charcol('.')
-            return line .. '·' .. col
-          end,
+          {
+            function()
+              local line = vim.fn.line('.')
+              local col = vim.fn.charcol('.')
+              return line .. '·' .. col
+            end,
+            color = 'Normal',
+          },
         },
         lualine_z = {
           function()

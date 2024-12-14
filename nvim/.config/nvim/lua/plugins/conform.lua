@@ -27,7 +27,9 @@ local DEFAULT_FORMATTERS = {
 }
 local NO_PRETTIER_PATHS = {
   '/personal/projects/stack',
+  '/personal/projects/angelica%-nadal',
   '/personal/open%-source/eslint%-plugin%-svelte%-tailwindcss',
+  '/personal/open%-source/advent%-visualizations',
   '/personal/open%-source/dartBarrelFileGenerator',
 }
 

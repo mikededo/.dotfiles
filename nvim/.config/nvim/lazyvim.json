@@ -1,7 +1,9 @@
 {
   "extras": [
+    "lazyvim.plugins.extras.ai.supermaven",
     "lazyvim.plugins.extras.coding.mini-surround",
     "lazyvim.plugins.extras.editor.dial",
+    "lazyvim.plugins.extras.editor.telescope",
     "lazyvim.plugins.extras.formatting.prettier",
     "lazyvim.plugins.extras.lang.json",
     "lazyvim.plugins.extras.lang.rust",
@@ -13,7 +15,7 @@
     "lazyvim.plugins.extras.linting.eslint"
   ],
   "news": {
-    "NEWS.md": "7429"
+    "NEWS.md": "10960"
   },
   "version": 7
 }
