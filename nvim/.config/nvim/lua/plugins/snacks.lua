@@ -7,12 +7,9 @@ return {
     notify = { enabled = false },
     indent = {
       animate = { enabled = false },
-      indent = { hl = 'SignColumn' },
+      indent = { char = '→', hl = 'SignColumn' },
       scope = { hl = 'FloatTitle' },
-      blank = {
-        char = '·',
-        hl = 'SignColumn',
-      },
+      blank = { char = '·', hl = 'SignColumn' },
     },
     scroll = { enabled = false },
     dashboard = {

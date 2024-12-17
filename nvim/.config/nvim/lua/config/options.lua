@@ -1,4 +1,3 @@
-vim.api.nvim_set_option('guicursor', 'i:block')
 vim.cmd('set relativenumber')
 vim.cmd('set incsearch')
 vim.cmd('set noshowmode')
@@ -6,8 +5,12 @@ vim.cmd('set tabstop=4')
 vim.cmd('set wrap')
 vim.cmd('set pumblend=0')
 vim.cmd('set scrolloff=0')
+vim.api.nvim_set_option_value('guicursor', 'i:block', {})
 vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
 vim.o.foldcolumn = '1'
+
+vim.g.catppuccin_flavour = 'macchiato'
+vim.g.lazyvim_blink_main = true
 
 -- git
 vim.api.nvim_create_autocmd('FileType', {

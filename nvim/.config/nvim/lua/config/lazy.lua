@@ -50,4 +50,3 @@ require('lazy').setup({
     },
   },
 })
-vim.g.catppuccin_flavour = 'macchiato'
