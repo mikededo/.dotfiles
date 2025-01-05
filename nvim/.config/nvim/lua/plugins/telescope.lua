@@ -57,6 +57,11 @@ return {
         desc = 'Colorscheme with preview',
       },
       {
+        '<leader>td',
+        '<cmd>TodoTelescope<cr>',
+        desc = 'Colorscheme with preview',
+      },
+      {
         '<leader>ds',
         Util.pick('lsp_document_symbols', {
           symbols = {
