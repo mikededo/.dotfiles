@@ -3,7 +3,6 @@ vim.api.nvim_create_autocmd('BufWritePre', {
   callback = function(args)
     require('conform').format({ bufnr = args.buf })
   end,
-  group = vim.api.nvim_create_augroup('EslintFixAll', { clear = true }),
 })
 
 local DEFAULT_FORMATTERS = {
