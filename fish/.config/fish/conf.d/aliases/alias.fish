@@ -13,6 +13,7 @@ alias os="cd ~/Documents/personal/open-source"
 alias sqci="cd ~/Documents/personal/projects/squared-ci"
 alias stack="projects && cd stack"
 alias aero="os && cd aero"
+alias advent="os && cd advent"
 
 # file manipulation
 alias rmd="rm -rf" # Lazy remove files
