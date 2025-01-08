@@ -9,33 +9,33 @@
 
 # Packages to be installed
 packages=(
-	git
-	kitty
-	nvim
-	fish
-	starship
-	wezterm
+  git
+  kitty
+  nvim
+  fish
+  starship
+  wezterm
 )
 
 # Run the stow command
 stow_it() {
-	package=$1
+  package=$1
 
-	stow -vR ${package} --ignore='(^|\W)\.gitkeep($|\W)' --ignore='(^|\W).DS_Store($|\W)'
+  stow -vR ${package} --ignore='(^|\W)\.gitkeep($|\W)' --ignore='(^|\W).DS_Store($|\W)'
 }
 
 # git clone helper
 git_clone() {
-	git clone "https://github.com/$1" $2
+  git clone "https://github.com/$1" $2
 }
 
 echo "> Stowing all packages\n"
 
 # Install everything
 for package in ${packages[@]}; do
-	echo "- Stowing ""$package""..."
-	stow_it $package
-	echo
+  echo "- Stowing ""$package""..."
+  stow_it $package
+  echo
 done
 
 # Additional dependencies
