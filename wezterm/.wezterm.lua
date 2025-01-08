@@ -36,8 +36,8 @@ c.keys = {
 	{ key = "x", mods = "ALT|CTRL", action = wezterm.action.SplitVertical({ domain = "CurrentPaneDomain" }) },
 	{ key = "b", mods = "CTRL", action = wezterm.action.RotatePanes("Clockwise") },
 	{ key = "h", mods = "ALT", action = wezterm.action.ActivatePaneDirection("Left") },
-	{ key = "j", mods = "ALT", action = wezterm.action.ActivatePaneDirection("Up") },
-	{ key = "k", mods = "ALT", action = wezterm.action.ActivatePaneDirection("Down") },
+	{ key = "k", mods = "ALT", action = wezterm.action.ActivatePaneDirection("Up") },
+	{ key = "j", mods = "ALT", action = wezterm.action.ActivatePaneDirection("Down") },
 	{ key = "l", mods = "ALT", action = wezterm.action.ActivatePaneDirection("Right") },
 }
 
