@@ -8,12 +8,15 @@ alias :q="exit"
 # folders
 alias docs="cd ~/Documents"
 alias dwn="cd ~/Downloads"
+
 alias projects="cd ~/Documents/personal/projects"
-alias os="cd ~/Documents/personal/open-source"
-alias sqci="cd ~/Documents/personal/projects/squared-ci"
 alias stack="projects && cd stack"
-alias aero="os && cd aero"
+
+alias os="cd ~/Documents/personal/open-source"
 alias advent="os && cd advent"
+alias aero="os && cd aero"
+alias esst="os && cd eslint-plugin-svelte-tailwindcss"
+alias sqci="cd ~/Documents/personal/projects/squared-ci"
 
 # file manipulation
 alias rmd="rm -rf" # Lazy remove files
