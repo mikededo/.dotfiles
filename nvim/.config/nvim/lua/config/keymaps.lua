@@ -1,9 +1,3 @@
-function sort_selection()
-  vim.api.nvim_command('normal! ggVG')
-  vim.api.nvim_command('sort')
-  vim.api.nvim_command('w')
-end
-
 vim.api.nvim_set_keymap('n', '<S-h>', '', {})
 vim.api.nvim_set_keymap('n', '<S-l>', '', {})
 vim.keymap.set( -- up on wrapped line
@@ -17,12 +11,6 @@ vim.keymap.set( -- down on wrapped line
   'j',
   'v:count == 0 ? "gj" : "j""',
   { expr = true, silent = true }
-)
-vim.api.nvim_set_keymap( -- sort file
-  'n',
-  '<leader>s',
-  ':lua sort_selection(true)<CR>',
-  { noremap = true, silent = true }
 )
 
 -- Comment
