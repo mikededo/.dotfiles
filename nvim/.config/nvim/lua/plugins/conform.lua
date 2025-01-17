@@ -14,7 +14,6 @@ local DEFAULT_FORMATTERS = {
   ['json'] = { 'prettierd' },
   ['jsonc'] = { 'prettierd' },
   ['lua'] = { 'stylua' },
-  ['less'] = { 'prettierd' },
   ['markdown'] = { 'prettierd' },
   ['markdown.mdx'] = { 'prettierd' },
   ['scss'] = { 'prettierd' },
@@ -26,6 +25,7 @@ local DEFAULT_FORMATTERS = {
 }
 local NO_PRETTIER_PATHS = {
   '/personal/projects/stack',
+  '/personal/projects/portfolio',
   '/personal/projects/angelica%-nadal',
   '/personal/open%-source/eslint%-plugin%-svelte%-tailwindcss',
   '/personal/open%-source/advent%-visualizations',
@@ -42,14 +42,13 @@ local get_formatters_by_ft = function()
     if current_path:find(path) then
       local formatters = vim.deepcopy(DEFAULT_FORMATTERS)
       -- Remove prettier from svelte, ts and js
-      formatters['css'] = {}
-      formatters['scss'] = {}
-      formatters['less'] = {}
       formatters['javascript'] = {}
       formatters['javascriptreact'] = {}
       formatters['svelte'] = { 'eslint_d' }
       formatters['typescript'] = {}
       formatters['typescriptreact'] = {}
+      -- Use eslint for specific files
+      formatters['css'] = { 'eslint_d' }
       return formatters
     end
   end
