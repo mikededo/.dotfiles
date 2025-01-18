@@ -1,5 +1,5 @@
 local layout = {
-  reverse = true,
+  reverse = false,
   layout = {
     box = 'horizontal',
     backdrop = false,
