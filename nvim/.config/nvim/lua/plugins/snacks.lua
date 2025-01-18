@@ -64,11 +64,7 @@ return {
     picker = {
       prompt = '   ',
       sources = {
-        files = {
-          hidden = true,
-        },
-        command_history = { layout = { preset = 'telescope' } },
-        search_history = { layout = { preset = 'telescope' } },
+        files = { hidden = true },
       },
       layout = layout,
     },
