@@ -21,15 +21,13 @@ It installs `nvm` as a `node` and `npm` version manager, but it can easily be
 removed by removing the `$HOME/.nvm` folder.
 
 > As soon as possible, the script will be migrated to a `lua` script in order to
-provide a more customizable installation.
+> provide a more customizable installation.
 
-## fish && kitty
+## fish
 
 As well as installing `fish`, the `./setup.sh` script will also install the
 [`fisher`](https://git.io/fisher) plugin manager. With it, I recommend
 installing the following plugins:
-
-- `plugin-kubectl`: adds simliar aliases as the kubectl plugin for zsh.
 
 > Completions can be installed from most executables (`gh`, `cargo`, `volta`...)
 > and should be stored in `~/.config/fish/completions/<exec-name>.fish`.  
@@ -50,30 +48,4 @@ for the prompt, it does not include any sort of plugin configuration.
 
 ## Neovim
 
-The Neovim configuration is built upon
-[`NvChad`](https://github.com/NvChad/NvChad). It adds a couple of plugins to
-deal with formating and the required configurations for the LSP server.
-
-> You can find and modify LSP configurations in the 
-> [NvChad custom config folder](./nvim/.config/nvim/lua/custom/plugins).
-
-Currently, the LSP is set up for:
-
-- Bash (it has a very simple completion).
-- Docker
-- Go
-- Rust
-- JavaScript, Typescript and TailwindCSS
-- Yaml (including k8s), JSON
-
-It includes diagnostics as well as formatting for each LSP. All required LSP are
-installed through the Mason plugin, meaning they will all be installed on
-launching `MasonInstallAll`. Same for TreeSitter language highlights, which
-has defined the required languages.
-
-> You can modify the formatting options in the 
-> [`formatter.lua`](./nvim/.config/nvim/lua/custom/plugins/user/formatter.lua).
-
-Currently using a minimally modified [NvChad](https://github.com/NvChad/NvChad)
-set up. The goal is to add the plugins required in order to make it fully
-functional both for front and back end development.
+Neovim is configured using the `LazyVim` starter with some customizations.
