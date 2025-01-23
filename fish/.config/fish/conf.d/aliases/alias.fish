@@ -15,8 +15,9 @@ alias stack="projects && cd stack"
 alias os="cd ~/Documents/personal/open-source"
 alias advent="os && cd advent"
 alias aero="os && cd aero"
-alias esst="os && cd eslint-plugin-svelte-tailwindcss"
+alias epst="os && cd eslint-plugin-svelte-tailwindcss"
 alias sqci="cd ~/Documents/personal/projects/squared-ci"
+alias portfolio="cd ~/Documents/personal/projects/portfolio"
 
 # file manipulation
 alias rmd="rm -rf" # Lazy remove files
