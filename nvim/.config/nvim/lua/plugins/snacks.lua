@@ -30,6 +30,96 @@ local layout = {
   },
 }
 
+--- @type snacks.dashboard.Section
+local dashboard = {
+  enabled = true,
+  width = 18,
+  sections = {
+    {
+      hidden = true,
+      key = 't',
+      desc = 'Find [T]ext',
+      action = ':lua Snacks.dashboard.pick(\'live_grep\')',
+    },
+    {
+      hidden = true,
+      icon = ' ',
+      key = 'r',
+      desc = '[R]ecent Files',
+      action = ':lua Snacks.dashboard.pick(\'oldfiles\')',
+    },
+    {
+      hidden = true,
+      icon = '󰒲 ',
+      key = 'l',
+      desc = '[L]azy',
+      action = ':Lazy',
+    },
+
+    {
+      padding = 2,
+      text = { { 'Neovim :: Δ Ε Δ Ο · 力', hl = 'Normal' } },
+      action = ':lua Snacks.dashboard.pick(\'files\')',
+      key = 'f',
+    },
+
+    {
+      padding = 1,
+      text = {
+        { '  Find [F]ile', width = 19, hl = 'NonText' },
+        { '  Find [T]ext', hl = 'NonText' },
+      },
+      action = ':lua Snacks.dashboard.pick(\'files\')',
+      key = 'f',
+    },
+    {
+      padding = 1,
+      text = {
+        { ' ', width = 3 },
+        { '  [N]ew File', width = 19, hl = 'NonText' },
+        { '  [R]ecent File', hl = 'NonText' },
+      },
+      action = ':ene | startinsert',
+      key = 'n',
+    },
+    {
+      padding = 2,
+      text = {
+        { ' ', width = 9 },
+        { '  [C]onfig', hl = 'NonText' },
+        { ' ', width = 8 },
+        { '󰒲  [L]azy', hl = 'NonText' },
+        { ' ', width = 14 },
+      },
+      action = ':lua Snacks.dashboard.pick(\'files\', {cwd = vim.fn.stdpath(\'config\')})',
+      key = 'c',
+    },
+    {
+      padding = 2,
+      text = {
+        { ' ', width = 5 },
+        { '  [Q]uit', hl = 'NonText' },
+      },
+      action = ':quitall',
+      key = 'q',
+    },
+
+    { section = 'startup', padding = 1 },
+
+    { text = ' ', padding = 6 },
+
+    {
+      align = 'center',
+      text = {
+        '@mikededo',
+        hl = 'NonText',
+      },
+    },
+  },
+
+  formats = { key = { '' } },
+}
+
 return {
   'folke/snacks.nvim',
   ---@type snacks.Config
@@ -37,6 +127,54 @@ return {
     animate = { enabled = false },
     notifier = { enabled = false },
     notify = { enabled = false },
+    input = {
+      win = { style = 'rename' },
+      icon_pos = false,
+    },
+    styles = {
+      rename = {
+        backdrop = false,
+        relative = 'cursor',
+        row = 1,
+        col = 1,
+        border = 'single',
+        title_pos = 'center',
+        height = 1,
+        width = 60,
+        noautocmd = true,
+        wo = { cursorline = false },
+        bo = { filetype = 'snacks_input', buftype = 'prompt' },
+        b = { completion = false },
+        keys = {
+          n_esc = {
+            '<esc>',
+            { 'cmp_close', 'cancel' },
+            mode = 'n',
+            expr = true,
+          },
+          i_esc = {
+            '<esc>',
+            { 'cmp_close', 'stopinsert' },
+            mode = 'i',
+            expr = true,
+          },
+          i_cr = {
+            '<cr>',
+            { 'cmp_accept', 'confirm' },
+            mode = 'i',
+            expr = true,
+          },
+          i_tab = {
+            '<tab>',
+            { 'cmp_select_next', 'cmp' },
+            mode = 'i',
+            expr = true,
+          },
+          i_ctrl_w = { '<c-w>', '<c-s-w>', mode = 'i', expr = true },
+          q = 'cancel',
+        },
+      },
+    },
     indent = {
       animate = { enabled = false },
       indent = { char = '→', hl = 'SignColumn' },
@@ -44,23 +182,7 @@ return {
       blank = { char = '·', hl = 'SignColumn' },
     },
     scroll = { enabled = false },
-    dashboard = {
-      sections = {
-        {
-          header = [[
-███╗   ██╗██╗   ██╗██╗███╗   ███╗
-████╗  ██║██║   ██║██║████╗ ████║
-██╔██╗ ██║██║   ██║██║██╔████╔██║
-██║╚██╗██║╚██╗ ██╔╝██║██║╚██╔╝██║
-██║ ╚████║ ╚████╔╝ ██║██║ ╚═╝ ██║
-╚═╝  ╚═══╝  ╚═══╝  ╚═╝╚═╝     ╚═╝]],
-          padding = 1,
-        },
-        { title = 'Shortcuts', padding = 1 },
-        { section = 'keys' },
-        { section = 'startup', padding = { 0, 2 } },
-      },
-    },
+    dashboard = dashboard,
     picker = {
       prompt = '   ',
       sources = {

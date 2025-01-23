@@ -23,6 +23,10 @@ return {
           SnacksPickerInputBorder = { fg = C.text, bg = C.crust },
           SnacksPickerListTitle = { fg = C.mantle, bg = C.red },
           SnacksPickerListCursorLine = { bg = C.base },
+          SnacksInputBorder = { bg = C.base, fg = C.peach },
+          SnacksInputTitle = { bg = C.base, fg = C.peach },
+          SnacksInputIcon = { bg = C.base, fg = C.peach },
+          SnacksInputNormal = { bg = C.base, fg = C.text },
         }
       end,
     },
