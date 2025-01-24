@@ -213,6 +213,13 @@ return {
     { '<leader>:', false },
 
     {
+      '<leader>ff',
+      function()
+        Snacks.picker.files()
+      end,
+      desc = 'Find files',
+    },
+    {
       '<leader>fw',
       function()
         Snacks.picker.grep()

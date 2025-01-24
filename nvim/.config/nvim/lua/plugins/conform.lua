@@ -24,12 +24,13 @@ local DEFAULT_FORMATTERS = {
   ['yaml'] = { 'prettierd' },
 }
 local NO_PRETTIER_PATHS = {
-  '/personal/projects/stack',
-  '/personal/projects/portfolio',
-  '/personal/projects/angelica%-nadal',
-  '/personal/open%-source/eslint%-plugin%-svelte%-tailwindcss',
   '/personal/open%-source/advent%-visualizations',
   '/personal/open%-source/dartBarrelFileGenerator',
+  '/personal/open%-source/eslint%-plugin%-svelte%-tailwindcss',
+  '/personal/open%-source/tailwindcss%-aria',
+  '/personal/projects/angelica%-nadal',
+  '/personal/projects/portfolio',
+  '/personal/projects/stack',
 }
 
 -- In personal projects I don't like using prettier,
@@ -49,6 +50,8 @@ local get_formatters_by_ft = function()
       formatters['typescriptreact'] = {}
       -- Use eslint for specific files
       formatters['css'] = { 'eslint_d' }
+      formatters['markdown'] = { 'eslint_d' }
+      formatters['markdown.mdx'] = { 'eslint_d' }
       return formatters
     end
   end
