@@ -28,17 +28,22 @@ c.use_fancy_tab_bar = false
 c.show_new_tab_button_in_tab_bar = false
 c.window_decorations = "RESIZE"
 c.window_padding = { left = 0, right = 0, top = 0, bottom = 0 }
-c.window_frame = { font = wezterm.font("JetBrainsMono Nerd Font Mono"), inactive_titlebar_bg = "#ffffff" }
+c.window_frame = {
+	font = wezterm.font("JetBrainsMono Nerd Font Mono"),
+	inactive_titlebar_bg = "#ffffff",
+}
 
 -- keys
 c.keys = {
-	{ key = "v", mods = "ALT|CTRL", action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
-	{ key = "x", mods = "ALT|CTRL", action = wezterm.action.SplitVertical({ domain = "CurrentPaneDomain" }) },
-	{ key = "b", mods = "CTRL", action = wezterm.action.RotatePanes("Clockwise") },
-	{ key = "h", mods = "ALT", action = wezterm.action.ActivatePaneDirection("Left") },
-	{ key = "k", mods = "ALT", action = wezterm.action.ActivatePaneDirection("Up") },
-	{ key = "j", mods = "ALT", action = wezterm.action.ActivatePaneDirection("Down") },
-	{ key = "l", mods = "ALT", action = wezterm.action.ActivatePaneDirection("Right") },
+	{ key = "t", mods = "CMD", action = wezterm.action.DisableDefaultAssignment },
+	{ key = "t", mods = "OPT", action = wezterm.action.SpawnTab("CurrentPaneDomain") },
+	{ key = "v", mods = "OPT", action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
+	{ key = "x", mods = "OPT", action = wezterm.action.SplitVertical({ domain = "CurrentPaneDomain" }) },
+	{ key = "b", mods = "OPT", action = wezterm.action.RotatePanes("Clockwise") },
+	{ key = "h", mods = "OPT", action = wezterm.action.ActivatePaneDirection("Left") },
+	{ key = "k", mods = "OPT", action = wezterm.action.ActivatePaneDirection("Up") },
+	{ key = "j", mods = "OPT", action = wezterm.action.ActivatePaneDirection("Down") },
+	{ key = "l", mods = "OPT", action = wezterm.action.ActivatePaneDirection("Right") },
 }
 
 wezterm.on("format-tab-title", function(tab, _, _, config, _, max_width)
