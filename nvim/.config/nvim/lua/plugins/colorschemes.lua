@@ -12,9 +12,14 @@ return {
       },
       custom_highlights = function(C)
         return {
-          FloatBorder = { bg = C.mantle },
+          FloatBorder = { bg = C.mantle, fg = C.peach },
           FloatTitle = { fg = C.text, bg = C.mantle },
           NormalFloat = { fg = C.text, bg = C.mantle },
+
+          -- NeoTree
+          NeoTreeTitleBar = { fg = C.peach, bg = C.mantle },
+          NeoTreeFloatBorder = { fg = C.peach, bg = C.mantle },
+          NeoTreeFloatTitle = { fg = C.peach },
 
           -- Snacks specific
           SnacksPickerMatch = { fg = C.mauve, style = { 'italic' } },
@@ -27,6 +32,9 @@ return {
           SnacksInputTitle = { bg = C.base, fg = C.peach },
           SnacksInputIcon = { bg = C.base, fg = C.peach },
           SnacksInputNormal = { bg = C.base, fg = C.text },
+
+          -- WhichKey
+          WhichKeyBorder = { fg = C.peach, bg = C.mantle },
         }
       end,
     },

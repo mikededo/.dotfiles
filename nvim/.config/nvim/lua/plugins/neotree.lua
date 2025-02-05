@@ -29,7 +29,7 @@ return {
       }
     end,
     opts = {
-      popup_border_style = 'NC',
+      popup_border_style = 'single',
       sources = { 'filesystem', 'buffers', 'git_status', 'document_symbols' },
       hide_root_node = true,
       open_files_do_not_replace_types = {
