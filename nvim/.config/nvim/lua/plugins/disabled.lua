@@ -8,6 +8,7 @@ return {
   disable('folke/flash.nvim'),
   disable('folke/noice.nvim'),
   disable('folke/persistence.nvim'),
+  disable('stevearc/conform.nvim'),
   disable('folke/tokyonight.nvim'),
   disable('ibhagwan/fzf-lua'),
   disable('rcarriga/nvim-notify'),

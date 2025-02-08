@@ -1,4 +1,6 @@
----@diagnostic disable: missing-fields
+-- Part of this config is inspired/based in https://github.com/ryoppippi/dotfiles
+
+local fmt = require('plugins.lspconfig.format')
 
 local signs = {
   { name = 'DiagnosticSignError', text = '' },
@@ -8,35 +10,11 @@ local signs = {
 }
 
 -- Disable semantics from LSP
-vim.api.nvim_create_autocmd('LspAttach', {
-  callback = function(args)
-    local client = vim.lsp.get_client_by_id(args.data.client_id)
-    if client == nil then
-      return
-    end
-    if client.server_capabilities == nil then
-      client.server_capabilities = {}
-    end
-
-    client.server_capabilities.semanticTokensProvider = nil
-    if client.name == 'svelte' then
-      client.capabilities.workspace =
-        vim.lsp.protocol.make_client_capabilities().workspace
-      client.capabilities.workspace.didChangeWatchedFiles.dynamicRegistration =
-        true
-      client.capabilities.workspace.didChangeWatchedFiles.relativePatternSupport =
-        true
-    end
-  end,
-})
-
--- Disable autoformat
-vim.g.autoformat = false
 
 local get_root_dir = function(fname)
   local util = require('lspconfig.util')
   return util.root_pattern('.git')(fname)
-    or util.root_pattern('package.json', 'tsconfig.json')(fname)
+      or util.root_pattern('package.json', 'tsconfig.json')(fname)
 end
 
 local get_keymaps = function()
@@ -70,10 +48,23 @@ local get_keymaps = function()
   }
 end
 
-require('lazyvim.util').lsp.on_attach(function(client)
-  if client.name == 'tsserver' then
-    client.server_capabilities.documentFormattingProvider = false
-  end
+local servers = vim.iter({
+  { 'cssls',         format = false },
+  { 'cssmodules_ls', format = false },
+  { 'eslint',        format = true, root_dir = get_root_dir, },
+  { 'graphql',       format = false },
+  { 'html',          format = false },
+  { 'jsonls',        format = false },
+  { 'lua_ls',        format = false },
+  { 'tailwindcss',   format = false },
+  { 'vtsls',         format = false },
+  { 'yamlls',        format = false },
+}):fold({}, function(acc, t)
+  acc[t[1]] = {
+    on_attach = fmt.format_config(t.format),
+    root_dir = t.root_dir,
+  }
+  return acc
 end)
 
 return {
@@ -98,29 +89,15 @@ return {
         },
       },
       -- LSP Server Settings
-      servers = {
-        cssls = {},
-        cssmodules_ls = {},
-        eslint = { root_dir = get_root_dir },
-        graphql = {},
-        html = {},
-        jsonls = {},
-        lua_ls = {},
-        tailwindcss = {},
-        ---@type vim.lsp.ClientConfig
-        svelte = {
-          on_attach = function(client)
-            vim.api.nvim_create_autocmd('BufWritePost', {
-              pattern = { '*.js', '*.ts' },
-              callback = function(ctx)
-                client.notify('$/onDidChangeTsOrJsFile', { uri = ctx.match })
-              end,
-            })
-          end,
-        },
-        yamlls = {},
-      },
+      servers = vim.tbl_extend("force", servers, require('plugins.lspconfig.servers.svelte'), require('plugins.lspconfig.servers.efm')),
     },
+    init = function()
+      vim.api.nvim_create_autocmd('LspAttach', {
+        callback = function(args)
+          fmt.on_attach(assert(vim.lsp.get_client_by_id(args.data.client_id)), args.buf)
+        end,
+      })
+    end,
     keys = get_keymaps,
   },
 }

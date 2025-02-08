@@ -2,6 +2,8 @@ return {
   'williamboman/mason.nvim',
   opts = {
     ensure_installed = {
+      -- general
+      'efm',
       -- lua
       'lua-language-server',
       'stylua',
@@ -14,8 +16,6 @@ return {
       'json-lsp',
       'tailwindcss-language-server',
       -- back end
-      'gopls',
-      'golangci-lint',
       'rustfmt',
       'rust-analyzer',
       -- other
