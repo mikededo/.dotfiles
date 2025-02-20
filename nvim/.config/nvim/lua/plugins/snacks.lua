@@ -127,6 +127,7 @@ return {
     animate = { enabled = false },
     notifier = { enabled = false },
     notify = { enabled = false },
+    image = { enabled = false },
     input = {
       win = { style = 'rename' },
       icon_pos = false,
