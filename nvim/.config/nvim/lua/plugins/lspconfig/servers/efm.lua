@@ -19,6 +19,10 @@ return {
           'css',
           'scss',
           'less',
+          'json',
+          'jsonc',
+          'graphql',
+          'yaml',
         },
         init_options = {
           documentFormatting = true,
