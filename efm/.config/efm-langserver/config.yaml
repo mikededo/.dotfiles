@@ -36,6 +36,7 @@ tools:
     require-marker: true
     root-markers:
       - .eslintrc
+      - .eslintrc.js
       - eslintrc.config.js
 
   fish_indent: &fish_indent
@@ -83,12 +84,6 @@ languages:
   typescript.tsx:
     - <<: *eslint
     - <<: *prettier
-  markdown:
-    - <<: *eslint
-    - <<: *prettier
-  markdown.mdx:
-    - <<: *eslint
-    - <<: *prettier
   ## styles
   css:
     - <<: *eslint
@@ -111,6 +106,12 @@ languages:
     - <<: *eslint
     - <<: *prettier
   handlebars:
+    - <<: *eslint
+    - <<: *prettier
+  markdown:
+    - <<: *eslint
+    - <<: *prettier
+  markdown.mdx:
     - <<: *eslint
     - <<: *prettier
 
