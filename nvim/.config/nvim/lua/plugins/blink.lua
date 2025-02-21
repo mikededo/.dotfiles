@@ -30,6 +30,9 @@ return {
         TypeParameter = '󰬛',
       },
     },
+    completion = {
+      ghost_text = { enabled = false },
+    },
     keymap = {
       preset = 'default',
       ['<Enter>'] = { 'accept', 'fallback' },
