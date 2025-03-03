@@ -9,7 +9,6 @@
 
 # Packages to be installed
 packages=(
-  efm
   fish
   git
   kitty
