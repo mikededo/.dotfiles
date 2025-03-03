@@ -23,7 +23,6 @@ return {
       'bash-language-server',
       -- yaml
       'yaml-language-server',
-      'yamlfmt',
     },
   },
 }

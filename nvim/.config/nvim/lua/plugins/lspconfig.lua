@@ -1,6 +1,7 @@
 -- Part of this config is inspired/based in https://github.com/ryoppippi/dotfiles
 
 local fmt = require('plugins.lspconfig.format')
+local eslint = require('plugins.lspconfig.servers.eslint')
 
 local signs = {
   { name = 'DiagnosticSignError', text = '' },
@@ -14,7 +15,7 @@ local signs = {
 local get_root_dir = function(fname)
   local util = require('lspconfig.util')
   return util.root_pattern('.git')(fname)
-      or util.root_pattern('package.json', 'tsconfig.json')(fname)
+    or util.root_pattern('package.json', 'tsconfig.json')(fname)
 end
 
 local get_keymaps = function()
@@ -48,24 +49,33 @@ local get_keymaps = function()
   }
 end
 
-local servers = vim.iter({
-  { 'cssls',         format = false },
-  { 'cssmodules_ls', format = false },
-  { 'eslint',        format = true, root_dir = get_root_dir, },
-  { 'graphql',       format = false },
-  { 'html',          format = false },
-  { 'jsonls',        format = false },
-  { 'lua_ls',        format = false },
-  { 'tailwindcss',   format = false },
-  { 'vtsls',         format = false },
-  { 'yamlls',        format = false },
-}):fold({}, function(acc, t)
-  acc[t[1]] = {
-    on_attach = fmt.format_config(t.format),
-    root_dir = t.root_dir,
-  }
-  return acc
-end)
+local servers = vim
+  .iter({
+    { 'cssls', format = false },
+    { 'cssmodules_ls', format = false },
+    {
+      'eslint',
+      format = false,
+      root_dir = get_root_dir,
+      filetypes = eslint.filetypes,
+    },
+    { 'graphql', format = false },
+    { 'html', format = false },
+    { 'jsonls', format = false },
+    { 'lua_ls', format = false },
+    { 'tailwindcss', format = false },
+    { 'vtsls', format = false },
+    { 'yamlls', format = false, settings = { format = { enable = false } } },
+  })
+  :fold({}, function(acc, t)
+    acc[t[1]] = {
+      on_attach = fmt.format_config(t.format),
+      root_dir = t.root_dir,
+      filetypes = t.filetypes,
+      settings = t.settings,
+    }
+    return acc
+  end)
 
 return {
   {
@@ -73,6 +83,7 @@ return {
     opts = {
       -- options for vim.diagnostic.config()
       inlay_hints = { enabled = false },
+      format = { timeout_ms = 2000 },
       diagnostics = {
         underline = true,
         update_in_insert = true,
@@ -89,12 +100,20 @@ return {
         },
       },
       -- LSP Server Settings
-      servers = vim.tbl_extend("force", servers, require('plugins.lspconfig.servers.svelte'), require('plugins.lspconfig.servers.efm')),
+      servers = vim.tbl_extend(
+        'force',
+        servers,
+        require('plugins.lspconfig.servers.svelte'),
+        require('plugins.lspconfig.servers.efm')
+      ),
     },
     init = function()
       vim.api.nvim_create_autocmd('LspAttach', {
         callback = function(args)
-          fmt.on_attach(assert(vim.lsp.get_client_by_id(args.data.client_id)), args.buf)
+          fmt.on_attach(
+            assert(vim.lsp.get_client_by_id(args.data.client_id)),
+            args.buf
+          )
         end,
       })
     end,

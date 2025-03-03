@@ -1,0 +1,22 @@
+return {
+  filetypes = {
+    'javascript',
+    'javascriptreact',
+    'javascript.jsx',
+    'typescript',
+    'typescriptreact',
+    'typescript.tsx',
+    'svelte',
+    'astro',
+    'vue',
+    'markdown',
+    'markdown.mdx',
+    'css',
+    'scss',
+    'less',
+    'json',
+    'jsonc',
+    'graphql',
+    'yaml',
+  },
+}
