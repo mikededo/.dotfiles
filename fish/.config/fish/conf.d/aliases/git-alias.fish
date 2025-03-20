@@ -6,8 +6,7 @@ alias def_branch="git symbolic-ref --short HEAD"
 alias main='git checkout main && gl'
 alias master='git checkout master && gl'
 alias develop='git checkout develop && gl'
-alias list-branches='git branch | xargs -I {} echo {}'
-alias lb='list-branches'
+alias ls-branches='git branch | xargs -I {} echo {}'
 alias H0='HUSKY=0' # disable husky from running prehooks
 alias check-log="git diff --staged -G console"
 

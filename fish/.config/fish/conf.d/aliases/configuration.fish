@@ -10,6 +10,7 @@ alias updfish="exec fish"
 # Alias files
 set ALIAS_DIR "$HOME/.config/fish/conf.d/aliases"
 alias cfgalias="vim $ALIAS_DIR/configuration.fish"
+alias devalias="vim $ALIAS_DIR/dev.fish"
 alias gitalias="vim $ALIAS_DIR/git-alias.fish"
 alias workalias="vim $ALIAS_DIR/work.fish"
 alias falias="alias | grep" # search for an alias
