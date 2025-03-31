@@ -11,7 +11,6 @@
 packages=(
   fish
   git
-  kitty
   nvim
   starship
   wezterm
