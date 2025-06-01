@@ -63,7 +63,18 @@ local servers = vim
     { 'html', format = false },
     { 'jsonls', format = false },
     { 'lua_ls', format = false },
-    { 'tailwindcss', format = false },
+    {
+      'tailwindcss',
+      format = false,
+      settings = {
+        tailwindCSS = {
+          experimental = {
+            classRegex = ' (["\'`][^"\'`]*.*?["\'`])',
+            '["\'`]([^"\'`]*).*?["\'`]',
+          },
+        },
+      },
+    },
     { 'vtsls', format = false },
     { 'yamlls', format = false, settings = { format = { enable = false } } },
   })
