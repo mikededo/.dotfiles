@@ -8,16 +8,18 @@ alias :q="exit"
 # folders
 alias docs="cd ~/Documents"
 alias dwn="cd ~/Downloads"
-
 alias projects="cd ~/Documents/personal/projects"
-alias stack="projects && cd stack"
 
-alias os="cd ~/Documents/personal/open-source"
-alias advent="os && cd advent"
-alias aero="os && cd aero"
-alias epst="os && cd eslint-plugin-svelte-tailwindcss"
-alias sqci="cd ~/Documents/personal/projects/squared-ci"
-alias portfolio="cd ~/Documents/personal/projects/portfolio"
+# dinamically create aliases based on the folders
+for folder in (ls -d ~/Documents/personal/projects/*/ | xargs -n1 basename)
+  if test $folder != 'test'
+    alias $folder="projects && cd $folder"
+  end
+end
+# extra aliases
+alias stack="projects && cd stack"
+alias epst="projects && cd eslint-plugin-svelte-tailwindcss"
+alias sqci="projects && cd squared-ci"
 
 # file manipulation
 alias rmd="rm -rf" # Lazy remove files
