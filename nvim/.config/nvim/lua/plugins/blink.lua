@@ -30,6 +30,17 @@ return {
         TypeParameter = '󰬛',
       },
     },
+    sources = {
+      compat = {},
+      -- Disable all snippets
+      transform_items = function(_, items)
+        return vim.tbl_filter(function(item)
+          return item.kind
+            ~= require('blink.cmp.types').CompletionItemKind.Snippet
+        end, items)
+      end,
+      default = { 'lsp', 'path', 'buffer' },
+    },
     completion = {
       ghost_text = { enabled = false },
     },
