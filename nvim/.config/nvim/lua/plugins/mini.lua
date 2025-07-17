@@ -6,6 +6,10 @@ return {
       return {
         n_lines = 500,
         custom_textobjects = {
+          A = ai.gen_spec.treesitter({
+            a = { '@attribute.outer' },
+            i = { '@attribute.inner' },
+          }),
           v = ai.gen_spec.treesitter({
             a = { '@assignment.outer' },
             i = { '@assignment.inner' },
