@@ -12,5 +12,4 @@ return {
   disable('folke/tokyonight.nvim'),
   disable('ibhagwan/fzf-lua'),
   disable('rcarriga/nvim-notify'),
-  disable('zbirenbaum/copilot-cmp'),
 }
