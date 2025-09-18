@@ -1,5 +1,8 @@
 # aliases related with development, mostly  
 alias check-deps="bunx npm-check-updates"
+alias bi="bun install"
+alias ba="bun add"
+alias bad="bun add --dev"
 
 # package.json
 alias pkgscripts="jq .scripts package.json"
