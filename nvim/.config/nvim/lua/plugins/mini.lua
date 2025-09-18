@@ -1,6 +1,6 @@
 return {
   {
-    'echasnovski/mini.ai',
+    'nvim-mini/mini.ai',
     opts = function()
       local ai = require('mini.ai')
       return {
@@ -19,7 +19,7 @@ return {
     end,
   },
   {
-    'echasnovski/mini.surround',
+    'nvim-mini/mini.surround',
     version = '*',
     keys = function(_, keys)
       local mappings = {
