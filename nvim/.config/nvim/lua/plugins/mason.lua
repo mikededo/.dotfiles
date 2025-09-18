@@ -2,13 +2,11 @@ return {
   'mason-org/mason.nvim',
   opts = {
     ensure_installed = {
-      -- general
-      'efm',
       -- lua
       'lua-language-server',
       'stylua',
       -- web dev
-      'typescript-language-server',
+      'vtsls',
       'diagnostic-languageserver',
       'svelte-language-server',
       'eslint_d',
@@ -21,8 +19,10 @@ return {
       -- other
       'dockerfile-language-server',
       'bash-language-server',
+      'actionlint',
       -- yaml
       'yaml-language-server',
+      -- NOTE: efm removed in favor of conform.nvim + nvim-lint
     },
   },
 }

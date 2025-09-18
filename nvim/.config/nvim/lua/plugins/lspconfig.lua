@@ -1,8 +1,5 @@
 -- Part of this config is inspired/based in https://github.com/ryoppippi/dotfiles
 
-local fmt = require('plugins.lspconfig.format')
-local eslint = require('plugins.lspconfig.servers.eslint')
-
 local signs = {
   { name = 'DiagnosticSignError', text = '' },
   { name = 'DiagnosticSignWarn', text = '' },
@@ -15,7 +12,7 @@ local signs = {
 local get_root_dir = function(fname)
   local util = require('lspconfig.util')
   return util.root_pattern('.git')(fname)
-    or util.root_pattern('package.json', 'tsconfig.json')(fname)
+      or util.root_pattern('package.json', 'tsconfig.json')(fname)
 end
 
 local get_keymaps = function()
@@ -49,44 +46,56 @@ local get_keymaps = function()
   }
 end
 
-local servers = vim
-  .iter({
-    { 'cssls', format = false },
-    { 'cssmodules_ls', format = false },
-    {
-      'eslint',
-      format = false,
-      root_dir = get_root_dir,
-      filetypes = eslint.filetypes,
+local servers = {
+  cssls = {},
+  cssmodules_ls = {},
+  eslint = {
+    root_dir = get_root_dir,
+    filetypes = {
+      'javascript',
+      'javascriptreact',
+      'javascript.jsx',
+      'typescript',
+      'typescriptreact',
+      'typescript.tsx',
+      'svelte',
+      'astro',
+      'vue',
+      'markdown',
+      'markdown.mdx',
+      'css',
+      'scss',
+      'less',
+      'json',
+      'jsonc',
+      'graphql',
+      'yaml',
     },
-    { 'graphql', format = false },
-    { 'html', format = false },
-    { 'jsonls', format = false },
-    { 'lua_ls', format = false },
-    {
-      'tailwindcss',
-      format = false,
-      settings = {
-        tailwindCSS = {
-          experimental = {
-            classRegex = ' (["\'`][^"\'`]*.*?["\'`])',
-            '["\'`]([^"\'`]*).*?["\'`]',
-          },
+    settings = {
+      workingDirectories = { mode = 'auto' },
+      format = true
+    }
+  },
+  graphql = {},
+  html = {},
+  jsonls = {},
+  lua_ls = {},
+  tailwindcss = {
+    settings = {
+      tailwindCSS = {
+        experimental = {
+          classRegex = ' (["\'`][^"\'`]*.*?["\'`])', '["\'`]([^"\'`]*).*?["\'`]',
         },
       },
     },
-    { 'vtsls', format = false },
-    { 'yamlls', format = false, settings = { format = { enable = false } } },
-  })
-  :fold({}, function(acc, t)
-    acc[t[1]] = {
-      on_attach = fmt.format_config(t.format),
-      root_dir = t.root_dir,
-      filetypes = t.filetypes,
-      settings = t.settings,
+  },
+  vtsls = {},
+  yamlls = {
+    settings = {
+      format = { enable = false }
     }
-    return acc
-  end)
+  },
+}
 
 return {
   {
@@ -110,24 +119,9 @@ return {
           source = 'if_many',
         },
       },
-      -- LSP Server Settings
-      servers = vim.tbl_extend(
-        'force',
-        servers,
-        require('plugins.lspconfig.servers.svelte'),
-        require('plugins.lspconfig.servers.efm')
-      ),
+      servers
     },
-    init = function()
-      vim.api.nvim_create_autocmd('LspAttach', {
-        callback = function(args)
-          fmt.on_attach(
-            assert(vim.lsp.get_client_by_id(args.data.client_id)),
-            args.buf
-          )
-        end,
-      })
-    end,
+
     keys = get_keymaps,
   },
 }
