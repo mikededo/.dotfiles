@@ -1,0 +1,38 @@
+# Appearance
+theme = Catppuccin Macchiato
+font-family = "JetBrainsMono Nerd Font Mono"
+font-style = Medium
+font-size = 13
+
+macos-titlebar-style = tabs
+macos-titlebar-proxy-icon = hidden
+
+# Window settings
+window-padding-x = 0
+window-padding-y = 0
+
+# Panes
+unfocused-split-opacity = 0.90
+
+# Keybindings
+# Disable default CMD+t
+keybind = super+t=unbind
+
+# Tab management
+keybind = alt+t=new_tab
+
+# Pane splitting
+keybind = alt+v=new_split:right
+keybind = alt+x=new_split:down
+
+# Pane navigation
+keybind = alt+h=goto_split:left
+keybind = alt+k=goto_split:top
+keybind = alt+j=goto_split:bottom
+keybind = alt+l=goto_split:right
+
+# Note: Ghostty doesn't have a direct equivalent to RotatePanes
+# The alt+b binding for pane rotation isn't migrated
+
+# Bell
+shell-integration-features = no-cursor,no-sudo,no-title
