@@ -4,12 +4,14 @@ font-family = "JetBrainsMono Nerd Font Mono"
 font-style = Medium
 font-size = 13
 
+macos-window-buttons = hidden
 macos-titlebar-style = tabs
 macos-titlebar-proxy-icon = hidden
 
 # Window settings
 window-padding-x = 0
 window-padding-y = 0
+window-title-font-family = "JetBrainsMono Nerd Font Mono"
 
 # Panes
 unfocused-split-opacity = 0.90
