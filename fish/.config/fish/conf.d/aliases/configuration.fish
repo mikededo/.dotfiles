@@ -1,11 +1,12 @@
 # Configurations
-alias fishconfig="vim $HOME/.config/fish/config.fish"
-alias starshipconfig="vim $HOME/.config/starship.toml"
-alias gitconfig="vim $HOME/.gitconfig"
-alias kittyconfig="vim $HOME/.config/kitty/kitty.conf"
 alias dotman="cd $HOME/.dotfiles"
+alias fishconfig="vim $HOME/.config/fish/config.fish"
+alias ghostconfig="vim $HOME/.config/ghostty/config"
+alias gitconfig="vim $HOME/.gitconfig"
 alias nvimdir="cd $HOME/.dotfiles/nvim/.config/nvim/"
+alias starshipconfig="vim $HOME/.config/starship.toml"
 alias updfish="exec fish"
+alias wezconfig="vim $HOME/.config/wezterm/wezterm.lua"
 
 # Alias files
 set ALIAS_DIR "$HOME/.config/fish/conf.d/aliases"
