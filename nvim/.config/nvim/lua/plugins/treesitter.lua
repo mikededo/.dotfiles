@@ -12,6 +12,8 @@ return {
         'jsdoc',
         'json',
         'jsonc',
+        'html',
+        'html_tags',
         'lua',
         'markdown',
         'svelte',
@@ -25,7 +27,6 @@ return {
       opts.textobjects = { enable = true }
       opts.indent = { enable = true }
 
-      -- Register mdx as a markdown language
       vim.filetype.add({ extension = { mdx = 'mdx' } })
       vim.treesitter.language.register('markdown', 'mdx')
     end,
