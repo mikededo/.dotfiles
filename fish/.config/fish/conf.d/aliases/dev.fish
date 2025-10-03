@@ -1,4 +1,5 @@
 # aliases related with development, mostly  
+alias v="vercel"
 alias check-deps="bunx npm-check-updates"
 alias bi="bun install"
 alias ba="bun add"
