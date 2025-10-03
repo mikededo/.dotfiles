@@ -3,6 +3,7 @@ theme = Catppuccin Macchiato
 font-family = "JetBrainsMono Nerd Font Mono"
 font-style = Medium
 font-size = 13
+cursor-style-blink = false
 
 macos-window-buttons = hidden
 macos-titlebar-style = tabs
