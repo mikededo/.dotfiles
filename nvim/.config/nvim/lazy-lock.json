@@ -4,7 +4,7 @@
   "LuaSnip": { "branch": "master", "commit": "73813308abc2eaeff2bc0d3f2f79270c491be9d7" },
   "SchemaStore.nvim": { "branch": "main", "commit": "7d0a0b914437bfefcb17d0a7f83d9f2147cc2d28" },
   "blink-copilot": { "branch": "main", "commit": "5d35fd07fcc148be20442da1bdd2407e03263d7d" },
-  "blink.cmp": { "branch": "main", "commit": "2b44b9cc94d426b355f1c43e4fc25170f1a89948" },
+  "blink.cmp": { "branch": "main", "commit": "cc8c9b737d9ddc5dd0d9869ca2970a3859be9c5f" },
   "bufferline.nvim": { "branch": "main", "commit": "655133c3b4c3e5e05ec549b9f8cc2894ac6f51b3" },
   "catppuccin": { "branch": "main", "commit": "af58927c55c9f3272c940ff02b3cee94a1249f26" },
   "conform.nvim": { "branch": "master", "commit": "fbcb4fa7f34bfea9be702ffff481a8e336ebf6ed" },
