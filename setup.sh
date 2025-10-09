@@ -37,12 +37,3 @@ for package in ${packages[@]}; do
   stow_it $package
   echo
 done
-
-# Additional dependencies
-echo "> Installing additional dependencies"
-
-echo "Installing volta"
-[ ! -d $HOME/.volta ] && curl https://get.volta.sh | bash
-echo "volta installed"
-
-echo "\n> Set up completed 🚀"
