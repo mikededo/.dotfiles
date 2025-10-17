@@ -7,6 +7,7 @@ alias main='git checkout main && gl'
 alias master='git checkout master && gl'
 alias develop='git checkout develop && gl'
 alias ls-branches='git branch | xargs -I {} echo {}'
+alias lsb='git branch | xargs -I {} echo {}'
 alias H0='HUSKY=0' # disable husky from running prehooks
 alias check-log="git diff --staged -G console"
 
@@ -42,7 +43,9 @@ alias updrem='git fetch && git rebase origin/main'
 alias updremm='git fetch && git rebase origin/master'
 # local
 alias gl='git pull'
-alias clear-branches='git branch --merged (def_branch) | grep -v (def_branch) | xargs -I {} git branch -D {}'
+function clear-branches
+    git fetch --prune && git branch -vv | grep ': gone]' | awk '{print $1}' | xargs -I {} git branch -D {}
+end
 # cherry-pick
 alias gcp="git cherry-pick"
 alias gcpc="git cherry-pick --continue"
