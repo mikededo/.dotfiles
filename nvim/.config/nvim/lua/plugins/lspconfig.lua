@@ -12,38 +12,7 @@ local signs = {
 local get_root_dir = function(fname)
   local util = require('lspconfig.util')
   return util.root_pattern('.git')(fname)
-      or util.root_pattern('package.json', 'tsconfig.json')(fname)
-end
-
-local get_keymaps = function()
-  local keys = require('lazyvim.plugins.lsp.keymaps').get()
-
-  keys[#keys + 1] = {
-    '<leader>e',
-    '<cmd>lua vim.diagnostic.open_float(0, { scope = "line" })<CR>',
-    desc = 'Show diagnostics',
-  }
-  keys[#keys + 1] = { '<leader>cr', false }
-  keys[#keys + 1] = {
-    '<leader>rn',
-    vim.lsp.buf.rename,
-    desc = 'Rename',
-    has = 'rename',
-  }
-  keys[#keys + 1] = {
-    '<leader>dn',
-    function()
-      vim.diagnostic.jump({ count = 1 })
-    end,
-    desc = 'Go to next diagnostic',
-  }
-  keys[#keys + 1] = {
-    '<leader>dN',
-    function()
-      vim.diagnostic.jump({ count = -1 })
-    end,
-    desc = 'Go to prev diagnostic',
-  }
+    or util.root_pattern('package.json', 'tsconfig.json')(fname)
 end
 
 local servers = {
@@ -73,8 +42,8 @@ local servers = {
     },
     settings = {
       workingDirectories = { mode = 'auto' },
-      format = true
-    }
+      format = true,
+    },
   },
   graphql = {},
   html = {},
@@ -84,7 +53,8 @@ local servers = {
     settings = {
       tailwindCSS = {
         experimental = {
-          classRegex = ' (["\'`][^"\'`]*.*?["\'`])', '["\'`]([^"\'`]*).*?["\'`]',
+          classRegex = ' (["\'`][^"\'`]*.*?["\'`])',
+          '["\'`]([^"\'`]*).*?["\'`]',
         },
       },
     },
@@ -92,8 +62,38 @@ local servers = {
   vtsls = {},
   yamlls = {
     settings = {
-      format = { enable = false }
-    }
+      format = { enable = false },
+    },
+  },
+  ['*'] = {
+    keys = {
+      {
+        '<leader>e',
+        '<cmd>lua vim.diagnostic.open_float(0, { scope = "line" })<CR>',
+        desc = 'Show diagnostics',
+      },
+      { '<leader>cr', false },
+      {
+        '<leader>rn',
+        vim.lsp.buf.rename,
+        desc = 'Rename',
+        has = 'rename',
+      },
+      {
+        '<leader>dn',
+        function()
+          vim.diagnostic.jump({ count = 1 })
+        end,
+        desc = 'Go to next diagnostic',
+      },
+      {
+        '<leader>dN',
+        function()
+          vim.diagnostic.jump({ count = -1 })
+        end,
+        desc = 'Go to prev diagnostic',
+      },
+    },
   },
 }
 
@@ -119,9 +119,7 @@ return {
           source = 'if_many',
         },
       },
-      servers
+      servers,
     },
-
-    keys = get_keymaps,
   },
 }
