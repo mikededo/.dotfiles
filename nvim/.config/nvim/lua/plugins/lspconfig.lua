@@ -15,88 +15,6 @@ local get_root_dir = function(fname)
     or util.root_pattern('package.json', 'tsconfig.json')(fname)
 end
 
-local servers = {
-  cssls = {},
-  cssmodules_ls = {},
-  eslint = {
-    root_dir = get_root_dir,
-    filetypes = {
-      'javascript',
-      'javascriptreact',
-      'javascript.jsx',
-      'typescript',
-      'typescriptreact',
-      'typescript.tsx',
-      'svelte',
-      'astro',
-      'vue',
-      'markdown',
-      'markdown.mdx',
-      'css',
-      'scss',
-      'less',
-      'json',
-      'jsonc',
-      'graphql',
-      'yaml',
-    },
-    settings = {
-      workingDirectories = { mode = 'auto' },
-      format = true,
-    },
-  },
-  graphql = {},
-  html = {},
-  jsonls = {},
-  lua_ls = {},
-  tailwindcss = {
-    settings = {
-      tailwindCSS = {
-        experimental = {
-          classRegex = ' (["\'`][^"\'`]*.*?["\'`])',
-          '["\'`]([^"\'`]*).*?["\'`]',
-        },
-      },
-    },
-  },
-  vtsls = {},
-  yamlls = {
-    settings = {
-      format = { enable = false },
-    },
-  },
-  ['*'] = {
-    keys = {
-      {
-        '<leader>e',
-        '<cmd>lua vim.diagnostic.open_float(0, { scope = "line" })<CR>',
-        desc = 'Show diagnostics',
-      },
-      { '<leader>cr', false },
-      {
-        '<leader>rn',
-        vim.lsp.buf.rename,
-        desc = 'Rename',
-        has = 'rename',
-      },
-      {
-        '<leader>dn',
-        function()
-          vim.diagnostic.jump({ count = 1 })
-        end,
-        desc = 'Go to next diagnostic',
-      },
-      {
-        '<leader>dN',
-        function()
-          vim.diagnostic.jump({ count = -1 })
-        end,
-        desc = 'Go to prev diagnostic',
-      },
-    },
-  },
-}
-
 return {
   {
     'neovim/nvim-lspconfig',
@@ -119,7 +37,62 @@ return {
           source = 'if_many',
         },
       },
-      servers,
+      servers = {
+        ['*'] = {
+          keys = {
+            {
+              '<leader>e',
+              '<cmd>lua vim.diagnostic.open_float(0, { scope = "line" })<CR>',
+              desc = 'Show diagnostics',
+            },
+            { '<leader>cr', false },
+            {
+              '<leader>rn',
+              vim.lsp.buf.rename,
+              desc = 'Rename',
+              has = 'rename',
+            },
+            {
+              '<leader>dn',
+              function()
+                vim.diagnostic.jump({ count = 1 })
+              end,
+              desc = 'Go to next diagnostic',
+            },
+            {
+              '<leader>dN',
+              function()
+                vim.diagnostic.jump({ count = -1 })
+              end,
+              desc = 'Go to prev diagnostic',
+            },
+          },
+        },
+        tailwindcss = {
+          settings = {
+            tailwindCSS = {
+              validate = true,
+              lint = {
+                cssConflict = 'warning',
+                invalidApply = 'error',
+                invalidScreen = 'error',
+                invalidVariant = 'error',
+                invalidConfigPath = 'error',
+                invalidTailwindDirective = 'error',
+                recommendedVariantOrder = 'warning',
+              },
+              classAttributes = {
+                'class',
+                'className',
+                'twMerge',
+                'cn',
+                'tv',
+                'cva',
+              },
+            },
+          },
+        },
+      },
     },
   },
 }
