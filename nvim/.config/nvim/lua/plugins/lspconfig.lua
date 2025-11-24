@@ -9,12 +9,6 @@ local signs = {
 
 -- Disable semantics from LSP
 
-local get_root_dir = function(fname)
-  local util = require('lspconfig.util')
-  return util.root_pattern('.git')(fname)
-    or util.root_pattern('package.json', 'tsconfig.json')(fname)
-end
-
 return {
   {
     'neovim/nvim-lspconfig',
