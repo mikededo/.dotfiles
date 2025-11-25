@@ -1,7 +1,7 @@
 # Appearance
 theme = Catppuccin Macchiato
-font-family = "JetBrainsMono Nerd Font Mono"
-font-style = Medium
+font-family = "JetBrainsMonoNL Nerd Font Mono"
+font-style = Regular
 font-size = 13
 cursor-style-blink = false
 
@@ -9,13 +9,15 @@ macos-window-buttons = hidden
 macos-titlebar-style = tabs
 macos-titlebar-proxy-icon = hidden
 
+mouse-hide-while-typing = true
+
 # Window settings
 window-padding-x = 0
 window-padding-y = 0
 window-title-font-family = "JetBrainsMono Nerd Font Mono"
 
 # Panes
-unfocused-split-opacity = 0.90
+unfocused-split-opacity = 0.50
 
 # Keybindings
 # Disable default CMD+t
