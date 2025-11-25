@@ -1,15 +1,13 @@
 # File for custom git aliases
 
-# util
+# branching
 alias _current_branch='git branch --show-current'
 alias def_branch="git symbolic-ref --short HEAD"
 alias main='git checkout main && gl'
 alias master='git checkout master && gl'
-alias develop='git checkout develop && gl'
-alias ls-branches='git branch | xargs -I {} echo {}'
-alias lsb='git branch | xargs -I {} echo {}'
-alias H0='HUSKY=0' # disable husky from running prehooks
-alias check-log="git diff --staged -G console"
+alias dev='git checkout dev && gl'
+alias list-branches='git branch | xargs -I {} echo {}'
+alias glsb='list-branches'
 
 # status
 alias gs="git status"
@@ -74,3 +72,5 @@ alias ctest="_semm_commit test"
 alias ci="_semm_commit ci"
 
 # other
+alias check-log="git diff --staged -G console"
+alias H0='HUSKY=0' # disable husky from running prehooks
