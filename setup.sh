@@ -24,11 +24,6 @@ stow_it() {
   stow -vR ${package} --ignore='(^|\W)\.gitkeep($|\W)' --ignore='(^|\W).DS_Store($|\W)'
 }
 
-# git clone helper
-git_clone() {
-  git clone "https://github.com/$1" $2
-}
-
 echo "> Stowing all packages\n"
 
 # Install everything
