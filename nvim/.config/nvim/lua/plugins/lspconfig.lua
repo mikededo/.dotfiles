@@ -7,7 +7,15 @@ local signs = {
   { name = 'DiagnosticSignInfo', text = '' },
 }
 
--- Disable semantics from LSP
+local function get_preferences()
+  if vim.fn.getcwd():find('stackweb') then
+    return {
+      importModuleSpecifier = 'non-relative',
+    }
+  end
+
+  return {}
+end
 
 return {
   {
@@ -62,6 +70,13 @@ return {
             },
           },
         },
+        vtsls = {
+          settings = {
+            typescript = {
+              preferences = get_preferences(),
+            },
+          },
+        },
         tailwindcss = {
           settings = {
             tailwindCSS = {
@@ -84,6 +99,35 @@ return {
                 'cva',
               },
             },
+          },
+        },
+        ruff = {
+          init_options = {
+            settings = {
+              configurationPreference = 'filesystemFirst',
+            },
+          },
+        },
+        basedpyright = {
+          settings = {
+            basedpyright = {
+              analysis = {
+                typeCheckingMode = 'standard',
+                autoSearchPaths = true,
+                useLibraryCodeForTypes = true,
+                diagnosticMode = 'openFilesOnly',
+                indexing = true,
+                autoImportCompletions = true,
+                exclude = {
+                  '**/node_modules',
+                  '**/__pycache__',
+                  '**/.venv',
+                  '**/venv',
+                  '**/.git',
+                },
+              },
+            },
+            python = { pythonPath = vim.fn.getcwd() .. '/.venv/bin/python' },
           },
         },
       },
