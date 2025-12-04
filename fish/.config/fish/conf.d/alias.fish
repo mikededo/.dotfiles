@@ -1,7 +1,8 @@
 set ALIAS_DIR "$HOME/.config/fish/conf.d/aliases"
+
 source "$ALIAS_DIR/alias.fish"
 source "$ALIAS_DIR/configuration.fish"
 source "$ALIAS_DIR/dev.fish"
 source "$ALIAS_DIR/gh.fish"
-source "$ALIAS_DIR/git-alias.fish"
+source "$ALIAS_DIR/git.fish"
 source "$ALIAS_DIR/work.fish"

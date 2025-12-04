@@ -13,6 +13,8 @@ function fish_right_prompt_loading_indicator -a last_prompt
     echo -n (set_color brblack)"$uncolored_last_prompt"(set_color normal)
 end
 
+# load git town
+git town completions fish | source
 # load starship
 starship init fish | source
 # load python from pyenv

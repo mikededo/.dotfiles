@@ -50,7 +50,7 @@ alias gcpc="git cherry-pick --continue"
 alias gcpa="git cherry-pick --abort"
 alias gcps="git cherry-pick --skip"
 
-# Commit messages
+# commit messages
 function _semm_commit
     set prefix $argv[1]
     set -e argv[1]
@@ -74,3 +74,4 @@ alias ci="_semm_commit ci"
 # other
 alias check-log="git diff --staged -G console"
 alias H0='HUSKY=0' # disable husky from running prehooks
+alias gt="git town"
