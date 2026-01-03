@@ -90,7 +90,7 @@ return {
                 invalidTailwindDirective = 'error',
                 recommendedVariantOrder = 'warning',
               },
-              classAttributes = {
+              classFunctions = {
                 'class',
                 'className',
                 'twMerge',
