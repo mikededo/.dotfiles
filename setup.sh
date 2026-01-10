@@ -14,6 +14,7 @@ packages=(
   ghostty
   nvim
   starship
+  tmux
   wezterm
 )
 
