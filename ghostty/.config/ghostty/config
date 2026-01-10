@@ -6,8 +6,9 @@ font-size = 12
 cursor-style-blink = false
 
 macos-window-buttons = hidden
-macos-titlebar-style = tabs
+macos-titlebar-style = hidden
 macos-titlebar-proxy-icon = hidden
+macos-option-as-alt = true
 
 mouse-hide-while-typing = true
 
@@ -22,22 +23,6 @@ unfocused-split-opacity = 0.50
 # Keybindings
 # Disable default CMD+t
 keybind = super+t=unbind
-
-# Tab management
-keybind = alt+t=new_tab
-
-# Pane splitting
-keybind = alt+v=new_split:right
-keybind = alt+x=new_split:down
-
-# Pane navigation
-keybind = alt+h=goto_split:left
-keybind = alt+k=goto_split:top
-keybind = alt+j=goto_split:bottom
-keybind = alt+l=goto_split:right
-
-# Note: Ghostty doesn't have a direct equivalent to RotatePanes
-# The alt+b binding for pane rotation isn't migrated
 
 # Bell
 shell-integration-features = no-cursor,no-sudo,no-title
