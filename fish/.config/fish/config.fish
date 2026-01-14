@@ -22,10 +22,11 @@ function pip --wraps pip
     pip $argv
 end
 
-# auto-start tmux 
-if status is-interactive; and not set -q TMUX
-    exec tmux
+if not set -q VSCODE_INJECTION; and test "$TERM_PROGRAM" != vscode
+    if status is-interactive; and not set -q TMUX
+        tmux attach -t default || tmux new -s default
+    end
 end
-
-# load starship 
-starship init fish | source
+if command -v starship >/dev/null
+    starship init fish | source
+end

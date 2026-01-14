@@ -59,9 +59,9 @@ alias pkgalldeps="jq '{ dependencies, devDependencies, peerDependencies }' packa
 # branching
 alias _current_branch='git branch --show-current'
 alias def_branch="git symbolic-ref --short HEAD"
-alias main='git checkout main && gl'
-alias master='git checkout master && gl'
-alias dev='git checkout dev && gl'
+abbr -a main 'git checkout main && git pull'
+abbr -a master 'git checkout master && git pull'
+abbr -a dev 'git checkout dev && git pull'
 alias list-branches='git branch | xargs -I {} echo {}'
 alias glsb='list-branches'
 
