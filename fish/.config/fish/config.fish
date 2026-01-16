@@ -15,7 +15,6 @@ function python --wraps python
     functions -e python pip
     python $argv
 end
-
 function pip --wraps pip
     pyenv init - | source
     functions -e python pip
@@ -29,4 +28,7 @@ if not set -q VSCODE_INJECTION; and test "$TERM_PROGRAM" != vscode
 end
 if command -v starship >/dev/null
     starship init fish | source
+end
+if command -v zoxide >/dev/null
+    zoxide init fish | source
 end
