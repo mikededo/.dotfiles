@@ -2,29 +2,7 @@
 alias sudo="sudo"
 abbr -a vim nvim
 abbr -a n nvim
-alias home="cd $HOME"
 abbr -a :q exit
-
-# folders
-alias docs="cd ~/Documents"
-alias dwn="cd ~/Downloads"
-alias projects="cd ~/Documents/personal/projects"
-alias work="cd $HOME/Documents/work"
-
-function p --description "Jump to project folder"
-    if test -d ~/Documents/personal/projects/$argv[1]
-        cd ~/Documents/personal/projects/$argv[1]
-    else if test -d ~/Documents/work/$argv[1]
-        cd ~/Documents/work/$argv[1]
-    else
-        echo "Project '$argv[1]' not found" >&2
-        return 1
-    end
-end
-complete -c p -f -a "(begin
-    ls -1 ~/Documents/personal/projects/ 2>/dev/null
-    ls -1 ~/Documents/work/ 2>/dev/null
-end | sort -u)"
 
 # file manipulation
 abbr -a rmd 'rm -rf'
@@ -34,13 +12,13 @@ alias reset_gpg="echo 'pinentry-program /opt/homebrew/bin/pinentry-mac' > ~/.gnu
 
 # Configurations
 alias dotman="cd $HOME/.dotfiles"
-alias fishconfig="vim $HOME/.config/fish/config.fish"
-alias ghostconfig="vim $HOME/.config/ghostty/config"
-alias gitconfig="vim $HOME/.gitconfig"
+alias fishconfig="nvim $HOME/.config/fish/config.fish"
+alias ghostconfig="nvim $HOME/.config/ghostty/config"
+alias gitconfig="nvim $HOME/.gitconfig"
 alias nvimdir="cd $HOME/.dotfiles/nvim/.config/nvim/"
-alias starshipconfig="vim $HOME/.config/starship.toml"
+alias starshipconfig="nvim $HOME/.config/starship.toml"
 alias updfish="exec fish"
-alias wezconfig="vim $HOME/.config/wezterm/wezterm.lua"
+alias wezconfig="nvim $HOME/.config/wezterm/wezterm.lua"
 alias falias="alias | grep" # search for an alias
 
 # aliases related with development, mostly  
@@ -64,6 +42,7 @@ abbr -a master 'git checkout master && git pull'
 abbr -a dev 'git checkout dev && git pull'
 alias list-branches='git branch | xargs -I {} echo {}'
 alias glsb='list-branches'
+abbr -a gt 'git town'
 
 # status
 abbr -a gs 'git status'
@@ -129,8 +108,6 @@ alias ci="_semm_commit ci"
 
 # other
 alias check-log="git diff --staged -G console"
-abbr -a H0 'HUSKY=0'
-abbr -a gt 'git town'
 # new pr
 alias npr="gh pr create -a @me"
 # draft new pr
