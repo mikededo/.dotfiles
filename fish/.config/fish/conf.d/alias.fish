@@ -19,9 +19,10 @@ alias nvimdir="cd $HOME/.dotfiles/nvim/.config/nvim/"
 alias starshipconfig="nvim $HOME/.config/starship.toml"
 alias updfish="exec fish"
 alias wezconfig="nvim $HOME/.config/wezterm/wezterm.lua"
+alias tmuxconfig="nvim $HOME/.config/tmux/tmux.conf"
 alias falias="alias | grep" # search for an alias
 
-# aliases related with development, mostly  
+# aliases related with development, mostly
 abbr -a v vercel
 alias check-deps="bunx npm-check-updates"
 abbr -a bi 'bun install'
