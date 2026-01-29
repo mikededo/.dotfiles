@@ -1,0 +1,9 @@
+cache/
+debug/
+plugins/
+projects/
+statsig/
+todos/
+plans/
+
+history.jsonl
