@@ -1,9 +1,14 @@
 cache/
 debug/
+file-history/
+paste-cache/
+plans/
 plugins/
 projects/
+shell-snapshots/
 statsig/
+tasks/
 todos/
-plans/
 
 history.jsonl
+stats-cache.json
