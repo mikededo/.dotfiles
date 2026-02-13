@@ -107,8 +107,6 @@ alias docs="_semm_commit docs"
 alias ctest="_semm_commit test"
 alias ci="_semm_commit ci"
 
-# other
-alias check-log="git diff --staged -G console"
 # new pr
 alias npr="gh pr create -a @me"
 # draft new pr
@@ -118,4 +116,6 @@ alias nepr="gh pr create -a @me --body ''"
 # view pr in web
 alias vpr="gh pr view -w"
 # mark as ready
-alias prr="gh pr ready"
+abbr -a prr "gh pr ready"
+# copy pr url
+abbr -a cpr "gh pr view -q '.url' --json url | pbcopy"
