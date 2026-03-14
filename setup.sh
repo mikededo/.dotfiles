@@ -3,6 +3,7 @@
 # Check mandatory applications
 [ ! -x "$(command -v fish)" ] && echo "ERROR: fish is not installed in the system" && exit -1
 [ ! -x "$(command -v git)" ] && echo "ERROR: git is not installed in the system" && exit -1
+[ ! -x "$(command -v jj)" ] && echo "ERROR: jj is not installed in the system" && exit -1
 [ ! -x "$(command -v nvim)" ] && echo "ERROR: nvim is not installed in the system" && exit -1
 [ ! -x "$(command -v stow)" ] && echo "ERROR: stow is not installed in the system" && exit -1
 [ ! -x "$(command -v curl)" ] && echo "ERROR: curl is not installed in the system" && exit -1
@@ -13,6 +14,7 @@ packages=(
   fish
   git
   ghostty
+  jj
   nvim
   starship
   tmux

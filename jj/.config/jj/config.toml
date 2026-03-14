@@ -1,0 +1,12 @@
+[user]
+name = "Miquel de Domingo"
+email = "miquelddg@gmail.com"
+
+[ui]
+editor = "nvim"
+color = "auto"
+
+[signing]
+backend = "ssh"
+behavior = "own"
+key = "~/.ssh/github_ssh.pub"
