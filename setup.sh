@@ -10,7 +10,6 @@
 
 # Packages to be installed
 packages=(
-  claude
   fish
   git
   ghostty
