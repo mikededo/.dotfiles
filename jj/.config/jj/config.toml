@@ -5,6 +5,7 @@ email = "miquelddg@gmail.com"
 [ui]
 editor = "nvim"
 color = "auto"
+default-command = "log"
 
 [signing]
 backend = "ssh"
