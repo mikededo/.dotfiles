@@ -1,15 +1,9 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
 # Prompt
-format = """
-$directory\
-$git_branch\
-$git_state\
-$git_status\
-$character\
-"""
+format = """$directory$character"""
+palette = "catppuccin_mocha"
 right_format = """
-$golang\
 $rust\
 $lua\
 $nodejs\
@@ -18,16 +12,14 @@ $memory_usage\
 $time\
 """
 command_timeout = 1500
-
-# Custom prompt
 add_newline = false
 
 [character]
-success_symbol = "[»](white)"
-error_symbol = "[»](red)"
+success_symbol = '[➜](bold peach)'
+error_symbol = '[➜](bold red)'
 
 [directory]
-style = "fg:4"
+style = "blue"
 truncation_length = 2
 truncation_symbol = "…/"
 
@@ -37,83 +29,68 @@ truncation_symbol = "…/"
 "/mnt/media" = " "
 
 [cmd_duration]
-min_time = 0                    # always show
-format = "[$duration]($style) "
-style = "fg:101"
+min_time = 0                                # always show
+format = "[$duration]($style)[·](overlay1)"
+style = "subtext1"
 disabled = false
 
 [memory_usage]
 disabled = false
 format = "[$symbol$ram_pct]($style) "
-style = "fg:208"
+style = "peach"
 symbol = "⛁ "
 threshold = 75
 
 [time]
 disabled = false
 format = "[$time]($style)"
-style = "white"
+time_format = "%R"
+style = "subtext0"
 
 [package]
 format = "[$symbol$version]($style) "
 style = "208"
 
-# Non-languages
 [git_branch]
-format = "[$symbol$branch(:$remote_branch)]($style) "
-style = "fg:35"
+format = '[$symbol$branch(:$remote_branch)]($style) '
+style = "bold mauve"
 symbol = "\uF126 "
-truncation_length = 24
-
-[git_state]
-am = "am"
-am_or_rebase = "am/rebase"
-bisect = "bisect"
-cherry_pick = "cherry-pick"
-merge = "merge"
-rebase = "rebase"
-revert = "revert"
-format = '[\[$state( $progress_current/$progress_total)\]]($style) '
-style = "yellow"
-
-[git_status]
-format = "[$staged$modified](fg:202)[$conflicted](fg:11)[$untracked](fg:4)[$deleted](fg:13)[$ahead_behind$stashed]($style)"
-ahead = "⇡$count "
-behind = "⇣$count "
-conflicted = "~$count "
-diverged = "⇣$behind_count⇡$ahead_count "
-modified = "!$count "
-renamed = "ɍ$count "
-staged = "+$count "
-stashed = "*$count "
-untracked = "?$count "
-deleted = "✘$count "
-style = "fg:35"
-
-# Languages
-[golang]
-disabled = false
-format = "[$symbol($version )]($style)"
-symbol = " "
-style = "cyan"
 
 [nodejs]
 disabled = false
 format = "[$symbol($version )]($style)"
-style = "green"
-not_capable_style = "red"
+style = "bold green"
+not_capable_style = "bold red"
 
 [rust]
 disabled = false
-format = "[$symbol($version )]($style)"
-style = "fg:208"
+format = "[$symbol($version)]($style)"
+style = "bold peach"
 
-[java]
-disabled = false
-format = "[$symbol($version )]($style)"
-style = "red"
-
-[kubernetes]
-disabled = true                                          # show if wanted
-format = "[$symbol$context( \\($namespace\\))]($style) "
-style = "fg:27"
+[palettes.catppuccin_mocha]
+rosewater = "#f5e0dc"
+flamingo = "#f2cdcd"
+pink = "#f5c2e7"
+mauve = "#cba6f7"
+red = "#f38ba8"
+maroon = "#eba0ac"
+peach = "#fab387"
+yellow = "#f9e2af"
+green = "#a6e3a1"
+teal = "#94e2d5"
+sky = "#89dceb"
+sapphire = "#74c7ec"
+blue = "#89b4fa"
+lavender = "#b4befe"
+text = "#cdd6f4"
+subtext1 = "#bac2de"
+subtext0 = "#a6adc8"
+overlay2 = "#9399b2"
+overlay1 = "#7f849c"
+overlay0 = "#6c7086"
+surface2 = "#585b70"
+surface1 = "#45475a"
+surface0 = "#313244"
+base = "#1e1e2e"
+mantle = "#181825"
+crust = "#11111b"
