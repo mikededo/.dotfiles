@@ -10,4 +10,4 @@ default-command = "log"
 [signing]
 backend = "ssh"
 behavior = "own"
-key = "~/.ssh/github_ssh.pub"
+key = "~/.ssh/github.pub"
