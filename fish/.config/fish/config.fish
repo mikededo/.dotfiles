@@ -9,18 +9,6 @@ function fish_right_prompt_loading_indicator -a last_prompt
     echo -n (set_color brblack)"$uncolored_last_prompt"(set_color normal)
 end
 
-# lazy load python from pyenv
-function python --wraps python
-    pyenv init - | source
-    functions -e python pip
-    python $argv
-end
-function pip --wraps pip
-    pyenv init - | source
-    functions -e python pip
-    pip $argv
-end
-
 if command -v git town >/dev/null
     git town completions fish | source
 end
@@ -36,3 +24,8 @@ end
 if command -v zoxide >/dev/null
     zoxide init fish | source
 end
+if command -v fnm >/dev/null
+    fnm env --use-on-cd --shell fish | source
+end
+
+fish_config theme choose custom
