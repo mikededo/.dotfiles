@@ -188,6 +188,9 @@ return {
       },
       formatters = {
         eslint_d = {
+          -- eslint_d returns 1 when non-fixable lint errors remain after --fix
+          -- Treat it as a successful formatter run so fixed output is still applied.
+          exit_codes = { 0, 1 },
           condition = function(_, ctx)
             return find_closest_config_file(
               shared.eslint_config_names,
