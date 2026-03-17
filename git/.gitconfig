@@ -1,7 +1,7 @@
 [user]
     name = Miquel de Domingo
     email = miquelddg@gmail.com 
-    signingkey = ~/.ssh/github_ssh.pub
+    signingkey = ~/.ssh/github.pub
 [commit]
     gpgsign = true
 [core]
