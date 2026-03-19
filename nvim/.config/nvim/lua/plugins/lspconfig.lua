@@ -7,16 +7,6 @@ local signs = {
   { name = 'DiagnosticSignInfo', text = '' },
 }
 
-local function get_preferences()
-  if vim.fn.getcwd():find('stackweb') then
-    return {
-      importModuleSpecifier = 'non-relative',
-    }
-  end
-
-  return {}
-end
-
 return {
   {
     'neovim/nvim-lspconfig',
@@ -73,7 +63,9 @@ return {
         vtsls = {
           settings = {
             typescript = {
-              preferences = get_preferences(),
+              preferences = {
+                importModuleSpecifier = 'non-relative',
+              },
             },
           },
         },
