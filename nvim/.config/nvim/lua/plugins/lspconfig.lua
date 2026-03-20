@@ -93,35 +93,6 @@ return {
             },
           },
         },
-        ruff = {
-          init_options = {
-            settings = {
-              configurationPreference = 'filesystemFirst',
-            },
-          },
-        },
-        basedpyright = {
-          settings = {
-            basedpyright = {
-              analysis = {
-                typeCheckingMode = 'standard',
-                autoSearchPaths = true,
-                useLibraryCodeForTypes = true,
-                diagnosticMode = 'openFilesOnly',
-                indexing = true,
-                autoImportCompletions = true,
-                exclude = {
-                  '**/node_modules',
-                  '**/__pycache__',
-                  '**/.venv',
-                  '**/venv',
-                  '**/.git',
-                },
-              },
-            },
-            python = { pythonPath = vim.fn.getcwd() .. '/.venv/bin/python' },
-          },
-        },
       },
     },
   },
