@@ -9,12 +9,11 @@ return {
       'vtsls',
       'diagnostic-languageserver',
       'svelte-language-server',
+      'eslint-lsp',
       'eslint_d',
-      'prettierd',
       'json-lsp',
       'tailwindcss-language-server',
       -- back end
-      'rustfmt',
       'rust-analyzer',
       -- other
       'dockerfile-language-server',
@@ -22,7 +21,6 @@ return {
       'actionlint',
       -- yaml
       'yaml-language-server',
-      -- NOTE: efm removed in favor of conform.nvim + nvim-lint
     },
   },
 }
