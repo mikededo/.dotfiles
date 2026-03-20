@@ -24,7 +24,7 @@ packages=(
 stow_it() {
   package=$1
 
-  stow -vR ${package} --ignore='(^|\W)\.gitkeep($|\W)' --ignore='(^|\W).DS_Store($|\W)'
+  stow --no-folding -vR ${package} --ignore='(^|\W)\.gitkeep($|\W)' --ignore='(^|\W).DS_Store($|\W)'
 }
 
 echo "> Stowing all packages\n"
