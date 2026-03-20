@@ -7,9 +7,7 @@ $character
 """
 palette = "catppuccin_mocha"
 right_format = """
-$git_branch\
-$git_status\
-$git_state\
+${custom.vcs}\
 · \
 $rust\
 $lua\
@@ -59,33 +57,18 @@ format = "[$symbol$version]($style) "
 style = "208"
 
 [git_state]
-am = "am"
-am_or_rebase = "am/rebase"
-bisect = "bisect"
-cherry_pick = "cherry-pick"
-merge = "merge"
-rebase = "rebase"
-revert = "revert"
-format = '[\[$state( $progress_current/$progress_total)\]]($style) '
-style = "yellow"
+disabled = true
 
 [git_status]
-format = "[$staged$modified](peach)[$conflicted](maroon)[$untracked](subtext0)[$deleted](red)[$ahead_behind$stashed](green)"
-ahead = "⇡$count "
-behind = "⇣$count "
-conflicted = "~$count "
-diverged = "⇣$behind_count⇡$ahead_count "
-modified = "!$count "
-renamed = "ɍ$count "
-staged = "+$count "
-stashed = "*$count "
-untracked = "?$count "
-deleted = "✘$count "
-style = "red"
+disabled = true
 
 [git_branch]
-format = '[$branch(:$remote_branch)]($style) '
-style = "mauve"
+disabled = true
+
+[custom.vcs]
+when = "vcs-starship detect"
+shell = ["vcs-starship"]
+format = "$output "
 
 [nodejs]
 disabled = false
@@ -95,7 +78,7 @@ not_capable_style = "bold red"
 
 [rust]
 disabled = false
-format = "[$symbol($version)]($style)"
+format = "[$symbol($version)]($style) "
 style = "bold peach"
 
 [palettes.catppuccin_mocha]
