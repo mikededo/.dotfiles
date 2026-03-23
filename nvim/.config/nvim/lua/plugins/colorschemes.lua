@@ -36,6 +36,14 @@ return {
           -- WhichKey
           WhichKeyBorder = { fg = C.peach, bg = C.mantle },
 
+          -- VCS Lualine
+          VcsJJShortestChangeId = {
+            fg = C.peach,
+            bg = C.base,
+            style = { 'bold' },
+          },
+          VcsJJRestChangeId = { fg = C.overlay0, bg = C.base },
+
           -- There was a change of colors in here, which I dislike. This
           -- reverts some of them: https://github.com/catppuccin/nvim/pull/804
           ['@variable.member'] = { fg = C.lavender },
