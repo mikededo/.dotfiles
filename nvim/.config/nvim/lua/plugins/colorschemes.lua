@@ -38,7 +38,7 @@ return {
 
           -- VCS Lualine
           VcsJJShortestChangeId = {
-            fg = C.peach,
+            fg = C.blue,
             bg = C.base,
             style = { 'bold' },
           },
