@@ -27,4 +27,7 @@ vim.api.nvim_set_keymap(
   {}
 )
 
+vim.keymap.del('i', '<M-k>')
+vim.keymap.del('i', '<M-j>')
+
 return {}
