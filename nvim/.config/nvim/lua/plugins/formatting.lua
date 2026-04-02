@@ -95,7 +95,6 @@ return {
         json = { 'prettierd', stop_after_first = true },
         json5 = { 'prettierd', stop_after_first = true },
         jsonc = { 'prettierd', stop_after_first = true },
-        svelte = { stop_after_first = true },
         vue = { 'prettierd', stop_after_first = true },
         markdown = {
           'prettierd',

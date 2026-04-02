@@ -60,6 +60,19 @@ return {
             },
           },
         },
+        svelte = {
+          settings = {
+            svelte = {
+              plugin = {
+                svelte = {
+                  format = {
+                    enable = false,
+                  },
+                },
+              },
+            },
+          },
+        },
         vtsls = {
           settings = {
             typescript = {
