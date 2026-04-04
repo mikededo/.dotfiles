@@ -25,7 +25,7 @@ if command -v zoxide >/dev/null
     zoxide init fish | source
 end
 if command -v fnm >/dev/null
-    fnm env --use-on-cd --shell fish | source
+    fnm env --use-on-cd --shell fish --log-level quiet | source
 end
 
 fish_config theme choose custom
