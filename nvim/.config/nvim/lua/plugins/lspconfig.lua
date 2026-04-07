@@ -7,6 +7,14 @@ local signs = {
   { name = 'DiagnosticSignInfo', text = '' },
 }
 
+local get_import_module_specifier = function()
+  if vim.fn.getcwd():find('work') then
+    return 'non-relative'
+  end
+
+  return 'relative'
+end
+
 return {
   {
     'neovim/nvim-lspconfig',
@@ -77,7 +85,7 @@ return {
           settings = {
             typescript = {
               preferences = {
-                importModuleSpecifier = 'non-relative',
+                importModuleSpecifier = get_import_module_specifier(),
               },
             },
           },

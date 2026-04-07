@@ -66,46 +66,34 @@ return {
 
         javascript = {
           'prettierd',
-          stop_after_first = true,
         },
         javascriptreact = {
           'prettierd',
-          stop_after_first = true,
         },
         ['javascript.jsx'] = {
           'prettierd',
-          stop_after_first = true,
         },
         typescript = {
           'prettierd',
-          stop_after_first = true,
         },
         typescriptreact = {
           'prettierd',
-          stop_after_first = true,
         },
         ['typescript.tsx'] = {
           'prettierd',
-          stop_after_first = true,
         },
-        html = { 'prettierd', stop_after_first = true },
-        css = { 'prettierd', stop_after_first = true },
-        scss = { 'prettierd', stop_after_first = true },
-        less = { 'prettierd', stop_after_first = true },
-        json = { 'prettierd', stop_after_first = true },
-        json5 = { 'prettierd', stop_after_first = true },
-        jsonc = { 'prettierd', stop_after_first = true },
-        vue = { 'prettierd', stop_after_first = true },
-        markdown = {
-          'prettierd',
-          stop_after_first = true,
-        },
-        ['markdown.mdx'] = {
-          'prettierd',
-          stop_after_first = true,
-        },
+        html = { 'prettierd' },
+        css = { 'prettierd' },
+        scss = { 'prettierd' },
+        less = { 'prettierd' },
+        json = { 'prettierd' },
+        json5 = { 'prettierd' },
+        jsonc = { 'prettierd' },
+        vue = { 'prettierd' },
+        markdown = { 'prettierd' },
+        ['markdown.mdx'] = { 'prettierd' },
 
-        graphql = { 'prettierd', stop_after_first = true },
+        graphql = { 'prettierd' },
         yaml = { 'prettierd', 'actionlint' },
       },
       formatters = {
