@@ -16,7 +16,3 @@ key = "~/.ssh/github.pub"
 --when.workspaces = ["~/Documents/work"]
 [--scope.user]
 email = "miquel.de.domingo@restream.io"
-[--scope.signing]
-backend = "ssh"
-behavior = "own"
-key = "~/.ssh/restream.pub"
