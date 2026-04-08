@@ -28,24 +28,4 @@ if command -v fnm >/dev/null
     fnm env --use-on-cd --shell fish --log-level quiet | source
 end
 
-# jj
-abbr -a jjc 'jj commit -m'
-abbr -a jjd 'jj desc -m'
-abbr -a jjl 'jj log -r @'
-abbr -a jjs 'jj show -s'
-abbr -a jjn 'jj new'
-abbr -a jjna 'jj new -A @-'
-abbr -a jje 'jj edit'
-abbr -a jja 'jj abandon'
-abbr -a jjr 'jj rebase'
-abbr -a jjsp 'jj split'
-abbr -a jjsq 'jj squash'
-abbr -a jjbm 'jj bookmark move'
-abbr -a jjbs 'jj bookmark set'
-abbr -a jjbc 'jj bookmark create'
-abbr -a jjbt 'jj bookmark track'
-abbr -a jjgp 'jj git push -b'
-abbr -a jjgc 'jj git clone --colocate'
-abbr -a jjfs 'jj file show -r'
-
 fish_config theme choose custom
