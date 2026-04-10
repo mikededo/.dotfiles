@@ -8,11 +8,13 @@ color = "auto"
 default-command = "log"
 pager = "delta"
 diff-formatter = ":git"
+git.subprocess = true
 
 [signing]
 backend = "ssh"
 behavior = "own"
 key = "~/.ssh/github.pub"
+
 
 [[--scope]]
 --when.workspaces = ["~/Documents/work"]
