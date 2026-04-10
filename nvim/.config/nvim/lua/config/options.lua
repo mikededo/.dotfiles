@@ -9,7 +9,6 @@ vim.api.nvim_set_option_value('guicursor', 'i:block', {})
 vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
 vim.o.foldcolumn = '1'
 
-vim.g.catppuccin_flavour = 'macchiato'
 vim.g.lazyvim_blink_main = true
 
 -- git

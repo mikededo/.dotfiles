@@ -7,6 +7,7 @@ return {
       require('catppuccin').setup(opts)
     end,
     opts = {
+      flavour = 'macchiato',
       integrations = {
         snacks = true,
       },
@@ -85,7 +86,7 @@ return {
   },
   {
     'LazyVim/LazyVim',
-    dependecies = { 'catppuccin/nvim' },
+    dependencies = { 'catppuccin/nvim' },
     opts = {
       colorscheme = 'catppuccin',
     },
