@@ -15,11 +15,12 @@ alias dotman="cd $HOME/.dotfiles"
 alias fishconfig="nvim $HOME/.config/fish/config.fish"
 alias ghostconfig="nvim $HOME/.config/ghostty/config"
 alias gitconfig="nvim $HOME/.gitconfig"
+alias jjconfig="nvim $HOME/.config/jj/.config.toml"
 alias nvimdir="cd $HOME/.dotfiles/nvim/.config/nvim/"
 alias starshipconfig="nvim $HOME/.config/starship.toml"
-alias updfish="exec fish"
-alias wezconfig="nvim $HOME/.config/wezterm/wezterm.lua"
 alias tmuxconfig="nvim $HOME/.config/tmux/tmux.conf"
+alias wezconfig="nvim $HOME/.config/wezterm/wezterm.lua"
+alias updfish="exec fish"
 alias falias="alias | grep" # search for an alias
 
 # aliases related with development, mostly
