@@ -1,5 +1,11 @@
 return {
   {
+    'rmehri01/onenord.nvim',
+    lazy = false,
+    priority = 10000,
+    -- Config lives in colors/onenord.lua so it only applies when selected.
+  },
+  {
     'catppuccin/nvim',
     lazy = false,
     priority = 10000,
