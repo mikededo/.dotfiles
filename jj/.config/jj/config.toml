@@ -6,6 +6,8 @@ email = "miquelddg@gmail.com"
 editor = "nvim"
 color = "auto"
 default-command = "log"
+pager = "delta"
+diff-formatter = ":git"
 
 [signing]
 backend = "ssh"
