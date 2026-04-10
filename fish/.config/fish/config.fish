@@ -9,10 +9,6 @@ function fish_right_prompt_loading_indicator -a last_prompt
     echo -n (set_color brblack)"$uncolored_last_prompt"(set_color normal)
 end
 
-if command -v git town >/dev/null
-    git town completions fish | source
-end
-
 if not set -q VSCODE_INJECTION; and test "$TERM_PROGRAM" != vscode
     if status is-interactive; and not set -q TMUX
         tmux attach -t default || tmux new -s default

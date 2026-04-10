@@ -43,7 +43,6 @@ abbr -a master 'git checkout master && git pull'
 abbr -a dev 'git checkout dev && git pull'
 alias list-branches='git branch | xargs -I {} echo {}'
 alias glsb='list-branches'
-abbr -a gt 'git town'
 
 # status
 abbr -a gs 'git status'
