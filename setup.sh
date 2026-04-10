@@ -10,9 +10,11 @@
 
 # Packages to be installed
 packages=(
+  bat
   fish
-  git
   ghostty
+  delta
+  git
   jj
   nvim
   starship
