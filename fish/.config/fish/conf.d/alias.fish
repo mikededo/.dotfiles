@@ -139,3 +139,7 @@ abbr -a jjbt 'jj bookmark track'
 abbr -a jjgp 'jj git push -b'
 abbr -a jjgc 'jj git clone --colocate'
 abbr -a jjfs 'jj file show -r'
+
+# opencode
+abbr -a oc opencode
+abbr -a ocr 'opencode run'
