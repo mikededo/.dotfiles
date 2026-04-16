@@ -1,6 +1,7 @@
 return {
   'saghen/blink.cmp',
   build = 'cargo +nightly build --release',
+  version = '1.*',
   opts = {
     appearance = {
       kind_icons = {
