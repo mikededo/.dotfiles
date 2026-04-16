@@ -15,7 +15,6 @@ backend = "ssh"
 behavior = "own"
 key = "~/.ssh/github.pub"
 
-
 [[--scope]]
 --when.workspaces = ["~/Documents/work"]
 [--scope.user]
