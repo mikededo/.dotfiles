@@ -17,6 +17,7 @@ packages=(
   git
   jj
   nvim
+  opencode
   starship
   tmux
   wezterm
