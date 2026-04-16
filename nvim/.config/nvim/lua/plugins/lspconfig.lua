@@ -9,10 +9,10 @@ local signs = {
 
 local get_import_module_specifier = function()
   if vim.fn.getcwd():find('work') then
-    return 'non-relative'
+    return 'relative'
   end
 
-  return 'relative'
+  return 'non-relative'
 end
 
 return {
