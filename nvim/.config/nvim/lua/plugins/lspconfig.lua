@@ -68,6 +68,12 @@ return {
             },
           },
         },
+        eslint = {
+          settings = {
+            format = true,
+            workingDirectories = { mode = 'auto' },
+          },
+        },
         svelte = {
           settings = {
             svelte = {
@@ -84,6 +90,9 @@ return {
         vtsls = {
           settings = {
             typescript = {
+              tsserver = {
+                maxTsServerMemory = 8192,
+              },
               preferences = {
                 importModuleSpecifier = get_import_module_specifier(),
               },

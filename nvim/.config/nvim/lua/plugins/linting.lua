@@ -46,12 +46,12 @@ return {
       linters_by_ft = {
         lua = {}, -- lua_ls provides diagnostics
 
-        javascript = { 'eslint_d' },
-        javascriptreact = { 'eslint_d' },
-        ['javascript.jsx'] = { 'eslint_d' },
-        typescript = { 'eslint_d' },
-        typescriptreact = { 'eslint_d' },
-        ['typescript.tsx'] = { 'eslint_d' },
+        javascript = {}, -- eslint-lsp provides diagnostics and formatting
+        javascriptreact = {},
+        ['javascript.jsx'] = {},
+        typescript = {},
+        typescriptreact = {},
+        ['typescript.tsx'] = {},
 
         svelte = { 'eslint_d' },
         vue = { 'eslint_d' },
