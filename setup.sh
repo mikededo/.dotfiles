@@ -10,6 +10,7 @@
 
 # Packages to be installed
 packages=(
+  agents
   bat
   fish
   ghostty
