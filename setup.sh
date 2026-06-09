@@ -16,6 +16,7 @@ packages=(
   ghostty
   delta
   git
+  hunk
   jj
   nvim
   opencode

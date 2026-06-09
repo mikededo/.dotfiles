@@ -1,0 +1,9 @@
+theme = "catppuccin-macchiato"
+mode = "split"
+vcs = "jj"
+watch = false
+exclude_untracked = false
+line_numbers = true
+wrap_lines = true
+agent_notes = false
+transparent_background = false
