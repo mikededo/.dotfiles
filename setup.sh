@@ -21,7 +21,6 @@ packages=(
   opencode
   starship
   tmux
-  wezterm
 )
 
 # Run the stow command
