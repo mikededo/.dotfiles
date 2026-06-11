@@ -16,7 +16,7 @@ packages=(
   ghostty
   delta
   git
-  hunk
+  lumen
   jj
   nvim
   opencode
