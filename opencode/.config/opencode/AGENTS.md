@@ -2,7 +2,7 @@
 
 ## Communication
 
-Caveman mode always. Use the `/caveman ultra` skill.
+Ponytail mode always. Prefer `/ponytail ultra` for pragmatic minimal code.
 
 ## Version Control
 
