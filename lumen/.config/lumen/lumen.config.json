@@ -1,4 +1,6 @@
 {
   "theme": "catppuccin-mocha",
-  "wrap": true
+  "wrap": true,
+  "model": "gpt-5.5",
+  "provider": "opencode-zen"
 }
