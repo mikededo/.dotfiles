@@ -8,6 +8,7 @@
     }
   },
   "plugin": [
-    "/Users/mikededo/.config/opencode/plugins/ponytail/.opencode/plugins/ponytail.mjs"
+    "/Users/mikededo/.config/opencode/plugins/ponytail/.opencode/plugins/ponytail.mjs",
+    "@sveltejs/opencode"
   ],
 }
