@@ -52,7 +52,7 @@ require('lazy').setup({
     lazy = false,
     version = false,
   },
-  checker = { enabled = true, notify = false },
+  checker = { enabled = true },
   performance = {
     rtp = {
       disabled_plugins = {
