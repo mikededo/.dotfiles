@@ -37,3 +37,5 @@
 
 [delta]
   features = catppuccin-macchiato line-numbers decorations
+[coderabbit]
+	machineId = cli/c1e084f6bbfc4508bc3beddd89e85428

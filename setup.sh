@@ -20,7 +20,6 @@ packages=(
   jj
   mcp
   nvim
-  opencode
   pi
   starship
   tmux
@@ -67,7 +66,7 @@ for package in "${packages[@]}"; do
   if [ -n "$output" ]; then
     while IFS= read -r line; do
       [ -n "$line" ] && changes=$((changes + 1))
-    done <<< "$output"
+    done <<<"$output"
   fi
 
   if [ "$status" -eq 0 ]; then
@@ -77,7 +76,7 @@ for package in "${packages[@]}"; do
 
     while IFS= read -r line; do
       printf "  %s\n" "$line"
-    done <<< "$output"
+    done <<<"$output"
 
     printf "\n"
     failed=1
