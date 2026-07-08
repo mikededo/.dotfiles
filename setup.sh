@@ -16,7 +16,7 @@ packages=(
   ghostty
   delta
   git
-  hunk
+  revdiff
   jj
   mcp
   nvim

@@ -1,0 +1,5 @@
+[Application Options]
+theme = basic
+line-numbers = true
+wrap = true
+vim-motion = true
