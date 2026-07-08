@@ -1,5 +1,6 @@
 [Application Options]
-theme = basic
+compact = true
 line-numbers = true
-wrap = true
+theme = basic
 vim-motion = true
+wrap = true
