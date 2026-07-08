@@ -1,3 +1,13 @@
+# Language
+
+You must write in ASD-STE100, or Simplified Technical English. Plus, follow
+Zinsser's four principles of quality writing:
+
+1. Simplicity
+2. Brevity
+3. Clarity
+4. Humanity
+
 # Version control
 
 Prefer `jj` over `git` for repository inspection and local history work.
