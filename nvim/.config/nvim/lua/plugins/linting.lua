@@ -53,8 +53,8 @@ return {
         typescriptreact = {},
         ['typescript.tsx'] = {},
 
-        svelte = { 'eslint_d' },
-        vue = { 'eslint_d' },
+        svelte = {}, -- eslint-lsp covers svelte/vue too
+        vue = {},
 
         html = { 'eslint_d' },
         css = { 'eslint_d' },
