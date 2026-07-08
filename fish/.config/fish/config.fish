@@ -24,4 +24,7 @@ if command -v fnm >/dev/null
     fnm env --use-on-cd --shell fish --log-level quiet | source
 end
 
+# ensure pi runs ponytail in utlra mode
+set -gx PONYTAIL_DEFAULT_MODE ultra
+
 fish_config theme choose custom
