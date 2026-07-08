@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "linear": {
+      "oauth": {},
+      "command": "bunx",
+      "args": ["-y", "mcp-remote", "https://mcp.linear.app/mcp"]
+    }
+  }
+}

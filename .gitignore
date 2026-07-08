@@ -1,1 +1,10 @@
 .DS_Store
+
+pi/.pi/agent/auth.json
+pi/.pi/agent/trust.json
+pi/.pi/agent/mcp-cache.json
+pi/.pi/agent/mcp-onboarding.json
+pi/.pi/agent/sessions/
+pi/.pi/agent/npm/
+pi/.pi/agent/git/
+pi/.pi/agent/bin/
