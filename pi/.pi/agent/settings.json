@@ -1,7 +1,7 @@
 {
   "theme": "catppuccin-macchiato",
   "defaultProvider": "openai-codex",
-  "defaultModel": "gpt-5.6-terra",
+  "defaultModel": "gpt-5.6-luna",
   "defaultThinkingLevel": "high",
   "terminal": {
     "showTerminalProgress": true
@@ -9,8 +9,16 @@
   "packages": [
     "git:github.com/DietrichGebert/ponytail",
     "git:git@github.com:otahontas/pi-coding-agent-catppuccin",
-    "npm:pi-mcp-adapter"
+    "npm:pi-mcp-adapter",
+    "npm:pi-stats-ext"
   ],
   "editorPaddingX": 0,
-  "lastChangelogVersion": "0.80.6"
+  "lastChangelogVersion": "0.80.6",
+  "enabledModels": [
+    "anthropic/claude-fable-5",
+    "openai-codex/gpt-5.5",
+    "openai-codex/gpt-5.6-luna",
+    "openai-codex/gpt-5.6-terra",
+    "openai-codex/gpt-5.6-sol"
+  ]
 }

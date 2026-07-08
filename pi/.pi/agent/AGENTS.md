@@ -20,4 +20,6 @@ Use `git` only when:
 
 Whenever working on a repository under `work` folder, you can use `code-review`
 skill. However, since the other repositories do not have access to coderabbit,
-DO NOT USER SUCH SKILL.
+DO NOT USER SUCH SKILL. At the same time, using the coderabbit CLI tool is very
+time consuming and not very efficient, which is why it should not be used as
+part of the checks cycle, and instead once everything has been developed.
