@@ -17,7 +17,6 @@ packages=(
   delta
   git
   hunk
-  lumen
   jj
   mcp
   nvim
