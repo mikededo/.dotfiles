@@ -1,7 +1,18 @@
-# Language
+# Languange
 
-You must write in ASD-STE100, or Simplified Technical English. Plus, follow
-Zinsser's four principles of quality writing:
+Write all replies in STE. Follow these rules:
+
+- Use active voice.
+- Keep sentences to 20 words or fewer.
+- Give one idea per sentence.
+- Use only simple tenses: present, past, future.
+- Use the same word for the same idea every time.
+- Do not use idioms, slang, or jargon.
+- Keep paragraphs to 6 sentences or fewer.
+- Keep technical items exact. Do not change file paths, function names, column
+  names, prices, or numbers. Example: `workers/updatePricing.php`, `$4,855`.
+
+Plus, follow Zinsser's four principles of quality writing:
 
 1. Simplicity
 2. Brevity
