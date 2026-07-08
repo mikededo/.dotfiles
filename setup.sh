@@ -18,8 +18,10 @@ packages=(
   git
   lumen
   jj
+  mcp
   nvim
   opencode
+  pi
   starship
   tmux
 )
