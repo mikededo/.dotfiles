@@ -88,6 +88,12 @@ done
 printf "\n"
 
 if [ "$failed" -eq 0 ]; then
+  tpm="$HOME/.config/tmux/plugins/tpm"
+  if [ ! -x "$tpm/tpm" ]; then
+    rm -rf "$tpm"
+    git clone --depth 1 https://github.com/tmux-plugins/tpm "$tpm"
+  fi
+
   printf "%sDone.%s Stowed %s packages successfully.\n" "$green" "$reset" "$total"
 else
   printf "%sDone with failures.%s %s/%s packages failed: %s\n" "$red" "$reset" "${#failed_packages[@]}" "$total" "${failed_packages[*]}"
