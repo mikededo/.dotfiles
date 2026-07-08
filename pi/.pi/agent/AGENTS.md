@@ -15,3 +15,9 @@ Use `git` only when:
 - the user explicitly asks for git
 - `jj` cannot do the operation
 - interacting with tooling that requires raw git commands
+
+# Code review
+
+Whenever working on a repository under `work` folder, you can use `code-review`
+skill. However, since the other repositories do not have access to coderabbit,
+DO NOT USER SUCH SKILL.
