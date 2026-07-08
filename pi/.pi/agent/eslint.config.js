@@ -1,0 +1,113 @@
+import antfu from '@antfu/eslint-config'
+import perfectionist from 'eslint-plugin-perfectionist'
+
+export default antfu({
+  formatters: {
+    css: true,
+    html: true
+  },
+  ignores: [
+    '!.env.example',
+    '.DS_Store',
+    '.env.*',
+    '.git',
+    '**/node_modules/',
+    '**/dist/',
+    'tsconfig.tsbuildinfo'
+  ],
+  isInEditor: false,
+  jsonc: true,
+  lessOpinionated: true,
+  markdown: true,
+  rules: {
+    'arrow-body-style': ['error', 'as-needed'],
+    'func-style': 'off',
+    'unicorn/throw-new-error': 'off'
+  },
+  stylistic: {
+    indent: 2,
+    quotes: 'single',
+    semi: false
+  },
+  toml: false,
+  typescript: {
+    overrides: {
+      'no-use-before-define': 'off',
+      'ts/consistent-type-definitions': ['error', 'type'],
+      'ts/consistent-type-imports': ['error', {
+        disallowTypeAnnotations: false,
+        fixStyle: 'separate-type-imports',
+        prefer: 'type-imports'
+      }],
+      'ts/no-unused-vars': ['error', {
+        args: 'all',
+        argsIgnorePattern: '^_',
+        caughtErrors: 'all',
+        caughtErrorsIgnorePattern: '^_',
+        destructuredArrayIgnorePattern: '^_',
+        ignoreRestSiblings: true,
+        varsIgnorePattern: '^_'
+      }],
+      'ts/no-use-before-define': ['error', {
+        classes: false,
+        enums: false,
+        functions: true,
+        ignoreTypeReferences: true,
+        typedefs: false,
+        variables: true
+      }]
+    }
+  }
+}, {
+  files: ['**/*.d.ts'],
+  rules: { 'ts/consistent-type-definitions': ['off'] }
+})
+  .override('antfu/stylistic/rules', {
+    rules: {
+      'style/arrow-parens': ['error', 'always'],
+      'style/brace-style': ['error', '1tbs'],
+      'style/comma-dangle': ['error', 'never'],
+      'style/indent': ['error', 2, {
+        flatTernaryExpressions: true,
+        offsetTernaryExpressions: true,
+        SwitchCase: 1
+      }],
+      'style/no-multiple-empty-lines': ['error', { max: 1 }],
+      'style/operator-linebreak': ['error', 'after', {
+        overrides: { ':': 'before', '?': 'before' }
+      }],
+      'style/quote-props': ['error', 'as-needed']
+    }
+  })
+  .override('antfu/perfectionist/setup', {
+    rules: {
+      ...(perfectionist.configs['recommended-alphabetical'].rules ?? {}),
+      'perfectionist/sort-exports': ['error', {
+        ignoreCase: true,
+        order: 'asc',
+        type: 'alphabetical'
+      }],
+      'perfectionist/sort-imports': ['error', {
+        environment: 'bun',
+        groups: [
+          'style',
+          ['type-builtin', 'type-external'],
+          ['type-parent', 'type-sibling', 'type-index'],
+          ['builtin', 'external'],
+          ['parent', 'sibling', 'index'],
+          'unknown'
+        ],
+        ignoreCase: true,
+        maxLineLength: undefined,
+        newlinesBetween: 1,
+        order: 'asc',
+        type: 'alphabetical'
+      }],
+      'perfectionist/sort-modules': 'off',
+      'perfectionist/sort-object-types': 'off',
+      'perfectionist/sort-objects': ['error', {
+        partitionByComment: true,
+        partitionByNewLine: true
+      }]
+    }
+  })

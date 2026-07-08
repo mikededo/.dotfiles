@@ -1,7 +1,7 @@
 {
   "theme": "catppuccin-macchiato",
   "defaultProvider": "openai-codex",
-  "defaultModel": "gpt-5.6-luna",
+  "defaultModel": "gpt-5.6-terra",
   "defaultThinkingLevel": "high",
   "terminal": {
     "showTerminalProgress": true
@@ -13,12 +13,51 @@
     "npm:pi-stats-ext"
   ],
   "editorPaddingX": 0,
-  "lastChangelogVersion": "0.80.6",
+  "quietStartup": true,
+  "lastChangelogVersion": "0.81.0",
   "enabledModels": [
     "anthropic/claude-fable-5",
     "openai-codex/gpt-5.5",
     "openai-codex/gpt-5.6-luna",
     "openai-codex/gpt-5.6-terra",
     "openai-codex/gpt-5.6-sol"
-  ]
+  ],
+  "hideThinkingBlock": true,
+  "alps-pi": {
+    "chromeFrame": {
+      "enabled": false,
+      "assistantFrame": false,
+      "toolCompactMode": true,
+      "compactEditTool": false
+    },
+    "fixedBottomEditor": {
+      "enabled": true
+    },
+    "beautifiedInput": {
+      "enabled": true
+    },
+    "animations": {
+      "enabled": true,
+      "randomMode": false,
+      "working": "crush",
+      "thinking": "shimmer",
+      "tool": "pipeline",
+      "width": "default",
+      "fps": 16
+    },
+    "shortcuts": {
+      "stashEditor": "alt+s",
+      "copyEditor": "ctrl+alt+c",
+      "cutEditor": "ctrl+alt+x",
+      "scrollChatUp": "super+up",
+      "scrollChatDown": "super+down",
+      "editorStart": "super+shift+up",
+      "editorEnd": "super+shift+down",
+      "jumpPreviousUserMessage": "ctrl+shift+u",
+      "jumpNextUserMessage": "ctrl+shift+i",
+      "jumpPreviousAssistantMessage": "ctrl+alt+,",
+      "jumpNextAssistantMessage": "ctrl+alt+.",
+      "jumpChatBottom": "ctrl+shift+g"
+    }
+  }
 }

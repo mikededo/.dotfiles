@@ -1,0 +1,9 @@
+auth.json
+trust.json
+mcp-cache.json
+mcp-onboarding.json
+sessions
+npm
+node_modules
+git
+bin

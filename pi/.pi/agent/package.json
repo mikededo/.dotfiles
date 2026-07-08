@@ -1,0 +1,21 @@
+{
+  "name": "@mikededo/pi-agent",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "lint": "eslint extensions",
+    "lint:fix": "eslint extensions --fix"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "9.0.0",
+    "@earendil-works/pi-coding-agent": "0.80.7",
+    "@earendil-works/pi-tui": "0.80.7",
+    "@types/node": "24.12.4",
+    "eslint": "10.6.0",
+    "eslint-plugin-format": "2.0.1",
+    "eslint-plugin-import": "2.32.0",
+    "eslint-plugin-perfectionist": "5.9.0",
+    "typescript": "6",
+    "typescript-eslint": "8.60.1"
+  }
+}
