@@ -6,6 +6,7 @@ abbr -a :q exit
 
 # file manipulation
 abbr -a rmd 'rm -rf'
+abbr -a cat bat
 alias rmds="find . -name .DS_Store | xargs rm"
 # avoids having to keep entering the passphrase to sign the commits
 alias reset_gpg="echo 'pinentry-program /opt/homebrew/bin/pinentry-mac' > ~/.gnupg/gpg-agent.conf && killall gpg-agent"
