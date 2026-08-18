@@ -30,7 +30,15 @@
   "hideThinkingBlock": false,
   "compaction": {
     "enabled": true,
-    "reserveTokens": 68000
+    "reserveTokens": 68000,
+    "modelOverrides": {
+      "anthropic/claude-opus-5": {
+        "reserveTokens": 128000
+      },
+      "anthropic/claude-fable-5-1": {
+        "reserveTokens": 128000
+      }
+    }
   },
   "alps-pi": {
     "chromeFrame": {
