@@ -9,6 +9,7 @@ default-command = "log"
 pager = "delta"
 diff-formatter = ":git"
 git.subprocess = true
+diff-editor = ":builtin"
 
 [signing]
 backend = "ssh"
