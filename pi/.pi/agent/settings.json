@@ -1,7 +1,7 @@
 {
   "theme": "catppuccin-macchiato",
   "defaultProvider": "openai-codex",
-  "defaultModel": "gpt-5.6-terra",
+  "defaultModel": "gpt-5.6-sol",
   "defaultThinkingLevel": "high",
   "terminal": {
     "showTerminalProgress": true
@@ -12,20 +12,26 @@
     "npm:pi-mcp-adapter",
     "npm:pi-stats-ext",
     "npm:@ff-labs/pi-fff",
-    "npm:@tmustier/pi-usage-extension"
+    "npm:@tmustier/pi-usage-extension",
+    "npm:@sting8k/pi-vcc"
   ],
   "editorPaddingX": 0,
   "quietStartup": true,
-  "lastChangelogVersion": "0.84.2",
+  "lastChangelogVersion": "0.85.1",
   "tuiMode": "fullscreen",
   "enabledModels": [
-    "openai-codex/gpt-5.5",
     "openai-codex/gpt-5.6-luna",
     "openai-codex/gpt-5.6-terra",
     "openai-codex/gpt-5.6-sol",
-    "anthropic/claude-opus-5"
+    "anthropic/claude-opus-5",
+    "anthropic/claude-fable-5-1",
+    "openai-codex/gpt-6-astra"
   ],
   "hideThinkingBlock": false,
+  "compaction": {
+    "enabled": true,
+    "reserveTokens": 68000
+  },
   "alps-pi": {
     "chromeFrame": {
       "enabled": false,
