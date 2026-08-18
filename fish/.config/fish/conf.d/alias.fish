@@ -129,9 +129,6 @@ function _semm_commit
     set prefix $argv[1]
     set -e argv[1]
 
-# opencode
-abbr -a oc opencode
-abbr -a ocr 'opencode run'
     if test (count $argv) -eq 1
         jj desc -m "$prefix: $argv[1]"
     else if test (count $argv) -eq 2
@@ -147,3 +144,7 @@ alias refactor="_semm_commit refactor"
 alias docs="_semm_commit docs"
 alias ctest="_semm_commit test"
 alias ci="_semm_commit ci"
+
+# pi
+abbr pu 'pi update'
+abbr pue 'pi update --extensions'
