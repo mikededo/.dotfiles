@@ -67,7 +67,7 @@ disabled = true
 
 [custom.vcs]
 when = "vcs-starship detect"
-shell = ["vcs-starship"]
+shell = ["vcs-starship", "--lines", "all"]
 format = "$output "
 
 [nodejs]
