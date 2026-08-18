@@ -17,7 +17,7 @@
   ],
   "editorPaddingX": 0,
   "quietStartup": true,
-  "lastChangelogVersion": "0.85.1",
+  "lastChangelogVersion": "0.87.0",
   "tuiMode": "fullscreen",
   "enabledModels": [
     "openai-codex/gpt-5.6-luna",

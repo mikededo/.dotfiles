@@ -1,7 +1,7 @@
 {
   "mcpServers": {
     "linear": {
-      "directTools": true
+      "directTools": false
     }
   }
 }
