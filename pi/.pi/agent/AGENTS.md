@@ -1,9 +1,11 @@
-# Instructions
+# AGENTS.md
+
+## Instructions
 
 - User questions are meant to be answered, not direct implementation
 instructions.
 
-# Languange
+## Languange
 
 Write in clear, direct English. Follow these rules:
 
@@ -25,7 +27,7 @@ Aim for Zinsser's four qualities — simplicity, brevity, clarity, humanity — 
 prioritizing clarity and directness first, and letting a plain, natural voice
 carry the "humanity" rather than adding warmth as decoration.
 
-# Version control
+## Version control
 
 Prefer `jj` over `git` for repository inspection and local history work.
 
@@ -43,10 +45,18 @@ Use `git` only when:
 - `jj` cannot do the operation
 - interacting with tooling that requires raw git commands
 
-# Code review
+## Code review
 
 Whenever working on a repository under `work` folder, you can use `code-review`
 skill. However, since the other repositories do not have access to coderabbit,
 DO NOT USER SUCH SKILL. At the same time, using the coderabbit CLI tool is very
 time consuming and not very efficient, which is why it should not be used as
 part of the checks cycle, and instead once everything has been developed.
+
+## MCP
+
+Mcp connections are available. Unless said otherwise, all connections are
+related to my work account, meaning that anything not related to work should not
+be done through MCP. Non-work related MCP connections are all suffixed with
+`-personal`. For example, `mcp connect linear-personal` will connect to my
+personal Linear MCP.

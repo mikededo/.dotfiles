@@ -3,7 +3,26 @@
     "linear": {
       "oauth": {},
       "command": "bunx",
-      "args": ["-y", "mcp-remote", "https://mcp.linear.app/mcp"]
+      "args": [
+        "-y",
+        "mcp-remote",
+        "https://mcp.linear.app/mcp"
+      ],
+      "env": {
+        "MCP_REMOTE_CONFIG_DIR": "/Users/mikededo/.mcp-auth/linear-work"
+      }
+    },
+    "linear-personal": {
+      "oauth": {},
+      "command": "bunx",
+      "args": [
+        "-y",
+        "mcp-remote",
+        "https://mcp.linear.app/mcp"
+      ],
+      "env": {
+        "MCP_REMOTE_CONFIG_DIR": "/Users/mikededo/.mcp-auth/linear-personal"
+      }
     }
   }
 }
