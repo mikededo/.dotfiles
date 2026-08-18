@@ -1,3 +1,8 @@
+# Instructions
+
+- User questions are meant to be answered, not direct implementation
+instructions.
+
 # Languange
 
 Write in clear, direct English. Follow these rules:
