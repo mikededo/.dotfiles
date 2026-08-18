@@ -88,27 +88,6 @@ abbr -a gcpc 'git cherry-pick --continue'
 abbr -a gcpa 'git cherry-pick --abort'
 abbr -a gcps 'git cherry-pick --skip'
 
-# commit messages
-function _semm_commit
-    set prefix $argv[1]
-    set -e argv[1]
-
-    if test (count $argv) -eq 1
-        git commit -m "$prefix: $argv[1]"
-    else if test (count $argv) -eq 2
-        git commit -m "$prefix($argv[1]): $argv[2]"
-    else
-        echo "Invalid number of arguments"
-    end
-end
-alias chore="_semm_commit chore"
-alias feat="_semm_commit feat"
-alias fix="_semm_commit fix"
-alias refactor="_semm_commit refactor"
-alias docs="_semm_commit docs"
-alias ctest="_semm_commit test"
-alias ci="_semm_commit ci"
-
 # new pr
 alias npr="gh pr create -a @me"
 # draft new pr
@@ -145,7 +124,26 @@ abbr -a jjgf 'jj git fetch'
 abbr -a jjgft 'jj git fetch --tracked'
 abbr -a jjgc 'jj git clone --colocate'
 abbr -a jjfs 'jj file show -r'
+# commit messages
+function _semm_commit
+    set prefix $argv[1]
+    set -e argv[1]
 
 # opencode
 abbr -a oc opencode
 abbr -a ocr 'opencode run'
+    if test (count $argv) -eq 1
+        jj desc -m "$prefix: $argv[1]"
+    else if test (count $argv) -eq 2
+        jj desc -m "$prefix($argv[1]): $argv[2]"
+    else
+        echo "Invalid number of arguments"
+    end
+end
+alias chore="_semm_commit chore"
+alias feat="_semm_commit feat"
+alias fix="_semm_commit fix"
+alias refactor="_semm_commit refactor"
+alias docs="_semm_commit docs"
+alias ctest="_semm_commit test"
+alias ci="_semm_commit ci"
