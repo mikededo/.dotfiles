@@ -3,28 +3,32 @@
   "defaultProvider": "openai-codex",
   "defaultModel": "gpt-6-sol",
   "defaultThinkingLevel": "high",
+  "defaultTools": [
+    "+codemode",
+    "+tool_search"
+  ],
   "terminal": {
     "showTerminalProgress": true
   },
   "packages": [
     "git:github.com/DietrichGebert/ponytail",
     "git:git@github.com:otahontas/pi-coding-agent-catppuccin",
-    "npm:pi-mcp-adapter",
     "npm:pi-stats-ext",
     "npm:@ff-labs/pi-fff",
     "npm:@tmustier/pi-usage-extension",
-    "npm:@sting8k/pi-vcc"
+    "npm:@sting8k/pi-vcc",
+    "npm:pi-subagents"
   ],
   "editorPaddingX": 0,
   "quietStartup": true,
-  "lastChangelogVersion": "0.87.1",
+  "lastChangelogVersion": "0.99.1",
   "tuiMode": "fullscreen",
   "enabledModels": [
     "openai-codex/gpt-6-astra",
     "openai-codex/gpt-6-luna",
-    "openai-codex/gpt-6-sol",
     "anthropic/claude-fable-5-1",
-    "anthropic/claude-opus-5-5"
+    "anthropic/claude-opus-5-5",
+    "openai-codex/gpt-6.1-sol"
   ],
   "hideThinkingBlock": false,
   "compaction": {
@@ -75,5 +79,6 @@
       "jumpNextAssistantMessage": "ctrl+alt+.",
       "jumpChatBottom": "ctrl+shift+g"
     }
-  }
+  },
+  "deviceId": "3ef1de87-ea6a-455f-b7e1-6a50a64a5026"
 }
