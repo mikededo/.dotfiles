@@ -148,4 +148,5 @@ alias ci="_semm_commit ci"
 # pi
 abbr pu 'pi update'
 abbr pue 'pi update --extensions'
+abbr pua 'pi update --all'
 abbr pc 'pi -c'
