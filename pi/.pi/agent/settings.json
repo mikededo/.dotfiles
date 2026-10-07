@@ -17,7 +17,7 @@
     "npm:@ff-labs/pi-fff",
     "npm:@tmustier/pi-usage-extension",
     "npm:@sting8k/pi-vcc",
-    "npm:pi-subagents"
+    "npm:pi-archimedes"
   ],
   "editorPaddingX": 0,
   "quietStartup": true,
