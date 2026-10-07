@@ -42,5 +42,12 @@
       }
     }
   },
-  "deviceId": "3ef1de87-ea6a-455f-b7e1-6a50a64a5026"
+  "deviceId": "3ef1de87-ea6a-455f-b7e1-6a50a64a5026",
+  "steeringMode": "one-at-a-time",
+  "followUpMode": "all",
+  "doubleEscapeAction": "tree",
+  "warnings": {
+    "anthropicExtraUsage": false
+  },
+  "fullscreenExitOutput": "transcript"
 }
