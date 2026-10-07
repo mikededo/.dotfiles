@@ -13,7 +13,6 @@
   "packages": [
     "git:github.com/DietrichGebert/ponytail",
     "git:git@github.com:otahontas/pi-coding-agent-catppuccin",
-    "npm:pi-stats-ext",
     "npm:@ff-labs/pi-fff",
     "npm:@tmustier/pi-usage-extension",
     "npm:@sting8k/pi-vcc",
