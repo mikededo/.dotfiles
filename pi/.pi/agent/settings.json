@@ -43,42 +43,5 @@
       }
     }
   },
-  "alps-pi": {
-    "chromeFrame": {
-      "enabled": false,
-      "assistantFrame": false,
-      "toolCompactMode": true,
-      "compactEditTool": false
-    },
-    "fixedBottomEditor": {
-      "enabled": true
-    },
-    "beautifiedInput": {
-      "enabled": true
-    },
-    "animations": {
-      "enabled": true,
-      "randomMode": false,
-      "working": "crush",
-      "thinking": "shimmer",
-      "tool": "pipeline",
-      "width": "default",
-      "fps": 16
-    },
-    "shortcuts": {
-      "stashEditor": "alt+s",
-      "copyEditor": "ctrl+alt+c",
-      "cutEditor": "ctrl+alt+x",
-      "scrollChatUp": "super+up",
-      "scrollChatDown": "super+down",
-      "editorStart": "super+shift+up",
-      "editorEnd": "super+shift+down",
-      "jumpPreviousUserMessage": "ctrl+shift+u",
-      "jumpNextUserMessage": "ctrl+shift+i",
-      "jumpPreviousAssistantMessage": "ctrl+alt+,",
-      "jumpNextAssistantMessage": "ctrl+alt+.",
-      "jumpChatBottom": "ctrl+shift+g"
-    }
-  },
   "deviceId": "3ef1de87-ea6a-455f-b7e1-6a50a64a5026"
 }
