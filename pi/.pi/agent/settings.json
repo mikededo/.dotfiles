@@ -20,7 +20,7 @@
   ],
   "editorPaddingX": 0,
   "quietStartup": true,
-  "lastChangelogVersion": "0.99.1",
+  "lastChangelogVersion": "1.0.4",
   "tuiMode": "fullscreen",
   "enabledModels": [
     "openai-codex/gpt-6-astra",
