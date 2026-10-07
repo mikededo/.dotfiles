@@ -49,5 +49,8 @@
   "warnings": {
     "anthropicExtraUsage": false
   },
-  "fullscreenExitOutput": "transcript"
+  "fullscreenExitOutput": "transcript",
+  "archimedes.imagePaste": {
+    "enabled": true
+  }
 }
