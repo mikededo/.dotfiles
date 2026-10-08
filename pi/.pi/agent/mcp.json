@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "linear": {
+      "command": "bunx",
+      "args": [
+        "-y",
+        "mcp-remote",
+        "https://mcp.linear.app/mcp"
+      ],
+      "env": {
+        "MCP_REMOTE_CONFIG_DIR": "/Users/mikededo/.mcp-auth/linear"
+      }
+    }
+  }
+}
