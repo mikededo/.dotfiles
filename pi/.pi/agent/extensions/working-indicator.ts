@@ -1,85 +1,61 @@
-import type { ExtensionAPI } from '@earendil-works/pi-coding-agent'
+import type { ExtensionAPI, ExtensionContext } from '@earendil-works/pi-coding-agent'
 
-const WIDTH = 7
-const INTERVAL = 32
-const CYCLES = 4 // cycles generated per loop, so jitter varies between repeats
-const HEAD = '▓'
-const TRAIL = ['▒', '░'] // closest to head → farthest, each smaller
-const EMPTY = '·'
-const TRAIL_LAG = 3 // ticks of history the trail reaches back
+// Knight Rider scanner, ported from opencode (packages/tui/src/ui/spinner.ts)
+const WIDTH = 8
+const INTERVAL = 40
+const TRAIL = 6 // lit cells counted from the head, head included
+const HOLD_START = 30 // frames held at the left edge
+const HOLD_END = 9 // frames held at the right edge
+const ACTIVE = '■'
+const IDLE = '⬝'
 
-// Timings, in ticks (× INTERVAL ms)
-const TURN = 1 // pause at the far edge in the there-and-back
-const SHORT_WAIT = 5 // ~160ms after the there-and-back
+type Theme = ExtensionContext['ui']['theme']
 
-// Softer than cubic: gentle acceleration and landing
-const easeInOutSine = (t: number) => -(Math.cos(Math.PI * t) - 1) / 2
-// Mild overshoot that settles back, used occasionally
-const easeOutBackSoft = (t: number) => {
-  const c1 = 0.8
-  return 1 + (c1 + 1) * (t - 1) ** 3 + c1 * (t - 1) ** 2
-}
+const dim = (text: string) => `\x1b[2m${text}\x1b[22m`
 
-const toCell = (p: number) => Math.min(WIDTH - 1, Math.max(0, Math.floor(p)))
+// Mirrors opencode's bidirectional scanner: forward, hold, backward, hold
+const buildFrames = (theme: Theme) => {
+  const forward = WIDTH
+  const backward = WIDTH - 1
+  const total = forward + HOLD_END + backward + HOLD_START
 
-// Head at `head`, trail grows behind it toward where it was `TRAIL_LAG` ticks ago
-const render = (head: number, lagged: number) => {
-  const cells = Array.from({ length: WIDTH }).fill(EMPTY)
-  const dir = Math.sign(head - lagged)
-  const length = Math.min(TRAIL.length, Math.abs(head - lagged))
-  for (let i = 1; i <= length; i++) {
-    const idx = head - dir * i
-    if (idx >= 0 && idx < WIDTH) {
-      cells[idx] = TRAIL[i - 1]
+  const cell = (index: number) => {
+    if (index === 0) return theme.fg('accent', ACTIVE)
+    if (index > 0 && index < TRAIL) return dim(theme.fg('accent', ACTIVE))
+    return dim(theme.fg('accent', IDLE))
+  }
+
+  return Array.from({ length: total }, (_, frame) => {
+    let active = 0
+    let holdProgress = 0
+    let isHolding = false
+    let isForward = true
+
+    if (frame < forward) {
+      active = frame
+    } else if (frame < forward + HOLD_END) {
+      active = WIDTH - 1
+      holdProgress = frame - forward
+      isHolding = true
+    } else if (frame < forward + HOLD_END + backward) {
+      active = WIDTH - 2 - (frame - forward - HOLD_END)
+      isForward = false
+    } else {
+      holdProgress = frame - forward - HOLD_END - backward
+      isHolding = true
+      isForward = false
     }
-  }
-  cells[head] = HEAD
-  return cells.join('')
-}
 
-const LEFT = 0.5
-const RIGHT = WIDTH - 0.5
-
-const buildFrames = () => {
-  const positions: number[] = []
-  let pos = LEFT
-
-  const sweep = (target: number) => {
-    const dist = Math.abs(target - pos)
-    // Small jitter in duration keeps sweeps from feeling metronomic
-    const steps = Math.round(dist * 2.4 + 2 + Math.random() * 4)
-    const ease = Math.random() < 0.3 ? easeOutBackSoft : easeInOutSine
-    for (let k = 1; k <= steps; k++) {
-      positions.push(pos + (target - pos) * ease(k / steps))
-    }
-    pos = target
-  }
-
-  const hold = (n: number) => {
-    for (let k = 0; k < n; k++) {
-      positions.push(pos)
-    }
-  }
-
-  for (let c = 0; c < CYCLES; c++) {
-    sweep(RIGHT)
-    hold(TURN)
-    sweep(LEFT)
-    hold(SHORT_WAIT)
-    sweep(RIGHT)
-    sweep(LEFT)
-  }
-
-  return positions.map((p, i) =>
-    render(toCell(p), toCell(positions[i - TRAIL_LAG] ?? LEFT))
-  )
+    return Array.from({ length: WIDTH }, (_, char) => {
+      const distance = isForward ? active - char : char - active
+      if (isHolding) return cell(distance + holdProgress)
+      return cell(distance)
+    }).join('')
+  })
 }
 
 export default function workingIndicator(pi: ExtensionAPI) {
   pi.on('session_start', (_, ctx) => {
-    const theme = ctx.ui.theme
-    const borderColor = theme.getThinkingBorderColor('off')
-    const frames = buildFrames().map((frame) => borderColor(frame))
-    ctx.ui.setWorkingIndicator({ frames, intervalMs: INTERVAL })
+    ctx.ui.setWorkingIndicator({ frames: buildFrames(ctx.ui.theme), intervalMs: INTERVAL })
   })
 }
