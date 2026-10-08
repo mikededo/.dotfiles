@@ -1,7 +1,7 @@
 {
   "theme": "pi-theme",
-  "defaultProvider": "openai-codex",
-  "defaultModel": "gpt-6.1-sol",
+  "defaultProvider": "anthropic",
+  "defaultModel": "claude-haiku-5-5",
   "defaultThinkingLevel": "high",
   "defaultTools": [
     "+codemode",
@@ -15,11 +15,12 @@
     "npm:@ff-labs/pi-fff",
     "npm:@tmustier/pi-usage-extension",
     "npm:@sting8k/pi-vcc",
-    "npm:pi-archimedes"
+    "npm:pi-archimedes",
+    "npm:@plannotator/pi-extension"
   ],
   "editorPaddingX": 0,
   "quietStartup": true,
-  "lastChangelogVersion": "1.1.0",
+  "lastChangelogVersion": "1.2.0",
   "tuiMode": "fullscreen",
   "enabledModels": [
     "openai-codex/gpt-6-astra",
@@ -67,30 +68,32 @@
     "enabled": false
   },
   "archimedes.ui": {
-    "animationStyle": "vertical-up",
-    "autoCollapseThinking": false,
     "bashToolStyling": true,
-    "codeUnindent": true,
     "codemodeToolStyling": true,
+    "mutedTheme": false,
+    "autoCollapseThinking": true,
+    "thinkingStyle": "Full",
+    "toolStyle": "Minimal",
+    "codeUnindent": true,
+    "labelText": "Thinking...",
+    "labelColor": "255,215,0",
+    "animationStyle": "vertical-up",
     "colorfulLogo": true,
     "editorSpinBorder": false,
-    "editorSpinLabel": "Working",
     "editorSpinSpeed": "normal",
-    "editorSpinStyle": "typing",
-    "labelColor": "255,215,0",
-    "labelText": "Thinking...",
-    "mutedTheme": false,
-    "thinkingStyle": "Full",
-    "toolStyle": "Minimal"
+    "editorSpinLabel": "Working",
+    "editorSpinStyle": "typing"
   },
   "archimedes.footer": {
-    "branchMaxLength": 50,
-    "splitThreshold": 150
+    "splitThreshold": 150,
+    "branchMaxLength": 50
   },
   "archimedes.notify": {
-    "delayMs": 30000,
     "notifyOnAgentEnd": true,
-    "notifyOnQuestion": true
+    "notifyOnQuestion": true,
+    "delayMs": 30000
   },
-  "archimedes.sessionName": {}
+  "archimedes.sessionName": {
+    "reasoning": "minimal"
+  }
 }
