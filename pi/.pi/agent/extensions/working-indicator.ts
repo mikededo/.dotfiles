@@ -7,11 +7,11 @@ const TRAIL = 6 // lit cells counted from the head, head included
 const HOLD_START = 30 // frames held at the left edge
 const HOLD_END = 9 // frames held at the right edge
 const ACTIVE = '■'
-const IDLE = '⬝'
+const IDLE = '·'
 
 type Theme = ExtensionContext['ui']['theme']
 
-const dim = (text: string) => `\x1b[2m${text}\x1b[22m`
+const dim = (text: string) => `\x1B[2m${text}\x1B[22m`
 
 // Mirrors opencode's bidirectional scanner: forward, hold, backward, hold
 const buildFrames = (theme: Theme) => {
@@ -20,8 +20,12 @@ const buildFrames = (theme: Theme) => {
   const total = forward + HOLD_END + backward + HOLD_START
 
   const cell = (index: number) => {
-    if (index === 0) return theme.fg('accent', ACTIVE)
-    if (index > 0 && index < TRAIL) return dim(theme.fg('accent', ACTIVE))
+    if (index === 0) {
+      return theme.fg('accent', ACTIVE)
+    }
+    if (index > 0 && index < TRAIL) {
+      return dim(theme.fg('accent', ACTIVE))
+    }
     return dim(theme.fg('accent', IDLE))
   }
 
@@ -48,7 +52,9 @@ const buildFrames = (theme: Theme) => {
 
     return Array.from({ length: WIDTH }, (_, char) => {
       const distance = isForward ? active - char : char - active
-      if (isHolding) return cell(distance + holdProgress)
+      if (isHolding) {
+        return cell(distance + holdProgress)
+      }
       return cell(distance)
     }).join('')
   })
