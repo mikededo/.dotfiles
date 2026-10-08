@@ -50,9 +50,47 @@
   },
   "fullscreenExitOutput": "transcript",
   "archimedes.imagePaste": {
+    "keybindingsPromptDone": true,
     "enabled": true
   },
+  "archimedes.meta": {
+    "onboarded": true
+  },
+  "archimedes.diff": {
+    "diffTheme": "github-dark",
+    "diffSplitMinWidth": 150,
+    "diffSplitMinCodeWidth": 60,
+    "diffSplitWrapCheck": true,
+    "enabled": false
+  },
+  "archimedes.sudo": {
+    "enabled": false
+  },
   "archimedes.ui": {
-    "editorSpinBorder": false
-  }
+    "animationStyle": "vertical-up",
+    "autoCollapseThinking": false,
+    "bashToolStyling": true,
+    "codeUnindent": true,
+    "codemodeToolStyling": true,
+    "colorfulLogo": true,
+    "editorSpinBorder": false,
+    "editorSpinLabel": "Working",
+    "editorSpinSpeed": "normal",
+    "editorSpinStyle": "typing",
+    "labelColor": "255,215,0",
+    "labelText": "Thinking...",
+    "mutedTheme": false,
+    "thinkingStyle": "Full",
+    "toolStyle": "Minimal"
+  },
+  "archimedes.footer": {
+    "branchMaxLength": 50,
+    "splitThreshold": 150
+  },
+  "archimedes.notify": {
+    "delayMs": 30000,
+    "notifyOnAgentEnd": true,
+    "notifyOnQuestion": true
+  },
+  "archimedes.sessionName": {}
 }
