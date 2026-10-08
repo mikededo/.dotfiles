@@ -1,5 +1,6 @@
 # general
 alias sudo="sudo"
+alias quit="exit"
 abbr -a vim nvim
 abbr -a n nvim
 abbr -a :q exit
@@ -150,3 +151,6 @@ abbr pu 'pi update'
 abbr pue 'pi update --extensions'
 abbr pua 'pi update --all'
 abbr pc 'pi -c'
+# quick questions: qq = no thinking, qm = medium thinking
+abbr qq 'pi --model anthropic/claude-haiku-5-5 --thinking off -p'
+abbr qm 'pi --model anthropic/claude-haiku-5-5 --thinking medium -p'
