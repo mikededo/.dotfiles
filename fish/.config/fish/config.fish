@@ -9,7 +9,7 @@ function fish_right_prompt_loading_indicator -a last_prompt
     echo -n (set_color brblack)"$uncolored_last_prompt"(set_color normal)
 end
 
-if not set -q VSCODE_INJECTION; and test "$TERM_PROGRAM" != vscode
+if not set -q VSCODE_INJECTION; and test "$TERM_PROGRAM" != vscode; and test "$__CFBundleIdentifier" != com.t3tools.t3code
     if status is-interactive; and not set -q TMUX
         tmux attach -t default || tmux new -s default
     end
