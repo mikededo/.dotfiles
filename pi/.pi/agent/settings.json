@@ -15,12 +15,11 @@
     "npm:@ff-labs/pi-fff",
     "npm:@tmustier/pi-usage-extension",
     "npm:@sting8k/pi-vcc",
-    "npm:pi-archimedes",
     "npm:@plannotator/pi-extension"
   ],
   "editorPaddingX": 0,
   "quietStartup": true,
-  "lastChangelogVersion": "1.2.0",
+  "lastChangelogVersion": "1.4.0",
   "tuiMode": "fullscreen",
   "enabledModels": [
     "openai-codex/gpt-6-astra",
@@ -29,7 +28,7 @@
     "anthropic/claude-opus-5-5",
     "anthropic/claude-haiku-5-5"
   ],
-  "hideThinkingBlock": false,
+  "hideThinkingBlock": true,
   "compaction": {
     "enabled": true,
     "reserveTokens": 68000,
@@ -77,6 +76,7 @@
     "codeUnindent": true,
     "labelText": "Thinking...",
     "labelColor": "255,215,0",
+    "startupSplash": true,
     "animationStyle": "vertical-up",
     "colorfulLogo": true,
     "editorSpinBorder": false,
