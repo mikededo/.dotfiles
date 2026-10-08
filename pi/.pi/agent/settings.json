@@ -1,7 +1,7 @@
 {
   "theme": "pi-theme",
   "defaultProvider": "openai-codex",
-  "defaultModel": "gpt-6-sol",
+  "defaultModel": "gpt-6.1-sol",
   "defaultThinkingLevel": "high",
   "defaultTools": [
     "+codemode",
@@ -19,14 +19,14 @@
   ],
   "editorPaddingX": 0,
   "quietStartup": true,
-  "lastChangelogVersion": "1.0.4",
+  "lastChangelogVersion": "1.1.0",
   "tuiMode": "fullscreen",
   "enabledModels": [
     "openai-codex/gpt-6-astra",
     "openai-codex/gpt-6-luna",
-    "anthropic/claude-fable-5-1",
+    "openai-codex/gpt-6.1-sol",
     "anthropic/claude-opus-5-5",
-    "openai-codex/gpt-6.1-sol"
+    "anthropic/claude-haiku-5-5"
   ],
   "hideThinkingBlock": false,
   "compaction": {
