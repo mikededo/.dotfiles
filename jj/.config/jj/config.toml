@@ -3,7 +3,7 @@ name = "Miquel de Domingo"
 email = "miquelddg@gmail.com"
 
 [ui]
-editor = "nvim"
+editor = "nvim --cmd 'set runtimepath^=~/.config/nvim' -u NONE -c 'lua dofile(vim.fn.expand(\"~/.config/nvim/lua/config/options.lua\")); vim.opt.rtp:append(vim.fn.stdpath(\"config\"))'"
 color = "auto"
 default-command = "log"
 pager = "delta"
