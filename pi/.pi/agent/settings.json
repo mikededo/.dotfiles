@@ -48,52 +48,5 @@
   "warnings": {
     "anthropicExtraUsage": false
   },
-  "fullscreenExitOutput": "transcript",
-  "archimedes.imagePaste": {
-    "keybindingsPromptDone": true,
-    "enabled": true
-  },
-  "archimedes.meta": {
-    "onboarded": true
-  },
-  "archimedes.diff": {
-    "diffTheme": "github-dark",
-    "diffSplitMinWidth": 150,
-    "diffSplitMinCodeWidth": 60,
-    "diffSplitWrapCheck": true,
-    "enabled": false
-  },
-  "archimedes.sudo": {
-    "enabled": false
-  },
-  "archimedes.ui": {
-    "bashToolStyling": true,
-    "codemodeToolStyling": true,
-    "mutedTheme": false,
-    "autoCollapseThinking": true,
-    "thinkingStyle": "Full",
-    "toolStyle": "Minimal",
-    "codeUnindent": true,
-    "labelText": "Thinking...",
-    "labelColor": "255,215,0",
-    "startupSplash": true,
-    "animationStyle": "vertical-up",
-    "colorfulLogo": true,
-    "editorSpinBorder": false,
-    "editorSpinSpeed": "normal",
-    "editorSpinLabel": "Working",
-    "editorSpinStyle": "typing"
-  },
-  "archimedes.footer": {
-    "splitThreshold": 150,
-    "branchMaxLength": 50
-  },
-  "archimedes.notify": {
-    "notifyOnAgentEnd": true,
-    "notifyOnQuestion": true,
-    "delayMs": 30000
-  },
-  "archimedes.sessionName": {
-    "reasoning": "minimal"
-  }
+  "fullscreenExitOutput": "transcript"
 }
