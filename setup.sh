@@ -12,6 +12,8 @@
 packages=(
   agents
   bat
+  claude
+  codex
   fish
   ghostty
   delta
