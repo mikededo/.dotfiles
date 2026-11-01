@@ -13,9 +13,7 @@
   "packages": [
     "git:github.com/DietrichGebert/ponytail",
     "npm:@ff-labs/pi-fff",
-    "npm:@tmustier/pi-usage-extension",
-    "npm:@sting8k/pi-vcc",
-    "npm:@plannotator/pi-extension"
+    "npm:@sting8k/pi-vcc"
   ],
   "editorPaddingX": 0,
   "quietStartup": true,
