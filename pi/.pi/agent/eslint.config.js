@@ -2,10 +2,6 @@ import antfu from '@antfu/eslint-config'
 import perfectionist from 'eslint-plugin-perfectionist'
 
 export default antfu({
-  formatters: {
-    css: true,
-    html: true
-  },
   ignores: [
     '!.env.example',
     '.DS_Store',
