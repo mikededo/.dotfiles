@@ -66,5 +66,4 @@ Ponytail mode and the writing rules both shape replies. Pick by task:
 Mcp connections are available. Unless said otherwise, all connections are
 related to my work account, meaning that anything not related to work should not
 be done through MCP. Non-work related MCP connections are all suffixed with
-`-personal`. For example, `mcp connect linear-personal` will connect to my
-personal Linear MCP.
+`-personal`.
