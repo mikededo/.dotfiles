@@ -1,7 +1,7 @@
 {
   "theme": "pi-theme",
   "defaultProvider": "anthropic",
-  "defaultModel": "claude-haiku-5-5",
+  "defaultModel": "claude-opus-5-5",
   "defaultThinkingLevel": "high",
   "defaultTools": [
     "+codemode",
@@ -17,7 +17,7 @@
   ],
   "editorPaddingX": 0,
   "quietStartup": true,
-  "lastChangelogVersion": "1.4.0",
+  "lastChangelogVersion": "1.5.0",
   "tuiMode": "fullscreen",
   "enabledModels": [
     "openai-codex/gpt-6-astra",
@@ -34,5 +34,8 @@
   "warnings": {
     "anthropicExtraUsage": false
   },
-  "fullscreenExitOutput": "transcript"
+  "fullscreenExitOutput": "transcript",
+  "extensionChangelogVersions": {
+    "{\"source\":\"npm:@sting8k/pi-vcc\",\"scope\":\"user\"}": "0.11.2"
+  }
 }
