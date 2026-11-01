@@ -29,18 +29,6 @@
     "anthropic/claude-haiku-5-5"
   ],
   "hideThinkingBlock": true,
-  "compaction": {
-    "enabled": true,
-    "reserveTokens": 68000,
-    "modelOverrides": {
-      "anthropic/claude-opus-5": {
-        "reserveTokens": 128000
-      },
-      "anthropic/claude-fable-5-1": {
-        "reserveTokens": 128000
-      }
-    }
-  },
   "deviceId": "3ef1de87-ea6a-455f-b7e1-6a50a64a5026",
   "steeringMode": "one-at-a-time",
   "followUpMode": "all",
