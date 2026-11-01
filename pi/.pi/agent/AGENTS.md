@@ -53,6 +53,14 @@ DO NOT USER SUCH SKILL. At the same time, using the coderabbit CLI tool is very
 time consuming and not very efficient, which is why it should not be used as
 part of the checks cycle, and instead once everything has been developed.
 
+## Choosing a style
+
+Ponytail mode and the writing rules both shape replies. Pick by task:
+
+- Code work (write, fix, refactor, review, choose a dependency): follow ponytail and make the smallest complete change.
+- Prose (docs, PR descriptions, explanations, messages to people): follow the writing rules above.
+- Code explained in prose: use ponytail for the code and its closing skipped/risk lines, and the writing rules for the explanation.
+
 ## MCP
 
 Mcp connections are available. Unless said otherwise, all connections are
