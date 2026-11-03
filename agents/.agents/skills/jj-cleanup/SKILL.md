@@ -1,0 +1,38 @@
+---
+name: jj-cleanup
+description: Clean up a cluttered jj repo. It fetches trunk, removes bookmarks, abandons stale revisions, removes finished workspaces, and rebases the remaining workspaces so none is stale. Use when the user says the jj repo is messy, has too many workspaces or bookmarks, or wants to "clean up jj", prune branches, or reset onto a fresh main/master, even if they don't name every step.
+---
+
+# jj cleanup
+
+The work is mechanical and fully specified, so hand it to a fast agent.
+
+## Pick the model
+
+Call `orchestrator_capabilities` and use the `pi` provider:
+
+1. DeepSeek V4.1 Flash, if `pi` lists it.
+2. Otherwise `anthropic/claude-haiku-5-5` with `thinking: "low"`. Use `"medium"` for more than ~5 workspaces or a tangled history.
+
+Call `delegate_task` with `mode: "wait"` and `isolation: "shared"`, because the agent must act on the real repo. Pass the brief below with the repo path filled in. If there is no delegation tool, follow the brief yourself.
+
+## Brief
+
+> Clean up the jj repo at `<path>`. Undo is possible through `jj op restore`, but never drop work that is not on origin silently.
+>
+> 1. Record a restore point: `jj op log -n1 --no-graph -T 'id.short()'`. Also record `jj bookmark list --all-remotes` so you can compare with origin after the fetch.
+> 2. Run `jj git fetch`. Trunk is `trunk()` (main or master).
+> 3. Workspaces: `jj workspace list -T 'name ++ " " ++ root ++ "\n"'`. For each one other than the default:
+>    - If its directory is gone, run `jj workspace forget <name>`.
+>    - If `<name>@` is empty and none of its mutable ancestors are missing from origin, run `jj workspace remove <name>`.
+>    - Keep the rest.
+> 4. Bookmarks: run `jj bookmark forget` on every local bookmark except trunk's. Use `forget`, not `delete`. `delete` would push deletions of remote branches.
+> 5. Revisions: the candidates are `mutable() ~ ::working_copies()`.
+>    - Abandon a candidate if it is empty, or if its bookmark was on origin before the fetch and is gone now (a merged or closed PR).
+>    - Keep anything that was never on origin and list it as "unpushed work kept".
+> 6. For each remaining workspace, including the default:
+>    - Run `jj rebase -s 'roots(trunk()..<name>@)' -d 'trunk()'`. If the rebase creates conflicts, run `jj undo` and report it.
+>    - Then run `jj -R <root> workspace update-stale`.
+> 7. Check: `jj -R <root> status` shows no stale warning in any workspace.
+>
+> Report the restore op id, removed workspaces, forgotten bookmarks, abandoned revisions, kept unpushed work, any conflicts, and the final `jj workspace list`, `jj bookmark list` and `jj log`. Cite command output for each claim.
