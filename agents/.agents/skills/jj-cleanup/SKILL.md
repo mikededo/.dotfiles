@@ -1,6 +1,6 @@
 ---
 name: jj-cleanup
-description: Clean up a cluttered jj repo. It fetches trunk, removes bookmarks, abandons stale revisions, removes finished workspaces, and rebases the remaining workspaces so none is stale. Use when the user says the jj repo is messy, has too many workspaces or bookmarks, or wants to "clean up jj", prune branches, or reset onto a fresh main/master, even if they don't name every step.
+description: Clean up a cluttered jj repo. It fetches trunk, removes merged or deleted bookmarks, abandons stale revisions, removes finished workspaces, and rebases the remaining workspaces so none is stale. Use when the user says the jj repo is messy, has too many workspaces or bookmarks, or wants to "clean up jj", prune branches, or reset onto a fresh main/master, even if they don't name every step.
 ---
 
 # jj cleanup
@@ -26,8 +26,12 @@ Call `delegate_task` with `mode: "wait"` and `isolation: "shared"`, because the 
 >    - If its directory is gone, run `jj workspace forget <name>`.
 >    - If `<name>@` is empty and none of its mutable ancestors are missing from origin, run `jj workspace remove <name>`.
 >    - Keep the rest.
-> 4. Bookmarks: run `jj bookmark forget` on every local bookmark except trunk's. Use `forget`, not `delete`. `delete` would push deletions of remote branches.
-> 5. Revisions: the candidates are `mutable() ~ ::working_copies()`.
+> 4. Bookmarks: run `jj bookmark forget` only on bookmarks that are finished:
+>    - merged into trunk (`bookmarks() & ::trunk()`), or
+>    - on origin before the fetch and gone from origin now (a merged or closed PR).
+>
+>    Keep trunk's bookmark, every bookmark that still exists on origin and is not merged, and every local-only bookmark. Use `forget`, not `delete`. `delete` would push deletions of remote branches.
+> 5. Revisions: the candidates are `mutable() ~ ::(working_copies() | bookmarks())`, so kept bookmarks protect their commits.
 >    - Abandon a candidate if it is empty, or if its bookmark was on origin before the fetch and is gone now (a merged or closed PR).
 >    - Keep anything that was never on origin and list it as "unpushed work kept".
 > 6. For each remaining workspace, including the default:
