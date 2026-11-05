@@ -25,6 +25,7 @@ packages=(
   nvim
   pi
   starship
+  t3
   tmux
 )
 
