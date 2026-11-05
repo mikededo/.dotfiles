@@ -48,8 +48,11 @@ fi
 # Run the stow command
 stow_it() {
   package="$1"
+  folding="--no-folding"
+  # Hex only loads its config through a symlink to the whole folder
+  [ "$package" = "hex" ] && folding=""
 
-  stow --no-folding -vR "$package" --ignore='(^|\W)\.gitkeep($|\W)' --ignore='(^|\W).DS_Store($|\W)'
+  stow $folding -vR "$package" --ignore='(^|\W)\.gitkeep($|\W)' --ignore='(^|\W).DS_Store($|\W)'
 }
 
 total=${#packages[@]}

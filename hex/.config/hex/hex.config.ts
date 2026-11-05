@@ -1,8 +1,5 @@
 import { defineHexConfig } from "@hex/commands"
 import { execFile } from "node:child_process"
-import { promisify } from "node:util"
-
-const run = promisify(execFile)
 
 // Hex gives child processes a minimal PATH; pi's `#!/usr/bin/env node` needs fnm's default node.
 const NODE_PATH = "/Users/mikededo/.local/share/fnm/aliases/default/bin:/usr/bin:/bin"
@@ -28,7 +25,7 @@ export default defineHexConfig({
       transform: async (text) => {
         if (!text.trim()) return text
         try {
-          const { stdout } = await run(
+          const stdout = await new Promise<string>((resolve, reject) => execFile(
             "/Users/mikededo/.bun/bin/pi",
             [
               "-p", "--model", "anthropic/claude-haiku-5-5", "--thinking", "off",
@@ -38,7 +35,8 @@ export default defineHexConfig({
               "--", text,
             ],
             { env: { PATH: NODE_PATH }, timeout: 12000 },
-          )
+            (error, out) => (error ? reject(error) : resolve(out)),
+          ))
           return stdout.trim() || text
         } catch (error) {
           // Paste the raw transcript rather than lose it.
