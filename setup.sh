@@ -18,6 +18,7 @@ packages=(
   ghostty
   delta
   git
+  hex
   revdiff
   jj
   mcp
