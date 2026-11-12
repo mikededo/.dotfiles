@@ -1,14 +1,27 @@
 {
   "mcpServers": {
-    "linear": {
+    "linear-finlai": {
       "command": "bunx",
       "args": [
         "-y",
         "mcp-remote",
-        "https://mcp.linear.app/mcp"
+        "https://mcp.linear.app/mcp",
+        "3335"
       ],
       "env": {
-        "MCP_REMOTE_CONFIG_DIR": "/Users/mikededo/.mcp-auth/linear"
+        "MCP_REMOTE_CONFIG_DIR": "/Users/mikededo/.mcp-auth/linear-finlai"
+      }
+    },
+    "linear-restream": {
+      "command": "bunx",
+      "args": [
+        "-y",
+        "mcp-remote",
+        "https://mcp.linear.app/mcp",
+        "3336"
+      ],
+      "env": {
+        "MCP_REMOTE_CONFIG_DIR": "/Users/mikededo/.mcp-auth/linear-restream"
       }
     },
     "pencil": {
