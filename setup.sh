@@ -18,7 +18,6 @@ packages=(
   ghostty
   delta
   git
-  hex
   revdiff
   jj
   mcp
@@ -49,8 +48,6 @@ fi
 stow_it() {
   package="$1"
   folding="--no-folding"
-  # Hex only loads its config through a symlink to the whole folder
-  [ "$package" = "hex" ] && folding=""
 
   stow $folding -vR "$package" --ignore='(^|\W)\.gitkeep($|\W)' --ignore='(^|\W).DS_Store($|\W)'
 }
