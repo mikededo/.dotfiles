@@ -16,6 +16,8 @@ Call `orchestrator_capabilities` and use the `pi` provider:
 
 Call `delegate_task` with `mode: "wait"` and `isolation: "shared"`, because the agent must act on the real repo. Pass the brief below with the repo path filled in. If there is no delegation tool, follow the brief yourself.
 
+The lead delegates this and reviews the child's report against command output. The lead does not run the cleanup. `jj git fetch` is the user's `jjgf`: it drops `@origin` bookmarks for branches deleted on the remote. Never `jj bookmark delete`.
+
 ## Brief
 
 > Clean up the jj repo at `<path>`. Undo is possible through `jj op restore`, but never remove a workspace or abandon a revision whose work is not merged into trunk. Pushed is not merged: a closed or open PR still counts as unmerged.
@@ -30,7 +32,7 @@ Call `delegate_task` with `mode: "wait"` and `isolation: "shared"`, because the 
 >    - merged into trunk (`bookmarks() & ::trunk()`), or
 >    - on origin before the fetch, gone from origin now, and its PR shows as merged in `gh pr list --head <bookmark> --state merged` (squash merges leave the commits outside `::trunk()`).
 >
->    Keep trunk's bookmark, every unmerged bookmark (open PR, closed-but-unmerged PR, or no PR), and every local-only bookmark. Use `forget`, not `delete`. `delete` would push deletions of remote branches.
+>    Keep trunk's bookmark, every unmerged bookmark (open PR, closed-but-unmerged PR, or no PR), and every local-only bookmark. A closed-but-unmerged bookmark is removed only when the user's message names it and says to remove it. Use `forget`, not `delete`. `delete` would push deletions of remote branches. Do not forget a remote bookmark that `jj git fetch` left in place.
 > 5. Revisions: the candidates are `mutable() ~ ::(working_copies() | bookmarks())`, so kept bookmarks protect their commits.
 >    - Abandon a candidate if it is empty, or if a bookmark forgotten in step 4 pointed at it or at a descendant (its PR was merged).
 >    - Keep everything else, including closed-but-unmerged PRs and work that was never on origin, and list it as "unmerged work kept".
