@@ -3,6 +3,17 @@
   "defaultProvider": "anthropic",
   "defaultModel": "claude-opus-5-5",
   "defaultThinkingLevel": "high",
+  "compaction": {
+    "modelOverrides": {
+      "anthropic/claude-opus-5-5": { "reserveTokens": 800000 },
+      "anthropic/claude-fable-5-2": { "reserveTokens": 800000 },
+      "anthropic/claude-fable-5-1": { "reserveTokens": 800000 },
+      "anthropic/claude-sonnet-5-5": { "reserveTokens": 800000 },
+      "anthropic/claude-haiku-5-5": { "reserveTokens": 800000 },
+      "openai-codex/gpt-6.1-sol": { "reserveTokens": 300000 },
+      "xai/grok-4.7": { "reserveTokens": 300000 }
+    }
+  },
   "defaultTools": [
     "+codemode",
     "+tool_search"
