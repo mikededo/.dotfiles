@@ -11,6 +11,13 @@
       "env": {
         "MCP_REMOTE_CONFIG_DIR": "/Users/mikededo/.mcp-auth/linear-work"
       }
+    },
+    "paper": {
+      "type": "stdio",
+      "command": "/Users/mikededo/.paper/bin/paper",
+      "args": [
+        "mcp"
+      ]
     }
   }
 }
