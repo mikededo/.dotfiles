@@ -24,6 +24,18 @@
         "MCP_REMOTE_CONFIG_DIR": "/Users/mikededo/.mcp-auth/linear-restream"
       }
     },
+    "posthog-finlai": {
+      "command": "bunx",
+      "args": [
+        "-y",
+        "mcp-remote",
+        "https://mcp.posthog.com/mcp",
+        "3337"
+      ],
+      "env": {
+        "MCP_REMOTE_CONFIG_DIR": "/Users/mikededo/.mcp-auth/posthog-finlai"
+      }
+    },
     "pencil": {
       "command": "/Applications/Pen.app/Contents/Resources/app.asar.unpacked/out/mcp-server-darwin-arm64",
       "args": [
