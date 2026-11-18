@@ -141,6 +141,8 @@
   },
   "projectSettingsFolded": true,
   "idleCompaction": "onReturn",
+  "defaultTheme": "linear",
+  "defaultThemeSetAt": "2026-11-15T09:04:00.803Z",
   "defaultThreadEnvMode": "local",
   "addProjectBaseDirectory": "~/Documents",
   "textGenerationModelSelection": {
