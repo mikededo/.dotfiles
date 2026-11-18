@@ -20,7 +20,9 @@ The lead delegates this and reviews the child's report against command output. T
 
 ## Brief
 
-> Clean up the jj repo at `<path>`. Undo is possible through `jj op restore`, but never remove a workspace or abandon a revision whose work is not merged into trunk. Pushed is not merged: a closed or open PR still counts as unmerged.
+> Clean up the jj repo at `<path>`. Undo is possible through `jj op restore`, but never remove a workspace or abandon a revision whose work is not merged into trunk. Pushed is not merged: a closed or open PR still counts as unmerged. Broad wording from the user, such as "clean up the abandoned revisions", does not change this.
+>
+> Other agents may be working in this repo. Never remove a workspace that still has a T3 thread that is not settled, or a running process: check `lim dev ls` and `lim dev ps` (if `lim` is installed) and keep those workspaces, even when their work is merged. If refs move while you work (new `import git refs` operations in `jj op log`), stop and report instead of continuing.
 >
 > 1. Record a restore point: `jj op log -n1 --no-graph -T 'id.short()'`. Also record `jj bookmark list --all-remotes` so you can compare with origin after the fetch.
 > 2. Run `jj git fetch`. Trunk is `trunk()` (main or master).
