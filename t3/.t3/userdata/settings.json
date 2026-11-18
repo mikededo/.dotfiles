@@ -108,9 +108,36 @@
     "worktreeUnchanged": true
   },
   "defaultAutoPull": true,
+  "projectScriptOverrides": {
+    "e1502720-12f6-4ef3-aad5-92c9ed0a5fb3": [
+      {
+        "id": "setup",
+        "name": "Setup",
+        "command": "wt step copy-ignored && bun install --frozen-lockfile",
+        "icon": "configure",
+        "runOnWorktreeCreate": true,
+        "async": false
+      }
+    ]
+  },
   "defaultModelSelection": {
     "instanceId": "pi",
     "model": "anthropic/claude-opus-5-5"
+  },
+  "projectSettingsOverrides": {
+    "e1502720-12f6-4ef3-aad5-92c9ed0a5fb3": {
+      "defaultThreadEnvMode": "local",
+      "defaultProjectScripts": [
+        {
+          "id": "setup",
+          "name": "Setup",
+          "command": "wt step copy-ignored && bun install --frozen-lockfile",
+          "icon": "configure",
+          "runOnWorktreeCreate": true,
+          "async": false
+        }
+      ]
+    }
   },
   "projectSettingsFolded": true,
   "idleCompaction": "onReturn",
@@ -129,6 +156,16 @@
   "branchNamingMode": "semantic",
   "branchNamePrefix": "",
   "removeAgentCreditsOnMerge": true,
+  "reviewGuideModelSelection": {
+    "instanceId": "pi",
+    "model": "anthropic/claude-haiku-5-5",
+    "options": [
+      {
+        "id": "thinking",
+        "value": "off"
+      }
+    ]
+  },
   "pullRequestMergeMethod": "squash",
   "providerInstances": {
     "codex": {
