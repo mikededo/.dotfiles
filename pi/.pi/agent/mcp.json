@@ -36,12 +36,28 @@
         "MCP_REMOTE_CONFIG_DIR": "/Users/mikededo/.mcp-auth/posthog-finlai"
       }
     },
+    "notion-finlai": {
+      "command": "bunx",
+      "args": [
+        "-y",
+        "mcp-remote",
+        "https://mcp.notion.com/mcp",
+        "3338"
+      ],
+      "env": {
+        "MCP_REMOTE_CONFIG_DIR": "/Users/mikededo/.mcp-auth/notion-finlai"
+      }
+    },
     "pencil": {
       "command": "/Applications/Pen.app/Contents/Resources/app.asar.unpacked/out/mcp-server-darwin-arm64",
       "args": [
         "--app",
         "desktop"
       ]
+    },
+    "neon-finlai": {
+      "url": "https://mcp.neon.tech/mcp?readonly=true&projectId=young-union-79638049&secrets=none",
+      "description": "Neon Postgres of Finlai (project young-union-79638049), read-only: list branches, inspect schema, run SELECT queries"
     }
   }
 }
