@@ -9,10 +9,12 @@ The work is mechanical and fully specified, so hand it to a fast agent.
 
 ## Pick the model
 
-Call `orchestrator_capabilities` and use the `pi` provider:
+Call `orchestrator_capabilities`:
 
-1. DeepSeek V4.1 Flash, if `pi` lists it.
-2. Otherwise `anthropic/claude-haiku-5-5` with `thinking: "low"`. Use `"medium"` for more than ~5 workspaces or a tangled history.
+1. DeepSeek V4.1 Flash on the `cursor` provider (`deepseek-v41-flash-1017`), if listed, with `reasoning_effort: "low"`.
+2. Otherwise `anthropic/claude-haiku-5-5` on `pi` with `thinking: "low"`.
+
+For either model, use `"medium"` for more than ~5 workspaces or a tangled history.
 
 Call `delegate_task` with `mode: "wait"` and `isolation: "shared"`, because the agent must act on the real repo. Pass the brief below with the repo path filled in. If there is no delegation tool, follow the brief yourself.
 
