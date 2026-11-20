@@ -2,15 +2,7 @@
   "mcpServers": {
     "linear": {
       "oauth": {},
-      "command": "bunx",
-      "args": [
-        "-y",
-        "mcp-remote",
-        "https://mcp.linear.app/mcp"
-      ],
-      "env": {
-        "MCP_REMOTE_CONFIG_DIR": "/Users/mikededo/.mcp-auth/linear-work"
-      }
+      "url": "https://mcp.linear.app/mcp"
     },
     "paper": {
       "type": "stdio",
