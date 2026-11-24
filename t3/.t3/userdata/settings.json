@@ -2,10 +2,6 @@
   "favorites": [
     {
       "provider": "pi",
-      "model": "openai-codex/gpt-6.1-sol"
-    },
-    {
-      "provider": "pi",
       "model": "anthropic/claude-opus-5-5"
     },
     {
@@ -15,6 +11,10 @@
     {
       "provider": "pi",
       "model": "anthropic/claude-fable-5-2"
+    },
+    {
+      "provider": "pi",
+      "model": "openai-codex/gpt-6.2-sol"
     }
   ],
   "providerModelPreferences": {
@@ -191,20 +191,23 @@
   },
   "projectSettingsFolded": true,
   "idleCompaction": "onReturn",
+  "autoResumeLimitedThreads": true,
+  "sidebarAutoSettleOnMerge": false,
   "defaultTheme": "linear",
-  "defaultThemeSetAt": "2026-11-21T06:10:48.882Z",
+  "defaultThemeSetAt": "2026-11-24T08:23:48.225Z",
   "defaultThreadEnvMode": "local",
   "addProjectBaseDirectory": "~/Documents",
   "textGenerationModelSelection": {
-    "instanceId": "pi",
-    "model": "anthropic/claude-haiku-5-5",
+    "instanceId": "cursor",
+    "model": "auto-smart",
     "options": [
       {
-        "id": "thinking",
-        "value": "off"
+        "id": "optimize_for",
+        "value": "cost"
       }
     ]
   },
+  "threadTitleInstructions": "The convention:\n\n- **Top-level:** `<project> · <goal>`, with the ticket if there is one. Example: `restream · CLP-3354 Mobile clip creation flow`.\n- **Delegated:** `<role> · <what>`, no project name. Repeated rounds get a number. Example: `review 2 · names, pins and removal`.\n- **Roles (closed list):** `build`, `fix`, `review`, `recheck`, `research`, `design`, `cleanup`.\n- **Language:** Spanish or English, mixing is fine. Under ~60 characters.\n\nTop-level thread: \"<project> · <goal>\". Add the ticket first if one exists, e.g. \"restream · CLP-3354 Mobile clip creation flow\".\nDelegated thread: \"<role> · <what>\". Leave out the project. Role must be one of: build, fix, review, recheck, research, design, cleanup. If this is a repeated round, add a number: \"review 2 · names, pins and removal\".\n\nUse Spanish or English, whichever reads best; mixing is fine. Keep it under 60 characters. Name the concrete thing, not the process (\"names, pins and removal\", not \"work on stuff\").",
   "branchNamingMode": "semantic",
   "branchNamePrefix": "",
   "removeAgentCreditsOnMerge": true,
