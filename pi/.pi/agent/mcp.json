@@ -22,6 +22,10 @@
     "neon-finlai": {
       "url": "https://mcp.neon.tech/mcp?readonly=true&projectId=young-union-79638049&secrets=none",
       "description": "Neon Postgres of Finlai (project young-union-79638049), read-only: list branches, inspect schema, run SELECT queries"
+    },
+    "datadog-restream": {
+      "url": "https://mcp.datadoghq.com/v1/mcp",
+      "description": "Datadog (Restream, US1 site): search logs, metrics, monitors and dashboards"
     }
   }
 }
