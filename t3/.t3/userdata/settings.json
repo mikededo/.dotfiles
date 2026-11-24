@@ -15,6 +15,10 @@
     {
       "provider": "pi",
       "model": "openai-codex/gpt-6.2-sol"
+    },
+    {
+      "provider": "pi",
+      "model": "opencode-go/deepseek-v4.1-flash"
     }
   ],
   "providerModelPreferences": {
@@ -194,7 +198,7 @@
   "autoResumeLimitedThreads": true,
   "sidebarAutoSettleOnMerge": false,
   "defaultTheme": "linear",
-  "defaultThemeSetAt": "2026-11-24T08:23:48.225Z",
+  "defaultThemeSetAt": "2026-11-24T21:19:54.401Z",
   "defaultThreadEnvMode": "local",
   "addProjectBaseDirectory": "~/Documents",
   "textGenerationModelSelection": {
