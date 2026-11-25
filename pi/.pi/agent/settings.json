@@ -97,6 +97,6 @@
   },
   "fullscreenExitOutput": "transcript",
   "extensionChangelogVersions": {
-    "{\"source\":\"npm:@sting8k/pi-vcc\",\"scope\":\"user\"}": "0.12.0"
+    "{\"source\":\"npm:@sting8k/pi-vcc\",\"scope\":\"user\"}": "0.12.1"
   }
 }
