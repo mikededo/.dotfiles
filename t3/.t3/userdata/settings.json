@@ -198,20 +198,20 @@
   "autoResumeLimitedThreads": true,
   "sidebarAutoSettleOnMerge": false,
   "defaultTheme": "linear",
-  "defaultThemeSetAt": "2026-11-24T21:19:54.401Z",
+  "defaultThemeSetAt": "2026-11-25T15:07:18.070Z",
   "defaultThreadEnvMode": "local",
   "addProjectBaseDirectory": "~/Documents",
   "textGenerationModelSelection": {
-    "instanceId": "cursor",
-    "model": "auto-smart",
+    "instanceId": "pi",
+    "model": "opencode-go/deepseek-v4.1-flash",
     "options": [
       {
-        "id": "optimize_for",
-        "value": "cost"
+        "id": "thinking",
+        "value": "low"
       }
     ]
   },
-  "threadTitleInstructions": "The convention:\n\n- **Top-level:** `<project> · <goal>`, with the ticket if there is one. Example: `restream · CLP-3354 Mobile clip creation flow`.\n- **Delegated:** `<role> · <what>`, no project name. Repeated rounds get a number. Example: `review 2 · names, pins and removal`.\n- **Roles (closed list):** `build`, `fix`, `review`, `recheck`, `research`, `design`, `cleanup`.\n- **Language:** Spanish or English, mixing is fine. Under ~60 characters.\n\nTop-level thread: \"<project> · <goal>\". Add the ticket first if one exists, e.g. \"restream · CLP-3354 Mobile clip creation flow\".\nDelegated thread: \"<role> · <what>\". Leave out the project. Role must be one of: build, fix, review, recheck, research, design, cleanup. If this is a repeated round, add a number: \"review 2 · names, pins and removal\".\n\nUse Spanish or English, whichever reads best; mixing is fine. Keep it under 60 characters. Name the concrete thing, not the process (\"names, pins and removal\", not \"work on stuff\").",
+  "threadTitleInstructions": "The convention:\n\n- **Top-level:** `<project> · <goal>`, with the ticket if there is one. Example: `restream · CLP-3354 Mobile clip creation flow`.\n- **Delegated:** `<role> · <what>`, no project name. Repeated rounds get a number. Example: `review 2 · names, pins and removal`.\n- **Roles (closed list):** `build`, `fix`, `review`, `recheck`, `research`, `design`, `cleanup`.\n- **Language:** Spanish or English, mixing is fine. Under ~60 characters.\n\nTop-level thread: \"<project> · <goal>\". Add the ticket first if one exists, e.g. \"restream · CLP-3354 Mobile clip creation flow\". Project always in lowercase.\nDelegated thread: \"<role> · <what>\". Leave out the project. Role must be one of: build, fix, review, recheck, research, design, cleanup. If this is a repeated round, add a number: \"review 2 · names, pins and removal\".\n\nUse Spanish or English, whichever reads best; mixing is fine. Keep it under 60 characters. Name the concrete thing, not the process (\"names, pins and removal\", not \"work on stuff\").",
   "branchNamingMode": "semantic",
   "branchNamePrefix": "",
   "removeAgentCreditsOnMerge": true,
