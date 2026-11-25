@@ -8,11 +8,14 @@
       "anthropic/claude-opus-5-5": {
         "reserveTokens": 800000
       },
+      "anthropic/claude-fable-5": {
+        "reserveTokens": 572000
+      },
       "anthropic/claude-fable-5-2": {
-        "reserveTokens": 800000
+        "reserveTokens": 572000
       },
       "anthropic/claude-fable-5-1": {
-        "reserveTokens": 800000
+        "reserveTokens": 572000
       },
       "anthropic/claude-sonnet-5-5": {
         "reserveTokens": 800000
@@ -20,8 +23,41 @@
       "anthropic/claude-haiku-5-5": {
         "reserveTokens": 800000
       },
+      "openai-codex/gpt-5.6-luna": {
+        "reserveTokens": 72000
+      },
+      "openai-codex/gpt-5.6-sol": {
+        "reserveTokens": 72000
+      },
+      "openai-codex/gpt-5.6-terra": {
+        "reserveTokens": 72000
+      },
+      "openai-codex/gpt-6-astra": {
+        "reserveTokens": 72000
+      },
+      "openai-codex/gpt-6-luna": {
+        "reserveTokens": 72000
+      },
+      "openai-codex/gpt-6-sol": {
+        "reserveTokens": 72000
+      },
+      "openai-codex/gpt-6.2-astra": {
+        "reserveTokens": 72000
+      },
       "openai-codex/gpt-6.1-sol": {
         "reserveTokens": 300000
+      },
+      "openai-codex/gpt-6.1-terra": {
+        "reserveTokens": 300000
+      },
+      "openai-codex/gpt-6.2-sol": {
+        "reserveTokens": 300000
+      },
+      "opencode-go/gpt-5.6-luna": {
+        "reserveTokens": 850000
+      },
+      "opencode-go/gpt-6-luna": {
+        "reserveTokens": 850000
       },
       "xai/grok-4.7": {
         "reserveTokens": 300000
